@@ -83,20 +83,65 @@ body {
 }
 
 .carrusel {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 16px;
-}
-
-.diapositiva {
-    flex: 0 0 50%;
     width: 100%;
-    height: 350px;
-    object-fit: cover;
-    scroll-snap-align: center;
+    max-width: 800px;
+    margin: 2rem auto;
 }
-
+.carrusel input[type="radio"] {
+    display: none;
+}
+.ventana-carrusel {
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    overflow: hidden;
+}
+.slides{
+    display: flex;
+    width: 100%;
+    transition: 0.5s;
+}
+.diapositiva {
+    flex: 0 0 100%;
+    display: block;
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    object-fit: cover;
+}
+#img1:checked ~ .ventana-carrusel .slides{
+    transform: translateX(0);
+}
+#img2:checked ~ .ventana-carrusel .slides{
+    transform: translateX(-100%);
+}
+#img3:checked ~ .ventana-carrusel .slides{
+    transform: translateX(-200%);
+}
+.navegacionSlide{
+    font-family: "Syne", "Roboto", sans-serif;
+    text-align: center;
+    margin-top: 1rem;
+}
+.navegacionSlide label{
+    background-color: #004d55;
+    color: #b0c4c4;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+#img1:checked ~ .navegacionSlide label[for="img1"],
+#img2:checked ~ .navegacionSlide label[for="img2"],
+#img3:checked ~ .navegacionSlide label[for="img3"]{
+    background-color: #2de0a5;
+    color: #001f23;
+}
+@media(max-width:480px){
+    .navegacionSlide label{
+        display: inline-block;
+        padding: 8px 12px;
+        margin: 0 3px;
+    }
+}
 #ubicacion {
     display: flex;
     flex-wrap: wrap;
