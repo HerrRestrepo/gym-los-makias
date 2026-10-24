@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Gym los Makias</title>
+</head>
+
+<body id="inicio">
+    <header>
+        <nav>
+            <ul class="barra">
+                <li><a href="/home.html"><img src="images/logo.png" alt="logo del Gym los Makias"></a></li>
+                <li><a href="/registro.html">Registrarte</a></li>
+                <li><a href="/pago.html">Paga tu plan</a></li>
+                <li><a href="#planes">!PONTE VIGA!</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="planes" class="seccion-planes">
+            <h2 class="titulo-planes">Nuestros Planes</h2> 
+                <div class="contenedor-planes">
+                    <article class="tarjeta-plan">
+                        <h3>Plan Básico (Bronce)</h3>
+                        <p class="precio">$65.000 <span>/ Mes</span></p>
+                        <ul class="beneficios">
+                            <li>Acceso a sala de musculación</li>
+                            <li>Zona cardiovascular</li>
+                            <li>Valoración física inicial</li>
+                        </ul>
+                        <button class="btn-plan">Elegir Plan</button>
+                    </article>
+                    <article class="tarjeta-plan plan-destacado">
+                        <span class="etiqueta-popular">Más Popular</span>
+                        
+                        <h3>Plan Makia (Plata)</h3>
+                        <p class="precio">$95.000 <span>/ Mes</span></p>
+                        <ul class="beneficios">
+                            <li>Todo lo del Plan Básico</li>
+                            <li>Clases grupales (Spinning, Rumba, CrossFit)</li>
+                            <li>Casillero asignado</li>
+                        </ul>
+                        <button class="btn-plan btn-destacado">Elegir Plan</button>
+                    </article>
+                    <article class="tarjeta-plan">
+                        <h3>Plan Élite (Oro)</h3>
+                        <p class="precio">$150.000 <span>/ Mes</span></p>
+                        <ul class="beneficios">
+                            <li>Todo lo del Plan Makia</li>
+                            <li>4 sesiones al mes con entrenador personalizado</li>
+                            <li>Asesoría nutricional</li>
+                        </ul>
+                        <button class="btn-plan">Elegir Plan</button>
+                    </article>
+                    <article class="tarjeta-plan">
+                        <h3>Plan Anual Makia VIP</h3>
+                        <p class="precio">$900.000 <span>/ Anual</span></p>
+                        <ul class="beneficios">
+                            <li>Acceso total sin restricciones</li>
+                            <li>Kit deportivo de bienvenida</li>
+                            <li>1 mes congelable al año</li>
+                        </ul>
+                        <button class="btn-plan">Elegir Plan</button>
+                    </article>
+
+                </div>
+        </section>
+ <main class="contenedor-formulario">
+        <div class="formulario">
+            <h2 class="subtitulo"> Tipo de plan y método de pago</h2>
+            <form action="./home.html" method="get">
+                <div class="campo-formulario">
+                    <label for="tipo-plan">Tipo de plan</label>
+                    <select name="tipo-plan" id="tipo-plan" required>
+                        <option value="">Seleccione tipo de plan</option>
+                        <option value="basico">Plan Básico (Bronce) $65.000 /Mes</option>
+                        <option value="makia">Plan Makia (Planta) $95.000 /Mes</option>
+                        <option value="elite">Plan Élite (Oro) $150.000 /Mes</option>
+                        <option value="vip">Plan Anual Makia VIP $900.000 /Anual</option>
+                    </select>
+                </div>
+                <div class="campo-formulario">
+                    <label for="tipo-pago">Método de pago</label>
+                    <select name="tipo-documento" id="tipo-documento" required>
+                        <option value="">Seleccione metedo de pago</option>
+                        <option value="pse">PSE</option>
+                        <option value="tarjeta">Tarjeta Crédito/Débito</option>
+                    </select>
+                </div>
+                <div class="campo-formulario">
+                    <label for="banco">Entidad Bancaria</label>
+                    <select name="banco" id="banco" required>
+                        <option value="">Seleccione su banco</option>
+                        <option value="bancolobia">Bancolombia</option>
+                        <option value="davivienda">Davivienda</option>
+                        <option value="nequi">Nequi</option>
+                    </select>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="direccion">Dirección</label>
+                    <input type="text" id="direccion" placeholder="Calle 00 # 00 - 00" required name="nombre">
+                </div>
+                <div class="campo-formulario">
+                    <label for="telefono-contacto">Número de telefeno</label>
+                    <input type="text" id="telefono-contacto" placeholder="+57 000 000 000" required
+                        name="telefono-contacto">
+                </div>
+                <div class="campo-formulario">
+                    <label for="email">Correo electronico</label>
+                    <input type="email" id="email" placeholder="Ej: correo@electronico.com" required name="email">
+                </div>
+                <div class="campo-formulario">
+                    <input type="checkbox" id="politica-datos" name="acepta-politicas" value="aceptado" required>
+                    <label for="politica-datos">Facturacion Electronica</label>
+                </div>
+                <button type="submit" class="boton-registrarse">Pagar</button>
+                <button type="reset" class="boton-limpiar">Limpiar Formulario</button>
+    </main>
+</body>
+
+</html>
