@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym los Makias - Portal del Cliente</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <ul class="barra">
+        <li><img src="images/logo.png" alt="logo del Gym los Makias"></li>
+        <li><a href="#perfil">Mi perfil</a></li>
+        <li><a href="#clases">Clases grupales</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenedor-cliente">
+
+    <!-- Resumen de datos personales y estado -->
+    <section id="perfil" class="perfil">
+      <div class="perfil-avatar">MG</div>
+
+      <div class="perfil-info">
+        <h1>Mariana Gómez Restrepo</h1>
+        <p>Documento: 1.020.345.678</p>
+        <p>Correo: mariana.gomez@correo.com</p>
+        <p>Teléfono: 300 123 4567</p>
+        <p>Plan: Mensual Premium</p>
+        <p>Vence: 30 de octubre de 2026</p>
+      </div>
+
+      <span class="etiqueta etiqueta-estado-cliente">Activo</span>
+    </section>
+
+    <!-- HU020: Horario general de clases grupales -->
+    <section id="clases" class="clases">
+      <h2>Horario de clases grupales</h2>
+      <p class="clases-subtitulo">Elige tu clase y reserva tu cupo.</p>
+
+      <div class="clases-lista">
+
+        <article class="tarjeta-clase">
+          <span class="etiqueta etiqueta-cupos">Cupos disponibles</span>
+          <h3>Zumba</h3>
+          <p>Lunes y miércoles</p>
+          <p>6:00 a.m. - 7:00 a.m.</p>
+          <p>Instructor: Carlos Ramírez</p>
+          <button class="boton-reservar" type="button">Reservar</button>
+        </article>
+
+        <article class="tarjeta-clase">
+          <span class="etiqueta etiqueta-cupos">Cupos disponibles</span>
+          <h3>Yoga</h3>
+          <p>Martes y jueves</p>
+          <p>7:00 a.m. - 8:00 a.m.</p>
+          <p>Instructora: Laura Torres</p>
+          <button class="boton-reservar" type="button">Reservar</button>
+        </article>
+
+        <article class="tarjeta-clase">
+          <span class="etiqueta etiqueta-pocos">Últimos cupos</span>
+          <h3>Spinning</h3>
+          <p>Lunes a viernes</p>
+          <p>5:30 p.m. - 6:30 p.m.</p>
+          <p>Instructor: Andrés Londoño</p>
+          <button class="boton-reservar" type="button">Reservar</button>
+        </article>
+
+        <article class="tarjeta-clase">
+          <span class="etiqueta etiqueta-cupos">Cupos disponibles</span>
+          <h3>Crossfit</h3>
+          <p>Miércoles y viernes</p>
+          <p>6:30 p.m. - 7:30 p.m.</p>
+          <p>Instructor: Julián Cardona</p>
+          <button class="boton-reservar" type="button">Reservar</button>
+        </article>
+
+        <article class="tarjeta-clase">
+          <span class="etiqueta etiqueta-lleno">Sin cupos</span>
+          <h3>Pilates</h3>
+          <p>Sábados</p>
+          <p>9:00 a.m. - 10:00 a.m.</p>
+          <p>Instructora: Sofía Vélez</p>
+          <button class="boton-reservar boton-deshabilitado" type="button" disabled>Reservar</button>
+        </article>
+
+        <article class="tarjeta-clase">
+          <span class="etiqueta etiqueta-cupos">Cupos disponibles</span>
+          <h3>Baile</h3>
+          <p>Viernes</p>
+          <p>8:00 p.m. - 9:00 p.m.</p>
+          <p>Instructor: Daniel Osorio</p>
+          <button class="boton-reservar" type="button">Reservar</button>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Botón fijo en pantalla (position: fixed) -->
+  <a href="#perfil" class="boton-subir">Subir</a>
+
+</body>
+</html>
