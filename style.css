@@ -239,6 +239,84 @@ body {
     text-decoration: none;
 }
 
+.seccion-contacto {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+    gap: 3rem;
+    align-items: start;
+    padding: 4rem max(2rem, calc((100% - 1000px) / 2));
+    color: #ffffff;
+    font-family: "roboto", sans-serif;
+}
+
+.contacto-intro h2 {
+    margin-bottom: 1rem;
+    color: #2DE0A5;
+    font-family: "Syne", "Roboto", sans-serif;
+    font-size: 2rem;
+}
+
+.formulario-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 2rem;
+    background-color: #00363C;
+    border: 1px solid #2DE0A5;
+    border-radius: 12px;
+}
+
+.campo-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.campo-contacto label {
+    margin: 0;
+}
+
+.campo-contacto input,
+.campo-contacto textarea {
+    width: 100%;
+    padding: 0.8rem;
+    box-sizing: border-box;
+    border: 1px solid #b0c4c4;
+    border-radius: 6px;
+    font: inherit;
+}
+
+.campo-contacto textarea {
+    resize: vertical;
+}
+
+.boton-contacto {
+    padding: 0.9rem 1rem;
+    color: #001F23;
+    background-color: #2DE0A5;
+    border: 0;
+    border-radius: 6px;
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.boton-contacto:hover {
+    background-color: #25c993;
+}
+
+.boton-contacto:focus-visible,
+.campo-contacto input:focus-visible,
+.campo-contacto textarea:focus-visible {
+    outline: 2px solid #2DE0A5;
+    outline-offset: 3px;
+}
+
+.contacto-aviso {
+    color: #b0c4c4;
+    font-size: 0.9rem;
+}
+
 .footer-home {
     padding: 3rem max(2rem, calc((100% - 1200px) / 2));
     font-family: "roboto", sans-serif;
@@ -527,6 +605,16 @@ select {
 }
 
 @media (max-width: 700px) {
+    .seccion-contacto {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 3rem 1.5rem;
+    }
+
+    .formulario-contacto {
+        padding: 1.5rem;
+    }
+
     .footer-home {
         padding: 2.5rem 1.5rem;
     }

@@ -99,6 +99,31 @@
 
             </div>
         </section>
+        <section id="contacto" class="seccion-contacto">
+            <div class="contacto-intro">
+                <h2>¿Tienes alguna duda?</h2>
+                <p>Déjanos tus datos y cuéntanos cómo podemos ayudarte.</p>
+            </div>
+            <form class="formulario-contacto" id="formulario-contacto">
+                <div class="campo-contacto">
+                    <label for="contacto-nombre">Nombre</label>
+                    <input type="text" id="contacto-nombre" name="nombre" autocomplete="name" required>
+                </div>
+                <div class="campo-contacto">
+                    <label for="contacto-email">Correo electrónico</label>
+                    <input type="email" id="contacto-email" name="email" autocomplete="email" required>
+                </div>
+                <div class="campo-contacto">
+                    <label for="contacto-telefono">Teléfono</label>
+                    <input type="tel" id="contacto-telefono" name="telefono" autocomplete="tel" required>
+                </div>
+                <div class="campo-contacto">
+                    <label for="contacto-mensaje">Tu consulta</label>
+                    <textarea id="contacto-mensaje" name="mensaje" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="boton-contacto">Enviar consulta</button>
+            </form>
+        </section>
     </main>
     <footer class="footer-home">
         <div class="footer-contenido">
@@ -112,6 +137,7 @@
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#ubicacion">Ubicación y horarios</a></li>
                     <li><a href="#planes">Nuestros planes</a></li>
+                    <li><a href="#contacto">Envía una consulta</a></li>
                     <li><a href="registro.html">Ponte viga</a></li>
                     <li><a href="cliente.html">Mi perfil</a></li>
                 </ul>
@@ -131,6 +157,14 @@
             <a href="#inicio">Volver al inicio ↑</a>
         </div>
     </footer>
+    <script>
+        document.getElementById("formulario-contacto").addEventListener("submit", function (event) {
+            event.preventDefault();
+            const nombre = document.getElementById("contacto-nombre").value.trim();
+            alert(`¡Envío exitoso, ${nombre}! (Simulación: tus datos no se enviaron ni se guardaron.)`);
+            this.reset();
+        });
+    </script>
 </body>
 
 </html>
