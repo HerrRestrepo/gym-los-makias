@@ -239,6 +239,79 @@ body {
     text-decoration: none;
 }
 
+.footer-home {
+    padding: 3rem max(2rem, calc((100% - 1200px) / 2));
+    font-family: "roboto", sans-serif;
+    color: #ffffff;
+    background-color: #00363C;
+    border-top: 2px solid #2DE0A5;
+}
+
+.footer-contenido {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 3rem;
+    padding-bottom: 2rem;
+}
+
+.footer-marca,
+.footer-enlaces,
+.footer-contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.footer-logo {
+    color: #2DE0A5;
+    font-family: "Syne", "Roboto", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.footer-home h2 {
+    font-size: 1.1rem;
+    color: #2DE0A5;
+}
+
+.footer-enlaces ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.footer-contacto address {
+    font-style: normal;
+    line-height: 1.6;
+}
+
+.footer-home a:not(.footer-logo) {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-home a:hover {
+    color: #2DE0A5;
+}
+
+.footer-home a:focus-visible {
+    outline: 2px solid #2DE0A5;
+    outline-offset: 4px;
+}
+
+.footer-final {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    color: #b0c4c4;
+    font-size: 0.9rem;
+}
+
 
 /* Integrante 3, cliente.html */
 
@@ -451,4 +524,20 @@ select {
 
 .boton-limpiar:active {
     transform: scale(0.98);
+}
+
+@media (max-width: 700px) {
+    .footer-home {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .footer-contenido {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-final {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
