@@ -1,130 +1,154 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Gym los Makias</title>
+    <link rel="stylesheet" href="../css/pago.css">
+    <title>Gym Los Makias - Planes y pago</title>
 </head>
 
 <body id="inicio">
     <header>
         <nav>
             <ul class="barra">
-                <li><a href="../index.html"><img src="../images/logo.png" alt="logo del Gym los Makias"></a></li>
+                <li><a href="../index.html"><img src="../images/logo.png" alt="Logo del Gym Los Makias"></a></li>
                 <li><a href="registro.html">Registrarte</a></li>
                 <li><a href="pago.html">Paga tu plan</a></li>
-                <li><a href="#planes">!PONTE VIGA!</a></li>
+                <li><a href="#planes">¡PONTE VIGA!</a></li>
             </ul>
         </nav>
     </header>
-    <section id="planes" class="seccion-planes">
-        <h2 class="titulo-planes">Nuestros Planes</h2>
-        <div class="contenedor-planes">
-            <article class="tarjeta-plan">
-                <h3>Plan Básico (Bronce)</h3>
-                <p class="precio">$65.000 <span>/ Mes</span></p>
-                <ul class="beneficios">
-                    <li>Acceso a sala de musculación</li>
-                    <li>Zona cardiovascular</li>
-                    <li>Valoración física inicial</li>
+    <main>
+        <form id="formulario-pago" action="../index.html" method="get">
+            <section id="planes" class="seccion-planes">
+                <h1 class="titulo-planes">Nuestros planes</h1>
+                <ul class="contenedor-planes" aria-label="Selecciona un plan">
+                    <li class="opcion-plan" data-plan-card="basico">
+                        <article class="tarjeta-plan">
+                            <h2>Plan Básico (Bronce)</h2>
+                            <p class="precio">$65.000 <span>/ Mes</span></p>
+                            <ul class="beneficios">
+                                <li>Acceso a sala de musculación</li>
+                                <li>Zona cardiovascular</li>
+                                <li>Valoración física inicial</li>
+                            </ul>
+                            <label class="btn-plan" for="plan-basico">Elegir Plan</label>
+                        </article>
+                    </li>
+                    <li class="opcion-plan" data-plan-card="makia">
+                        <article class="tarjeta-plan plan-destacado">
+                            <span class="etiqueta-popular">Más popular</span>
+                            <h2>Plan Makia (Plata)</h2>
+                            <p class="precio">$95.000 <span>/ Mes</span></p>
+                            <ul class="beneficios">
+                                <li>Todo lo del Plan Básico</li>
+                                <li>Clases grupales (Spinning, Rumba, CrossFit)</li>
+                                <li>Casillero asignado</li>
+                            </ul>
+                            <label class="btn-plan" for="plan-makia">Elegir Plan</label>
+                        </article>
+                    </li>
+                    <li class="opcion-plan" data-plan-card="elite">
+                        <article class="tarjeta-plan">
+                            <h2>Plan Élite (Oro)</h2>
+                            <p class="precio">$150.000 <span>/ Mes</span></p>
+                            <ul class="beneficios">
+                                <li>Todo lo del Plan Makia</li>
+                                <li>4 sesiones al mes con entrenador personalizado</li>
+                                <li>Asesoría nutricional</li>
+                            </ul>
+                            <label class="btn-plan" for="plan-elite">Elegir Plan</label>
+                        </article>
+                    </li>
+                    <li class="opcion-plan" data-plan-card="vip">
+                        <article class="tarjeta-plan">
+                            <h2>Plan Anual Makia VIP</h2>
+                            <p class="precio">$900.000 <span>/ Anual</span></p>
+                            <ul class="beneficios">
+                                <li>Acceso total sin restricciones</li>
+                                <li>Kit deportivo de bienvenida</li>
+                                <li>1 mes congelable al año</li>
+                            </ul>
+                            <label class="btn-plan" for="plan-vip">Elegir Plan</label>
+                        </article>
+                    </li>
                 </ul>
-                <button class="btn-plan">Elegir Plan</button>
-            </article>
-            <article class="tarjeta-plan plan-destacado">
-                <span class="etiqueta-popular">Más Popular</span>
-
-                <h3>Plan Makia (Plata)</h3>
-                <p class="precio">$95.000 <span>/ Mes</span></p>
-                <ul class="beneficios">
-                    <li>Todo lo del Plan Básico</li>
-                    <li>Clases grupales (Spinning, Rumba, CrossFit)</li>
-                    <li>Casillero asignado</li>
-                </ul>
-                <button class="btn-plan btn-destacado">Elegir Plan</button>
-            </article>
-            <article class="tarjeta-plan">
-                <h3>Plan Élite (Oro)</h3>
-                <p class="precio">$150.000 <span>/ Mes</span></p>
-                <ul class="beneficios">
-                    <li>Todo lo del Plan Makia</li>
-                    <li>4 sesiones al mes con entrenador personalizado</li>
-                    <li>Asesoría nutricional</li>
-                </ul>
-                <button class="btn-plan">Elegir Plan</button>
-            </article>
-            <article class="tarjeta-plan">
-                <h3>Plan Anual Makia VIP</h3>
-                <p class="precio">$900.000 <span>/ Anual</span></p>
-                <ul class="beneficios">
-                    <li>Acceso total sin restricciones</li>
-                    <li>Kit deportivo de bienvenida</li>
-                    <li>1 mes congelable al año</li>
-                </ul>
-                <button class="btn-plan">Elegir Plan</button>
-            </article>
-
-        </div>
-    </section>
-    <main class="contenedor-formulario">
-        <div class="formulario">
-            <h2 class="subtitulo"> Tipo de plan y método de pago</h2>
-            <form action="../index.html" method="get">
-                <div class="campo-formulario">
-                    <label for="tipo-plan">Tipo de plan</label>
-                    <select name="tipo-plan" id="tipo-plan" required>
-                        <option value="">Seleccione tipo de plan</option>
-                        <option value="basico">Plan Básico (Bronce) $65.000 /Mes</option>
-                        <option value="makia">Plan Makia (Planta) $95.000 /Mes</option>
-                        <option value="elite">Plan Élite (Oro) $150.000 /Mes</option>
-                        <option value="vip">Plan Anual Makia VIP $900.000 /Anual</option>
-                    </select>
-                </div>
-                <div class="campo-formulario">
-                    <label for="tipo-pago">Método de pago</label>
-                    <select name="tipo-documento" id="tipo-documento" required>
-                        <option value="">Seleccione metedo de pago</option>
-                        <option value="pse">PSE</option>
-                        <option value="tarjeta">Tarjeta Crédito/Débito</option>
-                    </select>
-                </div>
-                <div class="campo-formulario">
-                    <label for="banco">Entidad Bancaria</label>
-                    <select name="banco" id="banco" required>
-                        <option value="">Seleccione su banco</option>
-                        <option value="bancolobia">Bancolombia</option>
-                        <option value="davivienda">Davivienda</option>
-                        <option value="nequi">Nequi</option>
-                    </select>
-                </div>
-
-                <div class="campo-formulario">
-                    <label for="direccion">Dirección</label>
-                    <input type="text" id="direccion" placeholder="Calle 00 # 00 - 00" required name="nombre">
-                </div>
-                <div class="campo-formulario">
-                    <label for="telefono-contacto">Número de telefeno</label>
-                    <input type="text" id="telefono-contacto" placeholder="+57 000 000 000" required
-                        name="telefono-contacto">
-                </div>
-                <div class="campo-formulario">
-                    <label for="email">Correo electronico</label>
-                    <input type="email" id="email" placeholder="Ej: correo@electronico.com" required name="email">
-                </div>
-                <div class="campo-formulario">
-                    <input type="checkbox" id="politica-datos" name="acepta-politicas" value="aceptado" required>
-                    <label for="politica-datos">Facturacion Electronica</label>
-                </div>
-                <button type="submit" class="boton-registrarse">Pagar</button>
-                <button type="reset" class="boton-limpiar">Limpiar Formulario</button>
+            </section>
+            <section class="contenedor-formulario">
+                <section class="formulario">
+                    <fieldset class="selector-plan-formulario">
+                        <legend>Plan que deseas elegir</legend>
+                        <p>
+                            <input class="selector-plan" type="radio" name="plan" id="plan-basico" value="basico"
+                                aria-label="Plan Básico Bronce, 65.000 pesos al mes" required>
+                            <label for="plan-basico">Plan Básico (Bronce) - $65.000 / mes</label>
+                        </p>
+                        <p>
+                            <input class="selector-plan" type="radio" name="plan" id="plan-makia" value="makia"
+                                aria-label="Plan Makia Plata, 95.000 pesos al mes">
+                            <label for="plan-makia">Plan Makia (Plata) - $95.000 / mes</label>
+                        </p>
+                        <p>
+                            <input class="selector-plan" type="radio" name="plan" id="plan-elite" value="elite"
+                                aria-label="Plan Élite Oro, 150.000 pesos al mes">
+                            <label for="plan-elite">Plan Élite (Oro) - $150.000 / mes</label>
+                        </p>
+                        <p>
+                            <input class="selector-plan" type="radio" name="plan" id="plan-vip" value="vip"
+                                aria-label="Plan Anual Makia VIP, 900.000 pesos al año">
+                            <label for="plan-vip">Plan Anual Makia VIP - $900.000 / año</label>
+                        </p>
+                    </fieldset>
+                    <h2 class="subtitulo">Método de pago</h2>
+                    <p class="campo-formulario">
+                        <label for="tipo-pago">Método de pago</label>
+                        <select name="tipo-pago" id="tipo-pago" required>
+                            <option value="">Seleccione un método de pago</option>
+                            <option value="pse">PSE</option>
+                            <option value="tarjeta">Tarjeta crédito/débito</option>
+                        </select>
+                    </p>
+                    <p class="campo-formulario">
+                        <label for="banco">Entidad bancaria</label>
+                        <select name="banco" id="banco" required>
+                            <option value="">Seleccione su banco</option>
+                            <option value="bancolombia">Bancolombia</option>
+                            <option value="davivienda">Davivienda</option>
+                            <option value="nequi">Nequi</option>
+                        </select>
+                    </p>
+                    <p class="campo-formulario">
+                        <label for="direccion">Dirección</label>
+                        <input type="text" id="direccion" placeholder="Calle 00 # 00 - 00" required name="direccion">
+                    </p>
+                    <p class="campo-formulario">
+                        <label for="telefono-contacto">Número de teléfono</label>
+                        <input type="text" id="telefono-contacto" placeholder="+57 000 000 000" required
+                            name="telefono-contacto">
+                    </p>
+                    <p class="campo-formulario">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" placeholder="Ej: correo@electronico.com" required name="email">
+                    </p>
+                    <p class="campo-formulario campo-facturacion">
+                        <input type="checkbox" id="facturacion-electronica" name="facturacion-electronica"
+                            value="solicitada" required>
+                        <label for="facturacion-electronica">Facturación electrónica</label>
+                    </p>
+                    <button type="submit" class="boton-registrarse">Continuar</button>
+                    <button type="reset" class="boton-limpiar">Limpiar formulario</button>
+                </section>
+            </section>
+        </form>
     </main>
     <footer class="footer-home">
-        <div class="footer-contenido">
-            <div class="footer-marca">
-                <a class="footer-logo" href="#inicio">Gym Los Makias</a>
+        <section class="footer-contenido" aria-label="Información del gimnasio">
+            <section class="footer-marca">
+                <h2><a class="footer-logo" href="#inicio">Gym Los Makias</a></h2>
                 <p>Fuerza, disciplina y berraquera para alcanzar tus metas.</p>
-            </div>
+            </section>
             <nav class="footer-enlaces" aria-label="Navegación del pie de página">
                 <h2>Explora</h2>
                 <ul>
@@ -135,21 +159,20 @@
                     <li><a href="cliente.html">Mi perfil</a></li>
                 </ul>
             </nav>
-            <div class="footer-contacto">
+            <section class="footer-contacto">
                 <h2>Visítanos</h2>
                 <address>
                     Calle 52 # 48-35, Sector El Prado<br>
                     Bello, Antioquia
                 </address>
                 <a href="tel:+573001234567">+57 300 123 4567</a>
-                <a href="https://wa.me/573001234567" target="_blank" rel="noopener noreferrer">Escríbenos por
-                    WhatsApp</a>
-            </div>
-        </div>
-        <div class="footer-final">
+                <a href="https://wa.me/573001234567" target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp</a>
+            </section>
+        </section>
+        <section class="footer-final">
             <p>&copy; 2026 Gym Los Makias. Todos los derechos reservados.</p>
             <a href="#inicio">Volver al inicio ↑</a>
-        </div>
+        </section>
     </footer>
 </body>
 

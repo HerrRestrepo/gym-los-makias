@@ -1,0 +1,139 @@
+.tarjeta-plan h2 {
+    margin-bottom: 0.5rem;
+    font-size: 22px;
+}
+
+.opcion-plan {
+    position: relative;
+    display: flex;
+    flex: 1 1 250px;
+    max-width: 320px;
+}
+
+.opcion-plan .tarjeta-plan {
+    width: 100%;
+}
+
+
+#formulario-pago:has(#plan-basico:checked) [data-plan-card="basico"] .tarjeta-plan,
+#formulario-pago:has(#plan-makia:checked) [data-plan-card="makia"] .tarjeta-plan,
+#formulario-pago:has(#plan-elite:checked) [data-plan-card="elite"] .tarjeta-plan,
+#formulario-pago:has(#plan-vip:checked) [data-plan-card="vip"] .tarjeta-plan {
+    border-color: #2DE0A5;
+    background-color: #004d55;
+    box-shadow: 0 0 0 2px #2DE0A5;
+}
+
+.selector-plan-formulario {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: #001F23;
+    border: 1px solid #2DE0A5;
+    border-radius: 8px;
+    color: #ffffff;
+    min-width: 0;
+}
+
+.selector-plan-formulario legend {
+    grid-column: 1 / -1;
+    padding: 0 0.5rem;
+    color: #2DE0A5;
+    font-weight: 800;
+}
+
+.selector-plan-formulario p {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    min-width: 0;
+    margin: 0;
+    padding: 0.75rem;
+    background-color: #00363C;
+    border: 1px solid transparent;
+    border-radius: 6px;
+}
+
+.selector-plan-formulario p:has(input:checked) {
+    border-color: #2DE0A5;
+}
+
+.selector-plan-formulario label {
+    margin: 0;
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+.selector-plan {
+    flex: 0 0 auto;
+    margin-top: 0.2rem;
+    scroll-margin-top: 1.5rem;
+}
+
+.selector-plan:focus-visible {
+    outline: 2px solid #2DE0A5;
+    outline-offset: 3px;
+}
+
+.tarjeta-plan h2 {
+    color: #ffffff;
+}
+
+.btn-plan {
+    font-family: inherit;
+}
+
+.btn-plan:hover {
+    background-color: #2DE0A5;
+    color: #001F23;
+}
+
+.campo-formulario {
+    display: block;
+}
+
+.campo-formulario label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.campo-formulario input[type="checkbox"] + label {
+    display: inline;
+}
+
+.aviso-pago {
+    margin-bottom: 1rem;
+    color: #b0c4c4;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.formulario {
+    box-sizing: border-box;
+}
+
+@media (max-width: 700px) {
+    .barra {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        padding: 0.5rem;
+    }
+
+    .seccion-planes {
+        padding: 3rem 1rem;
+    }
+
+    .contenedor-formulario {
+        padding: 2rem 1rem;
+    }
+
+    .formulario {
+        padding: 1.5rem 1rem;
+    }
+
+    .selector-plan-formulario {
+        grid-template-columns: 1fr;
+    }
+}
