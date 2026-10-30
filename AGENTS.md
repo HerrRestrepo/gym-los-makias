@@ -3,8 +3,10 @@
 ## Alcance y estructura
 
 - La interfaz actual es un sitio estático construido con HTML y CSS, pero el alcance previsto del proyecto también incluye un backend. No interpretes que la ausencia actual de código de servidor significa que el proyecto deba permanecer sin backend.
-- Cuando se implemente lógica de servidor, utiliza Java básico y procedural, sin programación orientada a objetos. No introduzcas clases, objetos, herencia ni frameworks de Java salvo que el usuario cambie explícitamente este criterio.
+- La pila tecnológica permitida para nuevas implementaciones es HTML y CSS para la interfaz, y Java básico procedural para el backend. No agregues otros lenguajes, runtimes ni frameworks de aplicación salvo autorización explícita del usuario. Tailwind CSS está permitido únicamente como herramienta de estilos según los criterios de este documento.
+- Implementa la lógica de servidor con Java básico y enfoque procedural, sin diseño orientado a objetos: no crees modelos de dominio como clases, instancias, jerarquías de herencia ni soluciones basadas en encapsulación o polimorfismo. Como Java requiere una clase contenedora para compilar programas ejecutables, limita esa estructura al mínimo técnico requerido y no la uses para introducir arquitectura orientada a objetos.
 - El backend forma parte de la arquitectura prevista, aunque todavía no esté implementado en el repositorio. Distingue con claridad las funciones ya implementadas de las planeadas y no afirmes que hay procesamiento real hasta que exista.
+- `index.html` contiene un script JavaScript existente para simular el envío del formulario de contacto. Considéralo una excepción heredada: no agregues ni amplíes JavaScript; para nueva funcionalidad utiliza HTML/CSS en la interfaz o Java en el backend. No retires el script existente como parte de cambios no relacionados.
 - La página principal es `index.html`; las demás páginas HTML están en `pages/`.
 - Los archivos CSS están en `css/`. Reutiliza las hojas de estilo, clases y patrones existentes.
 - Mantén los cambios dentro de las funcionalidades implementadas o del alcance previsto y solicitado, incluido el backend Java.
@@ -29,7 +31,7 @@
 - Depura el CSS para evitar errores graves de visualización y conservar una presentación utilizable en pantallas móviles y de escritorio.
 - Implementa al menos dos microinteracciones visuales en CSS puro. Usa recursos apropiados como pseudo-clases (`:hover`, `:focus-visible`), pseudo-elementos, transiciones o animaciones, sin sacrificar la accesibilidad ni añadir efectos que contradigan la identidad visual del proyecto.
 - Demuestra el uso de Flexbox o Grid en la distribución de los componentes. Incluye media queries explícitas (`@media`) en el CSS propio para realizar ajustes finos en distintos anchos de pantalla.
-- Inicia una integración parcial y progresiva de Tailwind CSS en la presentación, sin reemplazar todo el CSS propio ni introducir dependencias o procesos de compilación sin necesidad. Conserva CSS propio para ajustes finos y componentes existentes; comprueba el método de integración y su compatibilidad antes de añadirlo.
+- Inicia una integración parcial y progresiva de Tailwind CSS en la presentación, sin reemplazar todo el CSS propio ni introducir dependencias, lenguajes adicionales o procesos de compilación sin necesidad. Conserva CSS propio para ajustes finos y componentes existentes; comprueba que el método de integración no amplíe la pila tecnológica antes de añadirlo.
 - Al documentar la integración entre módulos, explica cómo se relacionan las páginas con el backend Java previsto y los datos que intercambiarían. Distingue esa arquitectura acordada del comportamiento que ya está implementado.
 
 ## Rutas y recursos
