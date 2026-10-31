@@ -16,91 +16,25 @@
                 <li><a href="../index.html"><img src="../images/logo.png" alt="Logo del Gym Los Makias"></a></li>
                 <li><a href="registro.html">Registrarte</a></li>
                 <li><a href="pago.html">Paga tu plan</a></li>
-                <li><a href="#planes">¡PONTE VIGA!</a></li>
+                <li><a href="../index.html#planes">¡PONTE VIGA!</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <form id="formulario-pago" action="../index.html" method="get">
-            <section id="planes" class="seccion-planes">
-                <h1 class="titulo-planes">Nuestros planes</h1>
-                <ul class="contenedor-planes" aria-label="Selecciona un plan">
-                    <li class="opcion-plan" data-plan-card="basico">
-                        <article class="tarjeta-plan">
-                            <h2>Plan Básico (Bronce)</h2>
-                            <p class="precio">$65.000 <span>/ Mes</span></p>
-                            <ul class="beneficios">
-                                <li>Acceso a sala de musculación</li>
-                                <li>Zona cardiovascular</li>
-                                <li>Valoración física inicial</li>
-                            </ul>
-                            <label class="btn-plan" for="plan-basico">Elegir Plan</label>
-                        </article>
-                    </li>
-                    <li class="opcion-plan" data-plan-card="makia">
-                        <article class="tarjeta-plan plan-destacado">
-                            <span class="etiqueta-popular">Más popular</span>
-                            <h2>Plan Makia (Plata)</h2>
-                            <p class="precio">$95.000 <span>/ Mes</span></p>
-                            <ul class="beneficios">
-                                <li>Todo lo del Plan Básico</li>
-                                <li>Clases grupales (Spinning, Rumba, CrossFit)</li>
-                                <li>Casillero asignado</li>
-                            </ul>
-                            <label class="btn-plan" for="plan-makia">Elegir Plan</label>
-                        </article>
-                    </li>
-                    <li class="opcion-plan" data-plan-card="elite">
-                        <article class="tarjeta-plan">
-                            <h2>Plan Élite (Oro)</h2>
-                            <p class="precio">$150.000 <span>/ Mes</span></p>
-                            <ul class="beneficios">
-                                <li>Todo lo del Plan Makia</li>
-                                <li>4 sesiones al mes con entrenador personalizado</li>
-                                <li>Asesoría nutricional</li>
-                            </ul>
-                            <label class="btn-plan" for="plan-elite">Elegir Plan</label>
-                        </article>
-                    </li>
-                    <li class="opcion-plan" data-plan-card="vip">
-                        <article class="tarjeta-plan">
-                            <h2>Plan Anual Makia VIP</h2>
-                            <p class="precio">$900.000 <span>/ Anual</span></p>
-                            <ul class="beneficios">
-                                <li>Acceso total sin restricciones</li>
-                                <li>Kit deportivo de bienvenida</li>
-                                <li>1 mes congelable al año</li>
-                            </ul>
-                            <label class="btn-plan" for="plan-vip">Elegir Plan</label>
-                        </article>
-                    </li>
-                </ul>
-            </section>
             <section class="contenedor-formulario">
                 <section class="formulario">
-                    <fieldset class="selector-plan-formulario">
-                        <legend>Plan que deseas elegir</legend>
-                        <p>
-                            <input class="selector-plan" type="radio" name="plan" id="plan-basico" value="basico"
-                                aria-label="Plan Básico Bronce, 65.000 pesos al mes" required>
-                            <label for="plan-basico">Plan Básico (Bronce) - $65.000 / mes</label>
-                        </p>
-                        <p>
-                            <input class="selector-plan" type="radio" name="plan" id="plan-makia" value="makia"
-                                aria-label="Plan Makia Plata, 95.000 pesos al mes">
-                            <label for="plan-makia">Plan Makia (Plata) - $95.000 / mes</label>
-                        </p>
-                        <p>
-                            <input class="selector-plan" type="radio" name="plan" id="plan-elite" value="elite"
-                                aria-label="Plan Élite Oro, 150.000 pesos al mes">
-                            <label for="plan-elite">Plan Élite (Oro) - $150.000 / mes</label>
-                        </p>
-                        <p>
-                            <input class="selector-plan" type="radio" name="plan" id="plan-vip" value="vip"
-                                aria-label="Plan Anual Makia VIP, 900.000 pesos al año">
-                            <label for="plan-vip">Plan Anual Makia VIP - $900.000 / año</label>
-                        </p>
-                    </fieldset>
+                    <h1 class="subtitulo">Paga tu plan</h1>
+                    <p class="campo-formulario">
+                        <label for="plan">Plan que deseas elegir</label>
+                        <select name="plan" id="plan" required>
+                            <option value="">Seleccione un plan</option>
+                            <option value="basico">Plan Básico (Bronce) - $65.000 / mes</option>
+                            <option value="makia">Plan Makia (Plata) - $95.000 / mes</option>
+                            <option value="elite">Plan Élite (Oro) - $150.000 / mes</option>
+                            <option value="vip">Plan Anual Makia VIP - $900.000 / año</option>
+                        </select>
+                    </p>
                     <h2 class="subtitulo">Método de pago</h2>
                     <p class="campo-formulario">
                         <label for="tipo-pago">Método de pago</label>
@@ -154,7 +88,7 @@
                 <ul>
                     <li><a href="../index.html#inicio">Inicio</a></li>
                     <li><a href="../index.html#ubicacion">Ubicación y horarios</a></li>
-                    <li><a href="#planes">Nuestros planes</a></li>
+                    <li><a href="../index.html#planes">Nuestros planes</a></li>
                     <li><a href="registro.html">Ponte viga</a></li>
                     <li><a href="cliente.html">Mi perfil</a></li>
                 </ul>

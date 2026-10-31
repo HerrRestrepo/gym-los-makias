@@ -4,9 +4,7 @@
 
 - La interfaz actual es un sitio estático construido con HTML y CSS, pero el alcance previsto del proyecto también incluye un backend. No interpretes que la ausencia actual de código de servidor significa que el proyecto deba permanecer sin backend.
 - La pila tecnológica permitida para nuevas implementaciones es HTML y CSS para la interfaz, y Java básico procedural para el backend. No agregues otros lenguajes, runtimes ni frameworks de aplicación salvo autorización explícita del usuario. Tailwind CSS está permitido únicamente como herramienta de estilos según los criterios de este documento.
-- Implementa la lógica de servidor con Java básico y enfoque procedural, sin diseño orientado a objetos: no crees modelos de dominio como clases, instancias, jerarquías de herencia ni soluciones basadas en encapsulación o polimorfismo. Como Java requiere una clase contenedora para compilar programas ejecutables, limita esa estructura al mínimo técnico requerido y no la uses para introducir arquitectura orientada a objetos.
-- El backend forma parte de la arquitectura prevista, aunque todavía no esté implementado en el repositorio. Distingue con claridad las funciones ya implementadas de las planeadas y no afirmes que hay procesamiento real hasta que exista.
-- `index.html` contiene un script JavaScript existente para simular el envío del formulario de contacto. Considéralo una excepción heredada: no agregues ni amplíes JavaScript; para nueva funcionalidad utiliza HTML/CSS en la interfaz o Java en el backend. No retires el script existente como parte de cambios no relacionados.
+
 - La página principal es `index.html`; las demás páginas HTML están en `pages/`.
 - Los archivos CSS están en `css/`. Reutiliza las hojas de estilo, clases y patrones existentes.
 - Mantén los cambios dentro de las funcionalidades implementadas o del alcance previsto y solicitado, incluido el backend Java.

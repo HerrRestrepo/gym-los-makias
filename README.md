@@ -6,7 +6,7 @@ Sitio web estático de presentación para Gym Los Makias, un gimnasio de Bello, 
 
 - `index.html`: página principal con información del gimnasio, ubicación, horarios, planes y formulario de contacto.
 - `pages/registro.html`: formulario de registro de ejemplo.
-- `pages/pago.html`: presentación y selección de planes y método de pago en una interfaz demostrativa.
+- `pages/pago.html`: formulario de selección de plan y método de pago en una interfaz demostrativa.
 - `pages/cliente.html`: vista estática de perfil y horario de clases grupales.
 
 ## Estructura
@@ -39,7 +39,7 @@ Este proyecto es una demostración estática y no cuenta con un backend:
 
 - El formulario de contacto muestra una confirmación simulada; no envía ni guarda los datos.
 - Los formularios de registro y pago no procesan registros ni transacciones reales.
-- En `pages/pago.html`, el plan se selecciona con radios HTML y se resalta mediante CSS, sin JavaScript. El formulario envía el identificador elegido; el backend Java previsto deberá validar ese identificador y consultar el precio oficial del plan. Ese backend todavía no está implementado y no se realizan cobros.
+- En `pages/pago.html`, el plan se selecciona mediante un menú desplegable dentro del formulario de pago; las tarjetas informativas de los planes se exhiben en `index.html`. El formulario envía el identificador elegido; el backend Java previsto deberá validar ese identificador y consultar el precio oficial del plan. Ese backend todavía no está implementado y no se realizan cobros.
 - La información del perfil y las clases de `cliente.html` es contenido estático.
 - Los controles de reserva no realizan reservas reales.
 
