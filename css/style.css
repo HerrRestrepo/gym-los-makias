@@ -588,6 +588,17 @@ body {
     color: white;
 }
 
+input:not(:placeholder-shown):invalid {
+  border: 2px solid #e74c3c;
+  background-color: #fadbd8; 
+  outline: none;
+}
+
+input:required:placeholder-shown {
+  border: 2px solid #f39c12; 
+  background-color: #fcf3cf; 
+}
+
 label {
     font-size: 14px;
     color: white;
