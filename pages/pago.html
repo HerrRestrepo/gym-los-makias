@@ -21,9 +21,9 @@
         </nav>
     </header>
     <main>
-        <form id="formulario-pago" action="../index.html" method="get">
+        <form id="formulario-pago" action="cliente.html" method="get">
             <section class="contenedor-formulario">
-                <section class="formulario">
+                <section id="datos-pago" class="formulario">
                     <h1 class="subtitulo">Paga tu plan</h1>
                     <p class="campo-formulario">
                         <label for="plan">Plan que deseas elegir</label>
@@ -74,6 +74,15 @@
                     <button type="submit" class="boton-registrarse">Continuar</button>
                     <button type="reset" class="boton-limpiar">Limpiar formulario</button>
                 </section>
+                <section id="confirmacion-pago" class="formulario confirmacion-recibo" aria-live="polite" hidden>
+                    <h2 class="subtitulo">Confirmación de registro y pago simulado</h2>
+                    <p class="aviso-pago">Simulación completada: no se realizaron cobros reales ni se guardaron datos en un servidor.</p>
+                    <p class="recibo-detalle">
+                        <span>Número de recibo ficticio:</span>
+                        <output id="numero-recibo" class="codigo-recibo">---</output>
+                    </p>
+                    <a href="cliente.html" id="boton-dashboard" class="boton-registrarse enlace-dashboard">Ir al dashboard de cliente</a>
+                </section>
             </section>
         </form>
     </main>
@@ -108,6 +117,25 @@
             <a href="#inicio">Volver al inicio ↑</a>
         </section>
     </footer>
+    <script>
+        function generarNumeroRecibo() {
+            const numeroAleatorio = Math.floor(100000 + Math.random() * 900000);
+            return `MK-${numeroAleatorio}`;
+        }
+
+        document.getElementById("formulario-pago").addEventListener("submit", function (event) {
+            event.preventDefault();
+            const recibo = generarNumeroRecibo();
+            const salidaRecibo = document.getElementById("numero-recibo");
+            const seccionConfirmacion = document.getElementById("confirmacion-pago");
+
+            salidaRecibo.textContent = recibo;
+            seccionConfirmacion.hidden = false;
+
+            alert(`Registro y simulación de pago completados con éxito.\nNúmero de recibo ficticio: ${recibo}\n(Simulación: no se procesaron pagos reales ni se guardaron datos.)`);
+            window.location.href = "cliente.html";
+        });
+    </script>
 </body>
 
 </html>
