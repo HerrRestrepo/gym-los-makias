@@ -2,10 +2,12 @@
 
 ## Alcance y estructura
 
-- Este proyecto es un sitio estático construido con HTML y CSS. No asumas que existe un backend.
+- La interfaz actual es un sitio estático construido con HTML y CSS, pero el alcance previsto del proyecto también incluye un backend. No interpretes que la ausencia actual de código de servidor significa que el proyecto deba permanecer sin backend.
+- La pila tecnológica permitida para nuevas implementaciones es HTML y CSS para la interfaz, y Java básico procedural para el backend. No agregues otros lenguajes, runtimes ni frameworks de aplicación salvo autorización explícita del usuario. Tailwind CSS está permitido únicamente como herramienta de estilos según los criterios de este documento.
+
 - La página principal es `index.html`; las demás páginas HTML están en `pages/`.
 - Los archivos CSS están en `css/`. Reutiliza las hojas de estilo, clases y patrones existentes.
-- Mantén los cambios dentro de las funcionalidades que el proyecto implementa.
+- Mantén los cambios dentro de las funcionalidades implementadas o del alcance previsto y solicitado, incluido el backend Java.
 - Puedes crear archivos cuando sean necesarios, ubicándolos en las carpetas existentes. No muevas ni renombres carpetas ni reorganices la estructura del proyecto.
 - Antes de borrar cualquier archivo, pide permiso explícito. Si se autoriza el borrado, revisa y actualiza primero todas las referencias afectadas, incluidos enlaces `href`, rutas `src` e importaciones CSS, para no dejar recursos rotos.
 
@@ -20,6 +22,15 @@
 - Usa etiquetas asociadas a los campos de formulario, texto alternativo descriptivo para imágenes informativas y controles accesibles por teclado.
 - No agregues estilos en línea con el atributo `style`; define los estilos en la hoja CSS correspondiente.
 - El uso de emojis está completamente prohibido en el proyecto: no los incluyas en contenido, interfaz, documentación, comentarios ni otros textos.
+
+## Criterios de HTML y CSS 
+
+- El proyecto debe conservar más de un documento HTML, con páginas que representen sus funcionalidades actuales.
+- Depura el CSS para evitar errores graves de visualización y conservar una presentación utilizable en pantallas móviles y de escritorio.
+- Implementa al menos dos microinteracciones visuales en CSS puro. Usa recursos apropiados como pseudo-clases (`:hover`, `:focus-visible`), pseudo-elementos, transiciones o animaciones, sin sacrificar la accesibilidad ni añadir efectos que contradigan la identidad visual del proyecto.
+- Demuestra el uso de Flexbox o Grid en la distribución de los componentes. Incluye media queries explícitas (`@media`) en el CSS propio para realizar ajustes finos en distintos anchos de pantalla.
+- Inicia una integración parcial y progresiva de Tailwind CSS en la presentación, sin reemplazar todo el CSS propio ni introducir dependencias, lenguajes adicionales o procesos de compilación sin necesidad. Conserva CSS propio para ajustes finos y componentes existentes; comprueba que el método de integración no amplíe la pila tecnológica antes de añadirlo.
+- Al documentar la integración entre módulos, explica cómo se relacionan las páginas con el backend Java previsto y los datos que intercambiarían. Distingue esa arquitectura acordada del comportamiento que ya está implementado.
 
 ## Rutas y recursos
 
