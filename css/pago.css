@@ -22,6 +22,55 @@
     box-sizing: border-box;
 }
 
+.contenedor-formulario {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.confirmacion-recibo[hidden] {
+    display: none;
+}
+
+.confirmacion-recibo {
+    border: 2px solid #2DE0A5;
+    gap: 1rem;
+    text-align: center;
+}
+
+.recibo-detalle {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: #001F23;
+    border: 1px solid #2DE0A5;
+    border-radius: 8px;
+    color: #ffffff;
+}
+
+.codigo-recibo {
+    font-family: "Syne", "Roboto", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #2DE0A5;
+    letter-spacing: 1px;
+}
+
+.enlace-dashboard {
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+}
+
+.enlace-dashboard:focus-visible,
+.boton-registrarse:focus-visible,
+.boton-limpiar:focus-visible {
+    outline: 2px solid #2DE0A5;
+    outline-offset: 3px;
+}
+
 @media (max-width: 700px) {
     .barra {
         flex-wrap: wrap;
