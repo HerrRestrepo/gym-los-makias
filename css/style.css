@@ -8,6 +8,9 @@
 
 body {
     background-color: #001F23;
+    background-image: url("/images/fondo_lateral.jpeg");
+    background-position: center center;
+    background-size: contain;
 }
 
 .header-home {
