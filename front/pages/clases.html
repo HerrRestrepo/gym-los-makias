@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym Los Makias - Clases Grupales</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/clases.css">
+</head>
+
+<body id="inicio">
+
+  <header class="header-home">
+    <nav aria-label="Navegación del portal del cliente">
+      <ul class="barra">
+        <li><a href="../index.html"><img src="../images/logo.png" alt="Logo del Gym Los Makias"></a></li>
+        <li><a href="cliente.html">Mi perfil</a></li>
+        <li><a href="rutinas.html">Rutinas por día</a></li>
+        <li><a href="clases.html" class="enlace-activo" aria-current="page">Clases grupales</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenedor-cliente">
+
+    <!-- HU020: Horario general y reserva de todas las clases grupales -->
+    <section class="clases-completas" aria-labelledby="titulo-clases-completas">
+      <header class="encabezado-seccion">
+        <h1 id="titulo-clases-completas">Horario y reserva de clases grupales</h1>
+        <p class="clases-subtitulo">Consulta todas las sesiones de la semana, verifica la disponibilidad de cupos y agenda tu lugar.</p>
+      </header>
+
+      <ul class="leyenda-cupos" aria-label="Estado de disponibilidad de cupos">
+        <li class="item-leyenda">
+          <span class="indicador-cupo indicador-disponible" aria-hidden="true"></span>
+          <span>Cupos disponibles para reservar</span>
+        </li>
+        <li class="item-leyenda">
+          <span class="indicador-cupo indicador-pocos" aria-hidden="true"></span>
+          <span>Últimos cupos disponibles</span>
+        </li>
+        <li class="item-leyenda">
+          <span class="indicador-cupo indicador-lleno" aria-hidden="true"></span>
+          <span>Clase llena (sin cupos)</span>
+        </li>
+      </ul>
+
+      <ul class="clases-lista" aria-label="Listado completo de clases grupales">
+
+        <li class="item-clase">
+          <article class="tarjeta-clase">
+            <span class="etiqueta etiqueta-cupos">Cupos disponibles</span>
+            <h3>Zumba</h3>
+            <p>Lunes y miércoles</p>
+            <p>6:00 a.m. - 7:00 a.m.</p>
+            <p>Instructor: Carlos Ramírez</p>
+            <button class="boton-reservar" type="button">Reservar</button>
+          </article>
+        </li>
+
+        <li class="item-clase">
+          <article class="tarjeta-clase">
+            <span class="etiqueta etiqueta-cupos">Cupos disponibles</span>
+            <h3>Yoga</h3>
+            <p>Martes y jueves</p>
+            <p>7:00 a.m. - 8:00 a.m.</p>
+            <p>Instructora: Laura Torres</p>
+            <button class="boton-reservar" type="button">Reservar</button>
+          </article>
+        </li>
+
+        <li class="item-clase">
+          <article class="tarjeta-clase">
+            <span class="etiqueta etiqueta-pocos">Últimos cupos</span>
+            <h3>Spinning</h3>
+            <p>Lunes a viernes</p>
+            <p>5:30 p.m. - 6:30 p.m.</p>
+            <p>Instructor: Andrés Londoño</p>
+            <button class="boton-reservar" type="button">Reservar</button>
+          </article>
+        </li>
+
+        <li class="item-clase">
+          <article class="tarjeta-clase">
+            <span class="etiqueta etiqueta-cupos">Cupos disponibles</span>
+            <h3>Crossfit</h3>
+            <p>Miércoles y viernes</p>
+            <p>6:30 p.m. - 7:30 p.m.</p>
+            <p>Instructor: Julián Cardona</p>
+            <button class="boton-reservar" type="button">Reservar</button>
+          </article>
+        </li>
+
+        <li class="item-clase">
+          <article class="tarjeta-clase">
+            <span class="etiqueta etiqueta-lleno">Sin cupos</span>
+            <h3>Pilates</h3>
+            <p>Sábados</p>
+            <p>9:00 a.m. - 10:00 a.m.</p>
+            <p>Instructora: Sofía Vélez</p>
+            <button class="boton-reservar boton-deshabilitado" type="button" disabled>Reservar</button>
+          </article>
+        </li>
+
+        <li class="item-clase">
+          <article class="tarjeta-clase">
+            <span class="etiqueta etiqueta-cupos">Cupos disponibles</span>
+            <h3>Baile</h3>
+            <p>Viernes</p>
+            <p>8:00 p.m. - 9:00 p.m.</p>
+            <p>Instructor: Daniel Osorio</p>
+            <button class="boton-reservar" type="button">Reservar</button>
+          </article>
+        </li>
+
+      </ul>
+
+      <p class="acciones-seccion">
+        <a href="cliente.html" class="boton-ver-mas">Volver a mi perfil</a>
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="footer-home">
+    <section class="footer-contenido" aria-label="Información del gimnasio">
+      <section class="footer-marca">
+        <a class="footer-logo" href="../index.html">Gym Los Makias</a>
+        <p>Fuerza, disciplina y berraquera para alcanzar tus metas.</p>
+      </section>
+      <nav class="footer-enlaces" aria-label="Navegación del pie de página">
+        <h2>Explora</h2>
+        <ul>
+          <li><a href="../index.html#inicio">Inicio</a></li>
+          <li><a href="cliente.html">Mi perfil</a></li>
+          <li><a href="rutinas.html">Rutinas por día</a></li>
+          <li><a href="clases.html">Clases grupales</a></li>
+          <li><a href="pago.html">Paga tu plan</a></li>
+        </ul>
+      </nav>
+      <section class="footer-contacto">
+        <h2>Visítanos</h2>
+        <address>
+          Calle 52 # 48-35, Sector El Prado<br>
+          Bello, Antioquia
+        </address>
+        <a href="tel:+573001234567">+57 300 123 4567</a>
+        <a href="https://wa.me/573001234567" target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp</a>
+      </section>
+    </section>
+    <section class="footer-final">
+      <p>&copy; 2026 Gym Los Makias. Todos los derechos reservados.</p>
+      <a href="#inicio">Volver al inicio</a>
+    </section>
+  </footer>
+
+  <!-- Botón fijo en pantalla (position: fixed) -->
+  <a href="#inicio" class="boton-subir">Subir</a>
+
+</body>
+
+</html>
+

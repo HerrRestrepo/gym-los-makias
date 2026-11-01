@@ -1,0 +1,54 @@
+/* Estilos específicos para pages/cliente.html (Vista resumida del Portal del Cliente) */
+
+.perfil {
+    margin-bottom: 0;
+    border-radius: 12px;
+    gap: 1.75rem;
+    flex-wrap: wrap;
+    transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.perfil:hover {
+    border-color: #ffffff;
+}
+
+.perfil-avatar {
+    margin: 0;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background-color: #001F23;
+    color: #2DE0A5;
+}
+
+.perfil-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.perfil-info p {
+    color: #e0ecec;
+    line-height: 1.4;
+}
+
+.rutinas-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.clases-lista-preview {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 340px));
+}
+
+@media (max-width: 768px) {
+    .perfil {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem;
+    }
+
+    .clases-lista-preview {
+        grid-template-columns: 1fr;
+    }
+}
