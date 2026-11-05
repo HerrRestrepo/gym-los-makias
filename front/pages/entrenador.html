@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes asignados | Gym Los Makias</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/entrenador.css">
+</head>
+<body id="inicio" class="pagina-entrenador flex min-h-screen flex-col">
+    <header class="header-home w-full">
+        <nav aria-label="Navegación del entrenador">
+            <ul class="barra">
+                <li><a href="../index.html"><img src="../images/logo.png" alt="Logo de Gym Los Makias"></a></li>
+                <li><a href="entrenador.html" class="enlace-activo" aria-current="page">Clientes asignados</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="contenedor-entrenador mx-auto w-full flex-1">
+        <section class="seccion-clientes" aria-labelledby="titulo-clientes">
+            <header class="encabezado-entrenador">
+                <h1 id="titulo-clientes">Mis clientes</h1>
+                <p>Consulta las personas que tienes a cargo y su información básica.</p>
+            </header>
+            <p class="resumen-clientes">
+                Personas bajo tu responsabilidad:
+                <strong>5</strong>
+            </p>
+            <figure class="tabla-clientes-scroll">
+                <table class="tabla-clientes">
+                    <caption>Clientes asignados al entrenador</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Edad</th>
+                            <th scope="col">Género</th>
+                            <th scope="col">Correo electrónico</th>
+                            <th scope="col">Objetivo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Valentina Restrepo</th>
+                            <td data-label="Edad">24</td>
+                            <td data-label="Género">Mujer</td>
+                            <td data-label="Correo electrónico">valentina.restrepo@ejemplo.com</td>
+                            <td data-label="Objetivo">Hipertrofia</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Juan David Gómez</th>
+                            <td data-label="Edad">31</td>
+                            <td data-label="Género">Hombre</td>
+                            <td data-label="Correo electrónico">juan.gomez@ejemplo.com</td>
+                            <td data-label="Objetivo">Pérdida de peso</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Camila Arango</th>
+                            <td data-label="Edad">27</td>
+                            <td data-label="Género">Mujer</td>
+                            <td data-label="Correo electrónico">camila.arango@ejemplo.com</td>
+                            <td data-label="Objetivo">Acondicionamiento físico</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Mateo Castaño</th>
+                            <td data-label="Edad">22</td>
+                            <td data-label="Género">Hombre</td>
+                            <td data-label="Correo electrónico">mateo.castano@ejemplo.com</td>
+                            <td data-label="Objetivo">Hipertrofia</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Sara Jiménez</th>
+                            <td data-label="Edad">35</td>
+                            <td data-label="Género">Mujer</td>
+                            <td data-label="Correo electrónico">sara.jimenez@ejemplo.com</td>
+                            <td data-label="Objetivo">Pérdida de peso</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </figure>
+        </section>
+    </main>
+    <footer class="footer-home mt-auto">
+        <section class="footer-final">
+            <p>&copy; 2026 Gym Los Makias. Todos los derechos reservados.</p>
+            <a href="#inicio">Volver al inicio</a>
+        </section>
+    </footer>
+</body>
+</html>

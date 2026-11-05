@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Inicio de sesión | Gym Los Makias</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/sesion.css">
+</head>
+<body id="inicio" class="pagina-sesion flex min-h-screen flex-col">
+    <main class="contenido-sesion grid w-full flex-1 place-items-center">
+        <section class="tarjeta-sesion flex flex-col items-center text-center" aria-labelledby="titulo-sesion">
+            <a href="../index.html"><img src="../images/logo.png" alt="Gym Los Makias, inicio"></a>
+            <h1 id="titulo-sesion">Iniciar sesión</h1>
+            <form class="formulario-sesion">
+                <fieldset class="campos-sesion">
+                    <legend>Ingresa tus datos</legend>
+                    <label for="perfil">Elija su perfil</label>
+                    <select id="perfil" name="perfil" required>
+                        <option value="inscrito" selected>Inscrito</option>
+                        <option value="entrenador">Entrenador</option>
+                        <option value="administrador">Administrador</option>
+                    </select>
+                    <label for="usuario">Usuario</label>
+                    <input id="usuario" type="text" autocomplete="username" placeholder="Ingresa tus datos" required>
+                    <label for="contrasena">Contraseña</label>
+                    <input id="contrasena" type="password" autocomplete="current-password" placeholder="Ingresa tus datos" required>
+                </fieldset>
+                <button type="submit" class="boton-iniciar-sesion">Iniciar sesión</button>
+                <details class="recuperacion-contrasena mt-1 text-center text-sm text-[#b0c4c4]">
+                    <summary class="mx-auto w-fit cursor-pointer transition-colors duration-200 hover:text-[#2DE0A5] focus-visible:outline-2 focus-visible:outline-[#2DE0A5] focus-visible:outline-offset-2">Olvidé mi contraseña</summary>
+                    <p class="mt-2 leading-relaxed text-[#e0ecec]">La recuperación de contraseña aún no está disponible. No se envió ningún enlace.</p>
+                </details>
+            </form>
+        </section>
+    </main>
+    <footer class="footer-home mt-auto">
+        <section class="footer-contenido mx-auto grid w-full max-w-6xl grid-cols-1 gap-4 pb-3 md:grid-cols-2"
+            aria-label="Información del gimnasio">
+            <section class="footer-marca flex flex-col items-center gap-2 text-center">
+                <a class="footer-logo" href="../index.html">Gym Los Makias</a>
+                <p>Fuerza, disciplina y berraquera para alcanzar tus metas.</p>
+            </section>
+            <section class="footer-contacto flex flex-col items-center gap-2 text-center">
+                <h2>Visítanos</h2>
+                <address>
+                    Calle 52 # 48-35, Sector El Prado<br>
+                    Bello, Antioquia
+                </address>
+                <a href="tel:+573001234567">+57 300 123 4567</a>
+                <a href="https://wa.me/573001234567" target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp</a>
+            </section>
+        </section>
+        <section class="footer-final mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-2 pt-3 text-center text-sm md:flex-row">
+            <p>&copy; 2026 Gym Los Makias. Todos los derechos reservados.</p>
+            <a href="#inicio">Volver al inicio</a>
+        </section>
+    </footer>
+    <script>
+        const formularioSesion = document.querySelector(".formulario-sesion");
+        const destinosPerfil = {
+            inscrito: "cliente.html",
+            entrenador: "entrenador.html",
+            administrador: "admin.html"
+        };
+
+        formularioSesion.addEventListener("submit", (evento) => {
+            evento.preventDefault();
+            const perfilSeleccionado = document.querySelector("#perfil").value;
+            const destino = destinosPerfil[perfilSeleccionado];
+
+            if (!destino) {
+                return;
+            }
+
+            window.location.href = destino;
+        });
+    </script>
+</body>
+</html>
