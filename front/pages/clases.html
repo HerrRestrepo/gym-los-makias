@@ -4,13 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gym Los Makias - Clases Grupales</title>
+  <title>Gym Los Makias - Horario semanal de clases</title>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/clases.css">
 </head>
 
 <body id="inicio">
-
   <header class="header-home">
     <nav aria-label="Navegación del portal del cliente">
       <ul class="barra">
@@ -22,105 +21,140 @@
     </nav>
   </header>
 
-  <main class="contenedor-cliente">
-
-    <!-- HU020: Horario general y reserva de todas las clases grupales -->
-    <section class="clases-completas" aria-labelledby="titulo-clases-completas">
+  <main class="contenedor-cliente contenedor-horario">
+    <section class="horario-semanal" aria-labelledby="titulo-horario">
       <header class="encabezado-seccion">
-        <h1 id="titulo-clases-completas">Horario y reserva de clases grupales</h1>
-        <p class="clases-subtitulo">Consulta todas las sesiones de la semana, verifica la disponibilidad de cupos y agenda tu lugar.</p>
+        <p class="horario-eyebrow">Cartelera semanal</p>
+        <h1 id="titulo-horario">Entrenemos en equipo</h1>
+        <p class="horario-intro">Mira qué clases hay cada día y elige el horario que mejor te quede.</p>
       </header>
 
-      <ul class="leyenda-cupos" aria-label="Estado de disponibilidad de cupos">
-        <li class="item-leyenda">
-          <span class="indicador-cupo indicador-disponible" aria-hidden="true"></span>
-          <span>Cupos disponibles para reservar</span>
-        </li>
-        <li class="item-leyenda">
-          <span class="indicador-cupo indicador-pocos" aria-hidden="true"></span>
-          <span>Últimos cupos disponibles</span>
-        </li>
-        <li class="item-leyenda">
-          <span class="indicador-cupo indicador-lleno" aria-hidden="true"></span>
-          <span>Clase llena (sin cupos)</span>
-        </li>
+      <ul class="leyenda-horario" aria-label="Disponibilidad de las clases">
+        <li><span class="punto-disponible" aria-hidden="true"></span>Hay cupos</li>
+        <li><span class="punto-limitado" aria-hidden="true"></span>Últimos cupos</li>
+        <li><span class="punto-lleno" aria-hidden="true"></span>Sin cupos</li>
       </ul>
 
-      <ul class="clases-lista" aria-label="Listado completo de clases grupales">
+      <section class="contenedor-semana" aria-label="Horario de lunes a sábado">
+        <ul class="cuadricula-semana">
+          <li class="dia-semana">
+            <h2>Lunes</h2>
+            <article class="sesion-clase">
+              <p class="hora-clase">6:00 a. m. - 7:00 a. m.</p>
+              <h3>Zumba</h3>
+              <p class="instructor">Carlos Ramírez</p>
+              <p class="estado estado-disponible">Cupos disponibles</p>
+              <button class="boton-reserva" type="button">Reservar</button>
+            </article>
+            <article class="sesion-clase">
+              <p class="hora-clase">5:30 p. m. - 6:30 p. m.</p>
+              <h3>Spinning</h3>
+              <p class="instructor">Andrés Londoño</p>
+              <p class="estado estado-limitado">Últimos cupos</p>
+              <button class="boton-reserva" type="button">Reservar</button>
+            </article>
+          </li>
 
-        <li class="item-clase">
-          <article class="tarjeta-clase">
-            <span class="etiqueta etiqueta-cupos">Cupos disponibles</span>
-            <h3>Zumba</h3>
-            <p>Lunes y miércoles</p>
-            <p>6:00 a.m. - 7:00 a.m.</p>
-            <p>Instructor: Carlos Ramírez</p>
-            <button class="boton-reservar" type="button">Reservar</button>
-          </article>
-        </li>
+          <li class="dia-semana">
+            <h2>Martes</h2>
+            <article class="sesion-clase">
+              <p class="hora-clase">7:00 a. m. - 8:00 a. m.</p>
+              <h3>Yoga</h3>
+              <p class="instructor">Laura Torres</p>
+              <p class="estado estado-disponible">Cupos disponibles</p>
+              <button class="boton-reserva" type="button">Reservar</button>
+            </article>
+            <article class="sesion-clase">
+              <p class="hora-clase">5:30 p. m. - 6:30 p. m.</p>
+              <h3>Spinning</h3>
+              <p class="instructor">Andrés Londoño</p>
+              <p class="estado estado-limitado">Últimos cupos</p>
+              <button class="boton-reserva" type="button">Reservar</button>
+            </article>
+          </li>
 
-        <li class="item-clase">
-          <article class="tarjeta-clase">
-            <span class="etiqueta etiqueta-cupos">Cupos disponibles</span>
-            <h3>Yoga</h3>
-            <p>Martes y jueves</p>
-            <p>7:00 a.m. - 8:00 a.m.</p>
-            <p>Instructora: Laura Torres</p>
-            <button class="boton-reservar" type="button">Reservar</button>
-          </article>
-        </li>
+          <li class="dia-semana">
+            <h2>Miércoles</h2>
+            <article class="sesion-clase">
+              <p class="hora-clase">6:00 a. m. - 7:00 a. m.</p>
+              <h3>Zumba</h3>
+              <p class="instructor">Carlos Ramírez</p>
+              <p class="estado estado-disponible">Cupos disponibles</p>
+              <button class="boton-reserva" type="button">Reservar</button>
+            </article>
+            <article class="sesion-clase">
+              <p class="hora-clase">5:30 p. m. - 6:30 p. m.</p>
+              <h3>Spinning</h3>
+              <p class="instructor">Andrés Londoño</p>
+              <p class="estado estado-limitado">Últimos cupos</p>
+              <button class="boton-reserva" type="button">Reservar</button>
+            </article>
+            <article class="sesion-clase">
+              <p class="hora-clase">6:30 p. m. - 7:30 p. m.</p>
+              <h3>Crossfit</h3>
+              <p class="instructor">Julián Cardona</p>
+              <p class="estado estado-disponible">Cupos disponibles</p>
+              <button class="boton-reserva" type="button">Reservar</button>
+            </article>
+          </li>
 
-        <li class="item-clase">
-          <article class="tarjeta-clase">
-            <span class="etiqueta etiqueta-pocos">Últimos cupos</span>
-            <h3>Spinning</h3>
-            <p>Lunes a viernes</p>
-            <p>5:30 p.m. - 6:30 p.m.</p>
-            <p>Instructor: Andrés Londoño</p>
-            <button class="boton-reservar" type="button">Reservar</button>
-          </article>
-        </li>
+          <li class="dia-semana">
+            <h2>Jueves</h2>
+            <article class="sesion-clase">
+              <p class="hora-clase">7:00 a. m. - 8:00 a. m.</p>
+              <h3>Yoga</h3>
+              <p class="instructor">Laura Torres</p>
+              <p class="estado estado-disponible">Cupos disponibles</p>
+              <button class="boton-reserva" type="button">Reservar</button>
+            </article>
+            <article class="sesion-clase">
+              <p class="hora-clase">5:30 p. m. - 6:30 p. m.</p>
+              <h3>Spinning</h3>
+              <p class="instructor">Andrés Londoño</p>
+              <p class="estado estado-limitado">Últimos cupos</p>
+              <button class="boton-reserva" type="button">Reservar</button>
+            </article>
+          </li>
 
-        <li class="item-clase">
-          <article class="tarjeta-clase">
-            <span class="etiqueta etiqueta-cupos">Cupos disponibles</span>
-            <h3>Crossfit</h3>
-            <p>Miércoles y viernes</p>
-            <p>6:30 p.m. - 7:30 p.m.</p>
-            <p>Instructor: Julián Cardona</p>
-            <button class="boton-reservar" type="button">Reservar</button>
-          </article>
-        </li>
+          <li class="dia-semana">
+            <h2>Viernes</h2>
+            <article class="sesion-clase">
+              <p class="hora-clase">5:30 p. m. - 6:30 p. m.</p>
+              <h3>Spinning</h3>
+              <p class="instructor">Andrés Londoño</p>
+              <p class="estado estado-limitado">Últimos cupos</p>
+              <button class="boton-reserva" type="button">Reservar</button>
+            </article>
+            <article class="sesion-clase">
+              <p class="hora-clase">6:30 p. m. - 7:30 p. m.</p>
+              <h3>Crossfit</h3>
+              <p class="instructor">Julián Cardona</p>
+              <p class="estado estado-disponible">Cupos disponibles</p>
+              <button class="boton-reserva" type="button">Reservar</button>
+            </article>
+            <article class="sesion-clase">
+              <p class="hora-clase">8:00 p. m. - 9:00 p. m.</p>
+              <h3>Baile</h3>
+              <p class="instructor">Daniel Osorio</p>
+              <p class="estado estado-disponible">Cupos disponibles</p>
+              <button class="boton-reserva" type="button">Reservar</button>
+            </article>
+          </li>
 
-        <li class="item-clase">
-          <article class="tarjeta-clase">
-            <span class="etiqueta etiqueta-lleno">Sin cupos</span>
-            <h3>Pilates</h3>
-            <p>Sábados</p>
-            <p>9:00 a.m. - 10:00 a.m.</p>
-            <p>Instructora: Sofía Vélez</p>
-            <button class="boton-reservar boton-deshabilitado" type="button" disabled>Reservar</button>
-          </article>
-        </li>
+          <li class="dia-semana">
+            <h2>Sábado</h2>
+            <article class="sesion-clase sesion-llena">
+              <p class="hora-clase">9:00 a. m. - 10:00 a. m.</p>
+              <h3>Pilates</h3>
+              <p class="instructor">Sofía Vélez</p>
+              <p class="estado estado-lleno">Sin cupos</p>
+              <button class="boton-reserva" type="button" disabled>Reservar</button>
+            </article>
+          </li>
+        </ul>
+      </section>
 
-        <li class="item-clase">
-          <article class="tarjeta-clase">
-            <span class="etiqueta etiqueta-cupos">Cupos disponibles</span>
-            <h3>Baile</h3>
-            <p>Viernes</p>
-            <p>8:00 p.m. - 9:00 p.m.</p>
-            <p>Instructor: Daniel Osorio</p>
-            <button class="boton-reservar" type="button">Reservar</button>
-          </article>
-        </li>
-
-      </ul>
-
-      <p class="acciones-seccion">
-        <a href="cliente.html" class="boton-ver-mas">Volver a mi perfil</a>
-      </p>
     </section>
-
   </main>
 
   <footer class="footer-home">
@@ -153,12 +187,8 @@
       <p>&copy; 2026 Gym Los Makias. Todos los derechos reservados.</p>
       <a href="#inicio">Volver al inicio</a>
     </section>
+    <a href="#inicio" class="boton-subir">Subir</a>
   </footer>
-
-  <!-- Botón fijo en pantalla (position: fixed) -->
-  <a href="#inicio" class="boton-subir">Subir</a>
-
 </body>
 
 </html>
-
