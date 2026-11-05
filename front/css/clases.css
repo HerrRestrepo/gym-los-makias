@@ -1,0 +1,247 @@
+.horario-semanal {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contenedor-cliente.contenedor-horario {
+    max-width: 1600px;
+}
+
+.horario-eyebrow {
+    margin-bottom: 0.5rem;
+    color: #2DE0A5;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.horario-semanal h1 {
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+    font-family: "Syne", "Roboto", sans-serif;
+    font-size: clamp(2rem, 5vw, 3.25rem);
+}
+
+.horario-intro {
+    max-width: 42rem;
+    color: #b0c4c4;
+    line-height: 1.6;
+}
+
+.leyenda-horario {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    padding: 1rem 1.25rem;
+    background-color: #00363C;
+    border: 1px solid #2DE0A5;
+    border-radius: 8px;
+    color: #e0ecec;
+}
+
+.leyenda-horario li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.leyenda-horario li span {
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+}
+
+.punto-disponible {
+    background-color: #2DE0A5;
+}
+
+.punto-limitado {
+    background-color: #F2A93B;
+}
+
+.punto-lleno {
+    background-color: #D75A5A;
+}
+
+.contenedor-semana {
+    padding-bottom: 0.75rem;
+    overflow-x: auto;
+    scrollbar-color: #2DE0A5 #00363C;
+
+}
+
+.cuadricula-semana {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(9rem, 1fr));
+    align-items: start;
+    gap: 0;
+    min-width: 68rem;
+}
+
+.dia-semana {
+    display: flex;
+    min-height: 12rem;
+    flex-direction: column;
+    gap: 0;
+    padding: 0.75rem;
+    background-color: #002B30;
+    border: 1px solid #185258;
+    border-radius: 8px;
+}
+
+.dia-semana > h2 {
+    padding-bottom: 0.65rem;
+    border-bottom: 2px solid #2DE0A5;
+    color: #ffffff;
+    font-family: "Syne", "Roboto", sans-serif;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.sesion-clase {
+    padding: 0.8rem;
+    background-color: #00363C;
+    border: 1px solid #2DE0A5;
+    border-radius: 0;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.sesion-clase:hover {
+    transform: translateY(-2px);
+    border-color: #ffffff;
+}
+
+.hora-clase {
+    margin-bottom: 0.55rem;
+    color: #2DE0A5;
+    font-size: 0.75rem;
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+.sesion-clase h3 {
+    margin-bottom: 0.25rem;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.instructor {
+    margin-bottom: 0.6rem;
+    color: #b0c4c4;
+    font-size: 0.8rem;
+}
+
+.estado {
+    margin-bottom: 0.65rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.estado-disponible {
+    color: #2DE0A5;
+}
+
+.estado-limitado {
+    color: #F2A93B;
+}
+
+.estado-lleno {
+    color: #FF8585;
+}
+
+.boton-reserva {
+    width: 100%;
+    padding: 0.55rem 0.4rem;
+    border: 1px solid #2DE0A5;
+    border-radius: 5px;
+    background-color: #2DE0A5;
+    color: #001F23;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 800;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.boton-reserva:hover:not(:disabled) {
+    background-color: #001F23;
+    color: #2DE0A5;
+}
+
+.boton-reserva:focus-visible,
+.enlace-regreso a:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+}
+
+.boton-reserva:disabled {
+    border-color: #53686A;
+    background-color: #53686A;
+    color: #e0ecec;
+    cursor: not-allowed;
+}
+
+.sesion-llena {
+    border-color: #A64949;
+}
+
+.dia-vacio {
+    margin: auto 0;
+    color: #b0c4c4;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.nota-mock {
+    padding: 0.85rem 1rem;
+    border-left: 3px solid #F2A93B;
+    background-color: #00363C;
+    color: #e0ecec;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.enlace-regreso a {
+    color: #2DE0A5;
+    font-weight: 700;
+}
+
+.enlace-regreso a:hover {
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .horario-semanal {
+        gap: 1.25rem;
+    }
+
+    .leyenda-horario {
+        flex-direction: column;
+        gap: 0.65rem;
+    }
+
+    .contenedor-semana {
+        overflow-x: visible;
+    }
+
+    .cuadricula-semana {
+        width: 100%;
+        min-width: 0;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .dia-semana {
+        min-width: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sesion-clase,
+    .boton-reserva {
+        transition: none;
+    }
+}

@@ -482,10 +482,16 @@ body {
 /* Integrante 3, cliente.html */
 
 .contenedor-cliente {
-    width: 900px;
-    margin: 30px auto;
+    width: 100%;
+    max-width: 1040px;
+    margin: 2rem auto 4rem;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
     font-family: "roboto", sans-serif;
     color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 }
 
 .perfil {
@@ -557,17 +563,30 @@ body {
 }
 
 .clases-lista {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.75rem;
+    margin-top: 0.5rem;
 }
 
 .tarjeta-clase {
     position: relative;
-    width: 300px;
-    margin: 20px 20px 0 0;
+    width: 100%;
+    margin: 0;
     padding: 20px;
     background-color: #00363C;
     border: 2px solid #2DE0A5;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.tarjeta-clase:hover {
+    transform: translateY(-4px);
+    border-color: #ffffff;
 }
 
 .tarjeta-clase h3 {
@@ -590,6 +609,21 @@ body {
     color: #001F23;
     background-color: #2DE0A5;
     border: 2px solid #2DE0A5;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.boton-reservar:hover:not(:disabled) {
+    background-color: #001F23;
+    color: #2DE0A5;
+}
+
+.boton-deshabilitado {
+    background-color: #4a6366;
+    border-color: #4a6366;
+    color: #b0c4c4;
+    cursor: not-allowed;
 }
 
 .boton-subir {
@@ -601,6 +635,17 @@ body {
     font-weight: 800;
     color: #001F23;
     background-color: #2DE0A5;
+    text-decoration: none;
+    border-radius: 6px;
+    border: 2px solid #001F23;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.boton-subir:hover {
+    background-color: #001F23;
+    color: #2DE0A5;
+    border-color: #2DE0A5;
+    transform: translateY(-2px);
 }
 
 .contenedor-formulario {
@@ -719,5 +764,239 @@ select {
     .footer-final {
         flex-direction: column;
         align-items: flex-start;
+    }
+}
+
+/* Componentes compartidos de portal de cliente, rutinas (HU017) y clases (HU020) */
+
+.barra a {
+    display: inline-block;
+    padding: 0.6rem 1.1rem;
+    border-radius: 6px 6px 0 0;
+    border-bottom: 3px solid transparent;
+    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.barra a.enlace-activo,
+.barra a[aria-current="page"] {
+    color: #ffffff;
+    background-color: transparent;
+    border-bottom: 3px solid #ffffff;
+}
+
+.barra a:hover,
+.barra a:focus-visible,
+.barra a.enlace-activo:hover,
+.barra a[aria-current="page"]:hover,
+.barra a.enlace-activo:focus-visible,
+.barra a[aria-current="page"]:focus-visible {
+    color: #2DE0A5;
+    background-color: #004d55;
+    border-bottom-color: #2DE0A5;
+    outline: none;
+}
+
+.encabezado-seccion {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.encabezado-seccion h1,
+.encabezado-seccion h2 {
+    font-family: "Syne", "Roboto", sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.subtitulo-seccion,
+.clases-subtitulo {
+    color: #b0c4c4;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.bloque-rutina {
+    background-color: #00363C;
+    border: 2px solid #2DE0A5;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.bloque-rutina:hover {
+    transform: translateY(-2px);
+}
+
+.tabla-rutina {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    color: #ffffff;
+    font-size: 0.95rem;
+}
+
+.tabla-rutina caption {
+    background-color: #004d55;
+    padding: 1.1rem 1.5rem;
+    text-align: left;
+    border-bottom: 2px solid #2DE0A5;
+}
+
+.caption-contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.dia-titulo {
+    font-family: "Syne", "Roboto", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.objetivo-etiqueta {
+    background-color: #2DE0A5;
+    color: #001F23;
+    font-weight: 800;
+    font-size: 0.85rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tabla-rutina thead th {
+    background-color: #001F23;
+    color: #2DE0A5;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    padding: 0.9rem 1.25rem;
+    border-bottom: 1px solid #2DE0A5;
+}
+
+.tabla-rutina tbody tr {
+    border-bottom: 1px solid rgba(176, 196, 196, 0.2);
+    transition: background-color 0.2s ease;
+}
+
+.tabla-rutina tbody tr:last-child {
+    border-bottom: none;
+}
+
+.tabla-rutina tbody tr:hover {
+    background-color: #004d55;
+}
+
+.tabla-rutina tbody th,
+.tabla-rutina tbody td {
+    padding: 0.95rem 1.25rem;
+    vertical-align: middle;
+}
+
+.tabla-rutina tbody th {
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.zona-maquina {
+    color: #b0c4c4;
+}
+
+.dato-destacado {
+    font-weight: 800;
+    color: #2DE0A5;
+}
+
+.tabla-rutina tfoot td {
+    background-color: #001F23;
+    color: #b0c4c4;
+    font-size: 0.85rem;
+    padding: 0.75rem 1.25rem;
+    border-top: 1px solid rgba(45, 224, 165, 0.4);
+}
+
+.clases {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.item-clase {
+    display: flex;
+}
+
+.acciones-seccion {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 0.5rem;
+}
+
+.boton-ver-mas {
+    display: inline-block;
+    padding: 0.85rem 1.5rem;
+    background-color: #2DE0A5;
+    color: #001F23;
+    border: 2px solid #2DE0A5;
+    border-radius: 8px;
+    font-family: "roboto", sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.boton-ver-mas:hover {
+    background-color: #001F23;
+    color: #2DE0A5;
+    transform: translateY(-2px);
+}
+
+.boton-ver-mas:focus-visible,
+.boton-reservar:focus-visible,
+.boton-subir:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+    .barra {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .barra img {
+        width: 11rem;
+    }
+
+    .contenedor-cliente {
+        padding: 0 1rem;
+        margin: 1.5rem auto 3rem;
+        gap: 2.25rem;
+    }
+
+    .bloque-rutina {
+        overflow-x: auto;
+    }
+
+    .tabla-rutina {
+        min-width: 580px;
+    }
+
+    .tabla-rutina caption {
+        padding: 1rem;
+    }
+
+    .tabla-rutina thead th,
+    .tabla-rutina tbody th,
+    .tabla-rutina tbody td {
+        padding: 0.75rem 0.9rem;
     }
 }
