@@ -1,0 +1,211 @@
+.contenedor-entrenador {
+    width: 100%;
+    max-width: 1040px;
+    box-sizing: border-box;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+}
+
+.seccion-clientes {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.encabezado-entrenador {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.encabezado-entrenador h1 {
+    color: #ffffff;
+    font-family: "Syne", "Roboto", sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.encabezado-entrenador p {
+    color: #b0c4c4;
+    line-height: 1.5;
+}
+
+.resumen-clientes {
+    width: fit-content;
+    padding: 0.75rem 1rem;
+    border: 1px solid #2DE0A5;
+    border-radius: 8px;
+    background-color: #00363C;
+    color: #e0ecec;
+}
+
+.resumen-clientes strong {
+    margin-left: 0.35rem;
+    color: #2DE0A5;
+    font-size: 1.2rem;
+}
+
+.tabla-clientes-scroll {
+    border: 2px solid #2DE0A5;
+    border-radius: 12px;
+    background-color: #00363C;
+    overflow: hidden;
+}
+
+.tabla-clientes {
+    width: 100%;
+    border-collapse: collapse;
+    color: #ffffff;
+    text-align: left;
+}
+
+.tabla-clientes caption {
+    padding: 1rem 1.25rem;
+    border-bottom: 2px solid #2DE0A5;
+    background-color: #004d55;
+    font-family: "Syne", "Roboto", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-align: left;
+}
+
+.tabla-clientes thead th {
+    padding: 0.9rem 1.25rem;
+    border-bottom: 1px solid #2DE0A5;
+    background-color: #001F23;
+    color: #2DE0A5;
+    font-size: 0.85rem;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+}
+
+.tabla-clientes tbody tr {
+    border-bottom: 1px solid rgba(176, 196, 196, 0.2);
+    transition: background-color 0.2s ease;
+}
+
+.tabla-clientes tbody tr:last-child {
+    border-bottom: 0;
+}
+
+.tabla-clientes tbody tr:hover {
+    background-color: #004d55;
+}
+
+.tabla-clientes tbody th,
+.tabla-clientes tbody td {
+    padding: 0.95rem 1.25rem;
+    vertical-align: middle;
+}
+
+.tabla-clientes tbody th {
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.tabla-clientes tbody td:last-child {
+    color: #b0c4c4;
+}
+
+.tabla-clientes tbody td:nth-child(5) {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.pagina-entrenador .footer-final {
+    max-width: 1040px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .contenedor-entrenador {
+        margin: 1.5rem auto 2.5rem;
+        padding: 0 1rem;
+    }
+
+    .encabezado-entrenador h1 {
+        font-size: 1.75rem;
+    }
+
+    .tabla-clientes-scroll {
+        overflow: visible;
+        border: 0;
+        border-radius: 0;
+        background-color: transparent;
+    }
+
+    .tabla-clientes {
+        display: block;
+        min-width: 0;
+    }
+
+    .tabla-clientes caption {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid #2DE0A5;
+        border-radius: 8px;
+        padding: 0.85rem 1rem;
+        font-size: 1rem;
+    }
+
+    .tabla-clientes thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        clip-path: inset(50%);
+    }
+
+    .tabla-clientes tbody {
+        display: grid;
+        gap: 1rem;
+    }
+
+    .tabla-clientes tbody tr {
+        display: flex;
+        min-width: 0;
+        flex-direction: column;
+        overflow: hidden;
+        border: 1px solid #2DE0A5;
+        border-radius: 10px;
+        background-color: #00363C;
+    }
+
+    .tabla-clientes tbody tr:hover {
+        background-color: #00363C;
+    }
+
+    .tabla-clientes tbody th {
+        padding: 0.9rem 1rem;
+        background-color: #004d55;
+        font-size: 1.05rem;
+        white-space: normal;
+    }
+
+    .tabla-clientes tbody td {
+        display: grid;
+        min-width: 0;
+        grid-template-columns: minmax(7rem, 0.8fr) minmax(0, 1.2fr);
+        gap: 0.75rem;
+        padding: 0.7rem 1rem;
+        border-top: 1px solid rgba(176, 196, 196, 0.2);
+        overflow-wrap: anywhere;
+    }
+
+    .tabla-clientes tbody td::before {
+        color: #2DE0A5;
+        content: attr(data-label);
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+    }
+
+    .tabla-clientes tbody td:last-child {
+        color: #ffffff;
+    }
+}
