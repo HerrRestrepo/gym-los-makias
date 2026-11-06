@@ -41,7 +41,6 @@
         <section class="seccion-actividades" aria-labelledby="titulo-actividades">
             <header class="encabezado-actividades">
                 <h2 id="titulo-actividades">Popularidad de las clases</h2>
-                <p>Datos demostrativos de reservas, aforo y asistencia durante esta semana.</p>
             </header>
             <ul class="lista-actividades">
                 <li>
@@ -125,7 +124,93 @@
                     </article>
                 </li>
             </ul>
-            <p class="aviso-demostrativo">Cifras ficticias presentadas únicamente con fines visuales.</p>
+        </section>
+
+        <section class="seccion-personal" aria-labelledby="titulo-personal">
+            <header class="encabezado-personal">
+                <section>
+                    <h2 id="titulo-personal">Directorio del personal técnico</h2>
+                    <p>Cuentas, especialidades y horarios del equipo del gimnasio.</p>
+                </section>
+                <ul class="acciones-personal">
+                    <li>
+                        <button class="boton-crear-perfil" type="button" disabled aria-disabled="true">
+                            Crear nuevo perfil
+                        </button>
+                    </li>
+                    <li>
+                        <button class="boton-crear-perfil" type="button">
+                            Reasignar roles
+                        </button>
+                    </li>
+                </ul>
+            </header>
+            <ul class="lista-personal grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+                <li>
+                    <article class="perfil-personal">
+                        <header>
+                            <h3>Andrés Londoño</h3>
+                            <p>Entrenador personal</p>
+                        </header>
+                        <dl>
+                            <dt class="correo-personal">Cuenta</dt>
+                            <dd class="correo-personal">andres.londono@gymmakias.ejemplo</dd>
+                            <dt>Especialidad</dt>
+                            <dd>Fuerza e hipertrofia</dd>
+                            <dt>Horario</dt>
+                            <dd>Lunes a viernes · 6:00 a. m. a 2:00 p. m.</dd>
+                        </dl>
+                    </article>
+                </li>
+                <li>
+                    <article class="perfil-personal">
+                        <header>
+                            <h3>Laura Restrepo</h3>
+                            <p>Instructora grupal</p>
+                        </header>
+                        <dl>
+                            <dt class="correo-personal">Cuenta</dt>
+                            <dd class="correo-personal">laura.restrepo@gymmakias.ejemplo</dd>
+                            <dt>Especialidad</dt>
+                            <dd>Ciclismo indoor y resistencia</dd>
+                            <dt>Horario</dt>
+                            <dd>Lunes a jueves · 2:00 p. m. a 8:00 p. m.</dd>
+                        </dl>
+                    </article>
+                </li>
+                <li>
+                    <article class="perfil-personal">
+                        <header>
+                            <h3>Julián Cárdenas</h3>
+                            <p>Entrenador funcional</p>
+                        </header>
+                        <dl>
+                            <dt class="correo-personal">Cuenta</dt>
+                            <dd class="correo-personal">julian.cardenas@gymmakias.ejemplo</dd>
+                            <dt>Especialidad</dt>
+                            <dd>Acondicionamiento y entrenamiento funcional</dd>
+                            <dt>Horario</dt>
+                            <dd>Martes a sábado · 7:00 a. m. a 3:00 p. m.</dd>
+                        </dl>
+                    </article>
+                </li>
+                <li>
+                    <article class="perfil-personal">
+                        <header>
+                            <h3>Mariana Vélez</h3>
+                            <p>Instructora grupal</p>
+                        </header>
+                        <dl>
+                            <dt class="correo-personal">Cuenta</dt>
+                            <dd class="correo-personal">mariana.velez@gymmakias.ejemplo</dd>
+                            <dt>Especialidad</dt>
+                            <dd>Yoga y movilidad</dd>
+                            <dt>Horario</dt>
+                            <dd>Miércoles a domingo · 8:00 a. m. a 4:00 p. m.</dd>
+                        </dl>
+                    </article>
+                </li>
+            </ul>
         </section>
     </main>
     <footer class="footer-home mt-auto">
