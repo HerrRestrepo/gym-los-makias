@@ -1,4 +1,27 @@
+.pagina-entrenador {
+    position: relative;
+    isolation: isolate;
+    background-color: #001F23;
+}
+
+.pagina-entrenador::before {
+    position: fixed;
+    z-index: -1;
+    inset: 0;
+    background-image: url("../images/fondo_lateral.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+    opacity: 0.2;
+    pointer-events: none;
+}
+
 .contenedor-entrenador {
+    display: grid;
+    grid-template-columns: minmax(0, 1.8fr) minmax(250px, 0.9fr);
+    align-items: start;
+    gap: 1.5rem;
     width: 100%;
     max-width: 1040px;
     box-sizing: border-box;
@@ -114,13 +137,133 @@
     font-weight: 700;
 }
 
+.pagina-entrenador .footer-home {
+    padding: 1rem max(1rem, calc((100% - 1200px) / 2));
+}
+
+.pagina-entrenador .footer-contenido {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    padding-bottom: 0.75rem;
+}
+
+.pagina-entrenador .footer-marca,
+.pagina-entrenador .footer-contacto {
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+}
+
 .pagina-entrenador .footer-final {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem 1rem;
     max-width: 1040px;
     margin: 0 auto;
+    padding-top: 0.75rem;
+    text-align: center;
+}
+
+.panel-clases {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid #2DE0A5;
+    border-radius: 12px;
+    background-color: #001F23;
+}
+
+@media (min-width: 701px) {
+    .pagina-entrenador .footer-contenido {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pagina-entrenador .footer-final {
+        justify-content: space-between;
+    }
+}
+
+.encabezado-clases {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.encabezado-clases h2 {
+    color: #ffffff;
+    font-family: "Syne", "Roboto", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 800;
+}
+
+.encabezado-clases p {
+    color: #b0c4c4;
+    font-size: 0.9rem;
+    line-height: 1.45;
+}
+
+.lista-clases-entrenador {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.clase-asignada {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 0.9rem;
+    border-left: 4px solid;
+    border-radius: 8px;
+    color: #ffffff;
+    transition: transform 0.2s ease;
+}
+
+.clase-asignada:hover {
+    transform: translateX(3px);
+}
+
+.clase-asignada h3 {
+    margin-bottom: 0.15rem;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.clase-asignada p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.clase-asignada strong {
+    color: #ffffff;
+}
+
+.horario-clase {
+    margin-bottom: 0.25rem;
+    font-weight: 700;
+}
+
+.clase-ciclismo {
+    border-color: #2DE0A5;
+    background-color: #004d55;
+}
+
+.clase-funcional {
+    border-color: #e8a23a;
+    background-color: #49391f;
+}
+
+.clase-movilidad {
+    border-color: #70b7d1;
+    background-color: #1c3e4a;
 }
 
 @media (max-width: 768px) {
     .contenedor-entrenador {
+        grid-template-columns: minmax(0, 1fr);
         margin: 1.5rem auto 2.5rem;
         padding: 0 1rem;
     }
