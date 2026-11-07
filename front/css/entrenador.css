@@ -352,3 +352,87 @@
         color: #ffffff;
     }
 }
+
+/* HU024: Ficha del alumno (tarjeta flotante) */
+.boton-detalles {
+    padding: 0.4rem 0.9rem;
+    border: 1px solid #2DE0A5;
+    border-radius: 6px;
+    background-color: transparent;
+    color: #2DE0A5;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.boton-detalles:hover {
+    background-color: #2DE0A5;
+    color: #001F23;
+}
+
+.ficha-alumno {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 100;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 420px;
+    box-sizing: border-box;
+    padding: 1.5rem;
+    border: 2px solid #2DE0A5;
+    border-radius: 12px;
+    background-color: #00363C;
+    color: #ffffff;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.6);
+}
+
+.ficha-contenido h2 {
+    margin-bottom: 1rem;
+    color: #2DE0A5;
+    font-family: "Syne", "Roboto", sans-serif;
+    font-size: 1.4rem;
+}
+
+.ficha-contenido p {
+    margin-bottom: 0.6rem;
+    line-height: 1.4;
+}
+
+.boton-cerrar-ficha {
+    margin-top: 0.75rem;
+    padding: 0.5rem 1.2rem;
+    border: 0;
+    border-radius: 6px;
+    background-color: #2DE0A5;
+    color: #001F23;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* HU024: ajuste para que quepa la columna Detalle */
+@media (min-width: 769px) {
+    .contenedor-entrenador {
+        grid-template-columns: minmax(0, 2.4fr) minmax(230px, 0.8fr);
+        max-width: 1280px;
+    }
+
+    .tabla-clientes thead th,
+    .tabla-clientes tbody th,
+    .tabla-clientes tbody td {
+        padding-left: 0.6rem;
+        padding-right: 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    .tabla-clientes thead th {
+        font-size: 0.75rem;
+    }
+
+    .boton-detalles {
+        white-space: nowrap;
+        padding: 0.4rem 0.7rem;
+        font-size: 0.8rem;
+    }
+}
