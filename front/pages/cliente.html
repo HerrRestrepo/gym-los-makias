@@ -150,7 +150,15 @@
         <a href="clases.html" class="boton-ver-mas">Ver y agendar todas las clases</a>
       </p>
     </section>
+    <!-- HU018: Historial de sesiones completadas -->
+    <section id="historial" class="historial" aria-labelledby="titulo-historial">
+      <header class="encabezado-seccion">
+        <h2 id="titulo-historial">Historial de sesiones con tu entrenador</h2>
+        <p class="subtitulo-seccion">Entrenamientos personales que ya finalizaste.</p>
+      </header>
 
+      <ul class="lista-historial" id="lista-historial"></ul>
+    </section>
   </main>
 
   <footer class="footer-home">
@@ -207,7 +215,30 @@
     document.getElementById("perfil-vence").textContent = vence;
     document.getElementById("perfil-estado").textContent = estado;
   </script>
+  <script>
+    // HU018: Historial de sesiones completadas (matriz de datos quemados)
+    // Cada fila es: [fecha, entrenador, enfoque, estado]
+    var sesiones = [
+      ["28 de octubre de 2026", "Carlos Ramírez", "Tren superior", "Completado"],
+      ["21 de octubre de 2026", "Carlos Ramírez", "Tren inferior", "Completado"],
+      ["14 de octubre de 2026", "Laura Mejía", "Cardio y core", "Completado"],
+      ["7 de octubre de 2026", "Laura Mejía", "Valoración física", "Completado"]
+    ];
 
+    var lista = document.getElementById("lista-historial");
+    var contenido = "";
+
+    for (var i = 0; i < sesiones.length; i++) {
+      contenido = contenido +
+        '<li class="item-historial">' +
+        '<p><strong>' + sesiones[i][0] + '</strong><br>' +
+        sesiones[i][2] + ' con ' + sesiones[i][1] + '</p>' +
+        '<span class="estado-completado">' + sesiones[i][3] + '</span>' +
+        '</li>';
+    }
+
+    lista.innerHTML = contenido;
+  </script>
 </body>
 
 </html>
