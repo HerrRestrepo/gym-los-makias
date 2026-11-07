@@ -436,3 +436,44 @@
         font-size: 0.8rem;
     }
 }
+
+/* HU027: Lista de asistentes por clase */
+.boton-asistentes {
+    align-self: flex-start;
+    margin-top: 0.5rem;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid #ffffff;
+    border-radius: 6px;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.boton-asistentes:hover {
+    background-color: #ffffff;
+    color: #001F23;
+}
+
+.asistentes-clase {
+    padding: 0.9rem;
+    border: 1px dashed #2DE0A5;
+    border-radius: 8px;
+    background-color: #00363C;
+}
+
+.asistentes-clase h3 {
+    margin-bottom: 0.5rem;
+    color: #2DE0A5;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.asistentes-clase p {
+    color: #e0ecec;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}

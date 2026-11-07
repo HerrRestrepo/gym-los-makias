@@ -97,32 +97,48 @@
                 <h2 id="titulo-clases-asignadas">Clases que debo impartir</h2>
                 <p>Horario, aforo y enfoque para preparar cada sesión.</p>
             </header>
+            <section class="asistentes-clase" aria-live="polite">
+                <h3 id="asistentes-titulo">Asistentes</h3>
+                <p id="asistentes-lista">Selecciona una clase para ver quién reservó.</p>
+            </section>
             <ul class="lista-clases-entrenador">
-                <li class="clase-asignada clase-ciclismo">
-                    <h3>Ciclismo indoor</h3>
-                    <p class="horario-clase">Lunes · 6:00 p. m.</p>
-                    <p><strong>Aforo:</strong> 18 personas</p>
-                    <p><strong>Enfoque:</strong> resistencia cardiovascular</p>
-                    <p><strong>Preparación:</strong> bicicletas y lista musical</p>
-                </li>
-                <li class="clase-asignada clase-funcional">
-                    <h3>Entrenamiento funcional</h3>
-                    <p class="horario-clase">Miércoles · 7:00 a. m.</p>
-                    <p><strong>Aforo:</strong> 12 personas</p>
-                    <p><strong>Enfoque:</strong> fuerza y coordinación</p>
-                    <p><strong>Preparación:</strong> bandas, conos y colchonetas</p>
-                </li>
-                <li class="clase-asignada clase-movilidad">
-                    <h3>Movilidad y estiramiento</h3>
-                    <p class="horario-clase">Viernes · 5:30 p. m.</p>
-                    <p><strong>Aforo:</strong> 10 personas</p>
-                    <p><strong>Enfoque:</strong> flexibilidad y recuperación</p>
-                    <p><strong>Preparación:</strong> colchonetas y bloques</p>
-                </li>
-            </ul>
+                <ul class="lista-clases-entrenador">
+                    <li class="clase-asignada clase-ciclismo">
+                        <h3>Ciclismo indoor</h3>
+                        <p class="horario-clase">Lunes · 6:00 p. m.</p>
+                        <p><strong>Aforo:</strong> 18 personas</p>
+                        <p><strong>Reservas:</strong> 6</p>
+                        <p><strong>Enfoque:</strong> resistencia cardiovascular</p>
+                        <p><strong>Preparación:</strong> bicicletas y lista musical</p>
+                        <button type="button" class="boton-asistentes" onclick="mostrarAsistentes(0)">Ver
+                            asistentes</button>
+                    </li>
+                    <li class="clase-asignada clase-funcional">
+                        <h3>Entrenamiento funcional</h3>
+                        <p class="horario-clase">Miércoles · 7:00 a. m.</p>
+                        <p><strong>Aforo:</strong> 12 personas</p>
+                        <p><strong>Reservas:</strong> 5</p>
+                        <p><strong>Enfoque:</strong> fuerza y coordinación</p>
+                        <p><strong>Preparación:</strong> bandas, conos y colchonetas</p>
+                        <button type="button" class="boton-asistentes" onclick="mostrarAsistentes(1)">Ver
+                            asistentes</button>
+                    </li>
+                    <li class="clase-asignada clase-movilidad">
+                        <h3>Movilidad y estiramiento</h3>
+                        <p class="horario-clase">Viernes · 5:30 p. m.</p>
+                        <p><strong>Aforo:</strong> 10 personas</p>
+                        <p><strong>Reservas:</strong> 4</p>
+                        <p><strong>Enfoque:</strong> flexibilidad y recuperación</p>
+                        <p><strong>Preparación:</strong> colchonetas y bloques</p>
+                        <button type="button" class="boton-asistentes" onclick="mostrarAsistentes(2)">Ver
+                            asistentes</button>
+                    </li>
+                </ul>
+
+
         </aside>
     </main>
-        <!-- HU024: Tarjeta flotante con la ficha del alumno (oculta por defecto) -->
+    <!-- HU024: Tarjeta flotante con la ficha del alumno (oculta por defecto) -->
     <aside id="ficha-alumno" class="ficha-alumno" aria-labelledby="ficha-nombre">
         <article class="ficha-contenido">
             <h2 id="ficha-nombre"></h2>
@@ -157,7 +173,7 @@
             <a href="#inicio">Volver al inicio</a>
         </section>
     </footer>
-        <script>
+    <script>
         // HU024: Datos quemados de cada alumno (simulación, sin backend)
         // Cada fila es: [nombre, plan, vence, rutina, objetivo]
         var alumnos = [
@@ -181,6 +197,30 @@
         // Oculta la tarjeta otra vez
         function cerrarFicha() {
             document.getElementById("ficha-alumno").style.display = "none";
+        }
+        // HU027: Nombres de quienes reservaron cada clase (datos quemados)
+        // Hay un nombre por cada reserva: 6, 5 y 4
+        var asistentes = [
+            ["Valentina Restrepo", "Juan David Gómez", "Camila Arango", "Mateo Castaño", "Sara Jiménez", "Daniela Ruiz"],
+            ["Andrés Salazar", "Laura Mejía", "Felipe Duque", "Mariana Gómez", "Santiago Ocampo"],
+            ["Paula Zapata", "Sebastián Vélez", "Natalia Cardona", "Camilo Ríos"]
+        ];
+
+        var nombresClases = ["Ciclismo indoor", "Entrenamiento funcional", "Movilidad y estiramiento"];
+
+        // Cantidad de reservas de cada clase (igual al número que se ve en la tarjeta)
+        var reservas = [6, 5, 4];
+
+        // Muestra los nombres de la clase elegida
+        function mostrarAsistentes(numero) {
+            var texto = "";
+
+            for (var i = 0; i < reservas[numero]; i++) {
+                texto = texto + (i + 1) + ". " + asistentes[numero][i] + " | ";
+            }
+
+            document.getElementById("asistentes-titulo").textContent = nombresClases[numero];
+            document.getElementById("asistentes-lista").textContent = texto;
         }
     </script>
 </body>
