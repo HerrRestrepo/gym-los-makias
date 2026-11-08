@@ -618,6 +618,24 @@ body {
     background-color: #001F23;
     color: #2DE0A5;
 }
+.boton-cancelar-reserva {
+    margin-top: 10px;
+    padding: 12px;
+    font-family: "roboto", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #001F23;
+    background-color: #ff6b4acc;
+    border: 2px solid #ff6b4acc;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.boton-cancelar-reserva:hover:not(:disabled) {
+    background-color: #001F23;
+    color: #2DE0A5;
+}
 
 .boton-deshabilitado {
     background-color: #4a6366;

@@ -43,7 +43,8 @@
     <section id="rutinas" class="rutinas-preview" aria-labelledby="titulo-rutina-hoy">
       <header class="encabezado-seccion">
         <h2 id="titulo-rutina-hoy">Tu rutina del día</h2>
-        <p class="subtitulo-seccion">Vista rápida del entrenamiento asignado para hoy. Consulta la programación completa para ver todos los días de la semana.</p>
+        <p class="subtitulo-seccion">Vista rápida del entrenamiento asignado para hoy. Consulta la programación completa
+          para ver todos los días de la semana.</p>
       </header>
 
       <article class="bloque-rutina">
@@ -102,7 +103,8 @@
           </tbody>
           <tfoot>
             <tr>
-              <td colspan="5">Recomendación del día: realizar 10 minutos de movilidad escapular y hombro antes de iniciar la primera serie efectiva.</td>
+              <td colspan="5">Recomendación del día: realizar 10 minutos de movilidad escapular y hombro antes de
+                iniciar la primera serie efectiva.</td>
             </tr>
           </tfoot>
         </table>
@@ -117,7 +119,8 @@
     <section id="clases" class="clases" aria-labelledby="titulo-clases-proximas">
       <header class="encabezado-seccion">
         <h2 id="titulo-clases-proximas">Próximas clases grupales</h2>
-        <p class="clases-subtitulo">Reserva rápido una de las sesiones destacadas o explora la cartelera completa de horarios.</p>
+        <p class="clases-subtitulo">Reserva rápido una de las sesiones destacadas o explora la cartelera completa de
+          horarios.</p>
       </header>
 
       <ul class="clases-lista clases-lista-preview" aria-label="Vista previa de próximas clases grupales">
@@ -149,6 +152,35 @@
       <p class="acciones-seccion">
         <a href="clases.html" class="boton-ver-mas">Ver y agendar todas las clases</a>
       </p>
+    </section>
+    <section id="clases" class="clases" aria-labelledby="titulo-clases-proximas">
+      <header class="encabezado-seccion">
+        <h2 id="titulo-clases-proximas">Clases reservadas</h2>
+      </header>
+
+      <ul class="clases-lista clases-lista-preview" aria-label="Vista previa de próximas clases grupales">
+
+        <li class="item-clase">
+          <article class="tarjeta-clase">
+            <h3>Zumba</h3>
+            <p>Lunes y miércoles</p>
+            <p>6:00 a.m. - 7:00 a.m.</p>
+            <p>Instructor: Carlos Ramírez</p>
+            <button onclick="mostrarAlerta()" class="boton-cancelar-reserva" type="button">Cancelar Reserva</button>
+          </article>
+        </li>
+
+        <li class="item-clase">
+          <article class="tarjeta-clase">
+            <h3>Spinning</h3>
+            <p>Lunes a viernes</p>
+            <p>5:30 p.m. - 6:30 p.m.</p>
+            <p>Instructor: Andrés Londoño</p>
+            <button onclick="mostrarAlerta()" class="boton-cancelar-reserva" type="button">Cancelar Reserva</button>
+          </article>
+        </li>
+
+      </ul>
     </section>
 
   </main>
@@ -206,6 +238,9 @@
     document.getElementById("perfil-plan").textContent = plan;
     document.getElementById("perfil-vence").textContent = vence;
     document.getElementById("perfil-estado").textContent = estado;
+    function mostrarAlerta() {
+      alert('Su reserva a sido cancelada...');
+    }
   </script>
 
 </body>
