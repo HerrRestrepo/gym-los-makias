@@ -1,0 +1,368 @@
+.pagina-entrenador {
+    position: relative;
+    isolation: isolate;
+    background-color: #001F23;
+}
+
+.pagina-entrenador::before {
+    position: fixed;
+    z-index: -1;
+    inset: 0;
+    background-image: url("../images/fondo_lateral.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.contenedor-entrenador {
+    display: grid;
+    grid-template-columns: minmax(0, 1.8fr) minmax(250px, 0.9fr);
+    align-items: start;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1040px;
+    box-sizing: border-box;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+}
+
+.seccion-clientes {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.encabezado-entrenador {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.encabezado-entrenador h1 {
+    color: #ffffff;
+    font-family: "Syne", "Roboto", sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.encabezado-entrenador p {
+    color: #b0c4c4;
+    line-height: 1.5;
+}
+
+.resumen-clientes {
+    width: fit-content;
+    padding: 0.75rem 1rem;
+    border: 1px solid #2DE0A5;
+    border-radius: 8px;
+    background-color: #00363C;
+    color: #e0ecec;
+}
+
+.resumen-clientes strong {
+    margin-left: 0.35rem;
+    color: #2DE0A5;
+    font-size: 1.2rem;
+}
+
+.contenedor-tabla-usuarios{
+    display: grid;
+    align-items: start;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: auto;
+    box-sizing: border-box;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+    overflow: auto;
+}
+
+.tabla-clientes-scroll {
+    border: 2px solid #2DE0A5;
+    border-radius: 12px;
+    background-color: #00363C;
+    overflow: auto;
+}
+
+.tabla-clientes {
+    width: 100%;
+    border-collapse: collapse;
+    color: #ffffff;
+    text-align: left;
+}
+
+.tabla-clientes caption {
+    padding: 1rem 1.25rem;
+    border-bottom: 2px solid #2DE0A5;
+    background-color: #004d55;
+    font-family: "Syne", "Roboto", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-align: left;
+}
+
+.tabla-clientes thead th {
+    padding: 0.9rem 1.25rem;
+    border-bottom: 1px solid #2DE0A5;
+    background-color: #001F23;
+    color: #2DE0A5;
+    font-size: 0.85rem;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+}
+
+.tabla-clientes tbody tr {
+    border-bottom: 1px solid rgba(176, 196, 196, 0.2);
+    transition: background-color 0.2s ease;
+}
+
+.tabla-clientes tbody tr:last-child {
+    border-bottom: 0;
+}
+
+.tabla-clientes tbody tr:hover {
+    background-color: #004d55;
+}
+
+.tabla-clientes tbody th,
+.tabla-clientes tbody td {
+    padding: 0.95rem 1.25rem;
+    vertical-align: middle;
+}
+
+.tabla-clientes tbody th {
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.tabla-clientes tbody td:last-child {
+    color: #b0c4c4;
+}
+
+.tabla-clientes tbody td:nth-child(5) {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.pagina-entrenador .footer-home {
+    padding: 1rem max(1rem, calc((100% - 1200px) / 2));
+}
+
+.pagina-entrenador .footer-contenido {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    padding-bottom: 0.75rem;
+}
+
+.pagina-entrenador .footer-marca,
+.pagina-entrenador .footer-contacto {
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+}
+
+.pagina-entrenador .footer-final {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem 1rem;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding-top: 0.75rem;
+    text-align: center;
+}
+
+.panel-clases {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid #2DE0A5;
+    border-radius: 12px;
+    background-color: #001F23;
+}
+
+@media (min-width: 701px) {
+    .pagina-entrenador .footer-contenido {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pagina-entrenador .footer-final {
+        justify-content: space-between;
+    }
+}
+
+.encabezado-clases {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.encabezado-clases h2 {
+    color: #ffffff;
+    font-family: "Syne", "Roboto", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 800;
+}
+
+.encabezado-clases p {
+    color: #b0c4c4;
+    font-size: 0.9rem;
+    line-height: 1.45;
+}
+
+.lista-clases-entrenador {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.clase-asignada {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 0.9rem;
+    border-left: 4px solid;
+    border-radius: 8px;
+    color: #ffffff;
+    transition: transform 0.2s ease;
+}
+
+.clase-asignada:hover {
+    transform: translateX(3px);
+}
+
+.clase-asignada h3 {
+    margin-bottom: 0.15rem;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.clase-asignada p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.clase-asignada strong {
+    color: #ffffff;
+}
+
+.horario-clase {
+    margin-bottom: 0.25rem;
+    font-weight: 700;
+}
+
+.clase-ciclismo {
+    border-color: #2DE0A5;
+    background-color: #004d55;
+}
+
+.clase-funcional {
+    border-color: #e8a23a;
+    background-color: #49391f;
+}
+
+.clase-movilidad {
+    border-color: #70b7d1;
+    background-color: #1c3e4a;
+}
+
+@media (max-width: 768px) {
+    .contenedor-entrenador {
+        grid-template-columns: minmax(0, 1fr);
+        margin: 1.5rem auto 2.5rem;
+        padding: 0 1rem;
+    }
+
+    .encabezado-entrenador h1 {
+        font-size: 1.75rem;
+    }
+
+    .tabla-clientes-scroll {
+        overflow: auto;
+        border: 0;
+        border-radius: 0;
+        background-color: transparent;
+    }
+
+    .tabla-clientes {
+        display: block;
+        min-width: 0;
+    }
+
+    .tabla-clientes caption {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid #2DE0A5;
+        border-radius: 8px;
+        padding: 0.85rem 1rem;
+        font-size: 1rem;
+    }
+
+    .tabla-clientes thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        clip-path: inset(50%);
+    }
+
+    .tabla-clientes tbody {
+        display: grid;
+        gap: 1rem;
+    }
+
+    .tabla-clientes tbody tr {
+        display: flex;
+        min-width: 0;
+        flex-direction: column;
+        overflow: hidden;
+        border: 1px solid #2DE0A5;
+        border-radius: 10px;
+        background-color: #00363C;
+    }
+
+    .tabla-clientes tbody tr:hover {
+        background-color: #00363C;
+    }
+
+    .tabla-clientes tbody th {
+        padding: 0.9rem 1rem;
+        background-color: #004d55;
+        font-size: 1.05rem;
+        white-space: normal;
+    }
+
+    .tabla-clientes tbody td {
+        display: grid;
+        min-width: 0;
+        grid-template-columns: minmax(7rem, 0.8fr) minmax(0, 1.2fr);
+        gap: 0.75rem;
+        padding: 0.7rem 1rem;
+        border-top: 1px solid rgba(176, 196, 196, 0.2);
+        overflow-wrap: anywhere;
+    }
+
+    .tabla-clientes tbody td::before {
+        color: #2DE0A5;
+        content: attr(data-label);
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+    }
+
+    .tabla-clientes tbody td:last-child {
+        color: #ffffff;
+    }
+}

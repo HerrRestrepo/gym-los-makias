@@ -14,6 +14,7 @@
             <ul class="barra justify-start px-4 md:px-8">
                 <li><a href="../index.html"><img src="../images/logo.png" alt="Gym Los Makias, inicio"></a></li>
                 <li><a href="admin.html" class="enlace-activo" aria-current="page">Dashboard</a></li>
+                <li><a href="usuarios.html" class="enlace-activo" aria-current="page">Usuarios Registrados</a></li>
             </ul>
         </nav>
     </header>
@@ -22,7 +23,20 @@
             <h1 id="titulo-dashboard">Dashboard</h1>
             <p>Resumen semanal de reservas y asistencia a clases grupales.</p>
         </section>
-
+         <section class="resumen-semanal grid grid-cols-1 gap-4 md:grid-cols-3" aria-label="Resumen semanal">
+            <article class="indicador-semanal">
+                <h2>Planes activos</h2>
+                <p><strong>150</strong><span>Planes Activos</span></p>
+            </article>
+            <article class="indicador-semanal">
+                <h2>Planes a vencer</h2>
+                <p><strong>25</strong><span>Planes a vencer mes de noviembre</span></p>
+            </article>
+            <article class="indicador-semanal">
+                <h2>Planes vencidos</h2>
+                <p><strong>30</strong><span>Planes vencidos sin renevonar este mes</span></p>
+            </article>
+        </section>
         <section class="resumen-semanal grid grid-cols-1 gap-4 md:grid-cols-3" aria-label="Resumen semanal">
             <article class="indicador-semanal">
                 <h2>Reservas de la semana</h2>

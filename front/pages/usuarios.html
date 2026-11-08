@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/usuarios.css">
+</head>
+
+<body id="inicio" class="pagina-admin flex min-h-screen flex-col">
+    <header class="header-home w-full">
+        <nav aria-label="Navegación del administrador">
+            <ul class="barra justify-start px-4 md:px-8">
+                <li><a href="../index.html"><img src="../images/logo.png" alt="Gym Los Makias, inicio"></a></li>
+                <li><a href="admin.html" class="enlace-activo" aria-current="page">Dashboard</a></li>
+                <li><a href="usuarios.html" class="enlace-activo" aria-current="page">Usuarios Registrados</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="contenedor-tabla-usuarios">
+        <section class="seccion-clientes" aria-labelledby="titulo-clientes">
+            <header class="encabezado-entrenador">
+                <h1 id="titulo-clientes">Usuarios Registrados</h1>
+                <p>Consulta de los usurios registrados.</p>
+            </header>
+            <p class="resumen-clientes">
+                Cantidad de usuarios registrados actualmente:
+                <strong>60</strong>
+            </p>
+            <figure class="tabla-clientes-scroll">
+                <table class="tabla-clientes">
+                    <caption>Usuarios registrados</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Edad</th>
+                            <th scope="col">Género</th>
+                            <th scope="col">Correo electrónico</th>
+                            <th scope="col">Objetivo</th>
+                            <th scope="col">Plan</th>
+                            <th scope="col">Fecha de registro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Valentina Restrepo</th>
+                            <td data-label="Edad">24</td>
+                            <td data-label="Género">Mujer</td>
+                            <td data-label="Correo electrónico">valentina.restrepo@ejemplo.com</td>
+                            <td data-label="Objetivo">Hipertrofia</td>
+                            <td data-label="Plan">Plan Básico (Bronce)</td>
+                            <td data-label="Fecha de registro">10/10/2026</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Juan David Gómez</th>
+                            <td data-label="Edad">31</td>
+                            <td data-label="Género">Hombre</td>
+                            <td data-label="Correo electrónico">juan.gomez@ejemplo.com</td>
+                            <td data-label="Objetivo">Pérdida de peso</td>
+                            <td data-label="Plan">Plan Makia (Plata)</td>
+                            <td data-label="Fecha de registro">05/10/2026</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Camila Arango</th>
+                            <td data-label="Edad">27</td>
+                            <td data-label="Género">Mujer</td>
+                            <td data-label="Correo electrónico">camila.arango@ejemplo.com</td>
+                            <td data-label="Objetivo">Acondicionamiento físico</td>
+                            <td data-label="Plan">Plan Makia (Plata)</td>
+                            <td data-label="Fecha de registro">05/10/2026</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Mateo Castaño</th>
+                            <td data-label="Edad">22</td>
+                            <td data-label="Género">Hombre</td>
+                            <td data-label="Correo electrónico">mateo.castano@ejemplo.com</td>
+                            <td data-label="Objetivo">Hipertrofia</td>
+                            <td data-label="Plan">Plan Élite (Oro)</td>
+                            <td data-label="Fecha de registro">07/11/2026</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Sara Jiménez</th>
+                            <td data-label="Edad">35</td>
+                            <td data-label="Género">Mujer</td>
+                            <td data-label="Correo electrónico">sara.jimenez@ejemplo.com</td>
+                            <td data-label="Objetivo">Pérdida de peso</td>
+                            <td data-label="Plan">Plan Anual Makia VIP</td>
+                            <td data-label="Fecha de registro">12/11/2026</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Carlos Gómez</th>
+                            <td data-label="Edad">28</td>
+                            <td data-label="Género">Hombre</td>
+                            <td data-label="Correo electrónico">carlos.gomez@ejemplo.com</td>
+                            <td data-label="Objetivo">Aumento de masa muscular</td>
+                            <td data-label="Plan">Plan Élite (Oro)</td>
+                            <td data-label="Fecha de registro">01/11/2026</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Laura Martínez</th>
+                            <td data-label="Edad">24</td>
+                            <td data-label="Género">Mujer</td>
+                            <td data-label="Correo electrónico">laura.martinez@ejemplo.com</td>
+                            <td data-label="Objetivo">Tonificación</td>
+                            <td data-label="Plan">Plan Makia (Plata)</td>
+                            <td data-label="Fecha de registro">03/11/2026</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Andrés Felipe Ríos</th>
+                            <td data-label="Edad">42</td>
+                            <td data-label="Género">Hombre</td>
+                            <td data-label="Correo electrónico">andres.rios@ejemplo.com</td>
+                            <td data-label="Objetivo">Resistencia</td>
+                            <td data-label="Plan">Plan Makia (Plata)</td>
+                            <td data-label="Fecha de registro">05/11/2026</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Valentina López</th>
+                            <td data-label="Edad">31</td>
+                            <td data-label="Género">Mujer</td>
+                            <td data-label="Correo electrónico">valentina.lopez@ejemplo.com</td>
+                            <td data-label="Objetivo">Pérdida de peso</td>
+                            <td data-label="Plan">Plan Anual Makia VIP</td>
+                            <td data-label="Fecha de registro">07/11/2026</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Mateo Castañeda</th>
+                            <td data-label="Edad">22</td>
+                            <td data-label="Género">Hombre</td>
+                            <td data-label="Correo electrónico">mateo.castaneda@ejemplo.com</td>
+                            <td data-label="Objetivo">Aumento de masa muscular</td>
+                            <td data-label="Plan">Plan Élite (Oro)</td>
+                            <td data-label="Fecha de registro">08/11/2026</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Diana Ramírez</th>
+                            <td data-label="Edad">37</td>
+                            <td data-label="Género">Mujer</td>
+                            <td data-label="Correo electrónico">diana.ramirez@ejemplo.com</td>
+                            <td data-label="Objetivo">Mantenimiento</td>
+                            <td data-label="Plan">Plan Makia (Plata)</td>
+                            <td data-label="Fecha de registro">09/11/2026</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Sebastián Orozco</th>
+                            <td data-label="Edad">29</td>
+                            <td data-label="Género">Hombre</td>
+                            <td data-label="Correo electrónico">sebastian.orozco@ejemplo.com</td>
+                            <td data-label="Objetivo">Tonificación</td>
+                            <td data-label="Plan">Plan Anual Makia VIP</td>
+                            <td data-label="Fecha de registro">10/11/2026</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Camila Torres</th>
+                            <td data-label="Edad">26</td>
+                            <td data-label="Género">Mujer</td>
+                            <td data-label="Correo electrónico">camila.torres@ejemplo.com</td>
+                            <td data-label="Objetivo">Pérdida de peso</td>
+                            <td data-label="Plan">Plan Básico (Bronce)</td>
+                            <td data-label="Fecha de registro">11/11/2026</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Jorge Ruiz</th>
+                            <td data-label="Edad">45</td>
+                            <td data-label="Género">Hombre</td>
+                            <td data-label="Correo electrónico">jorge.ruiz@ejemplo.com</td>
+                            <td data-label="Objetivo">Resistencia</td>
+                            <td data-label="Plan">Plan Anual Makia VIP</td>
+                            <td data-label="Fecha de registro">12/11/2026</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Natalia Herrera</th>
+                            <td data-label="Edad">33</td>
+                            <td data-label="Género">Mujer</td>
+                            <td data-label="Correo electrónico">natalia.herrera@ejemplo.com</td>
+                            <td data-label="Objetivo">Aumento de masa muscular</td>
+                            <td data-label="Plan">Plan Makia (Plata)</td>   
+                            <td data-label="Fecha de registro">14/11/2026</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </figure>
+        </section>
+
+    </main>
+    <footer class="footer-home mt-auto">
+        <section class="footer-contenido mx-auto grid w-full max-w-6xl grid-cols-1 gap-4 pb-3 md:grid-cols-2"
+            aria-label="Información del gimnasio">
+            <section class="footer-marca flex flex-col items-center gap-2 text-center">
+                <a class="footer-logo" href="../index.html">Gym Los Makias</a>
+                <p>Fuerza, disciplina y berraquera para alcanzar tus metas.</p>
+            </section>
+            <section class="footer-contacto flex flex-col items-center gap-2 text-center">
+                <h2>Visítanos</h2>
+                <address>
+                    Calle 52 # 48-35, Sector El Prado<br>
+                    Bello, Antioquia
+                </address>
+                <a href="tel:+573001234567">+57 300 123 4567</a>
+                <a href="https://wa.me/573001234567" target="_blank" rel="noopener noreferrer">Escríbenos por
+                    WhatsApp</a>
+            </section>
+        </section>
+        <section
+            class="footer-final mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-2 pt-3 text-center text-sm md:flex-row">
+            <p>&copy; 2026 Gym Los Makias. Todos los derechos reservados.</p>
+            <a href="#inicio">Volver al inicio</a>
+        </section>
+    </footer>
+
+
+</body>
+
+</html>
