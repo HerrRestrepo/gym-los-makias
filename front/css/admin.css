@@ -683,3 +683,22 @@
     color: #e8a23a;
     font-weight: 700;
 }
+
+/* HU035: Botón Dar de baja */
+.boton-baja {
+    padding: 0.4rem 0.9rem;
+    border: 1px solid #e05a5a;
+    border-radius: 6px;
+    background-color: transparent;
+    color: #e05a5a;
+    font-size: 0.85rem;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.boton-baja:hover {
+    background-color: #e05a5a;
+    color: #ffffff;
+}
