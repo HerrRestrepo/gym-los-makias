@@ -25,8 +25,12 @@ public class App {
         String planSeleccionado = "";
         int valorPlanSeleccionado = 0;
         boolean planConfirmado = false;
+        int opcionEntrenador = 0;
+        int alumnoElegido = 0;
+        int claseElegida = 0;
+        int opcionAdmin = 0;
 
-        while (opcionMenu != 7) {
+        while (opcionMenu != 9) {
             System.out.println("\n--- GYM LOS MAKIAS ---");
             System.out.println("1. Inicio e informacion de la marca");
             System.out.println("2. Carrusel de areas de entrenamiento");
@@ -34,7 +38,9 @@ public class App {
             System.out.println("4. Planes de suscripcion");
             System.out.println("5. Formulario de contacto y dudas");
             System.out.println("6. Registrarse y seleccionar plan (!PONTE VIGA!)");
-            System.out.println("7. Salir");
+            System.out.println("7. Modulo entrenador");
+            System.out.println("8. Modulo administracion");
+            System.out.println("9. Salir");
             System.out.println("---");
             System.out.print("Seleccione una opcion: ");
             opcionMenu = sc.nextInt();
@@ -234,7 +240,137 @@ public class App {
                         System.out.println("Opcion no valida.");
                     }
                 }
-            } else if (opcionMenu == 7) {
+                } else if (opcionMenu == 7) {
+                opcionEntrenador = -1;
+                while (opcionEntrenador != 0) {
+                    System.out.println("\n=== MODULO ENTRENADOR ===");
+                    System.out.println("1. Fichas tecnicas de alumnos");
+                    System.out.println("2. Agenda personal");
+                    System.out.println("3. Clases grupales de la semana");
+                    System.out.println("4. Asistentes por clase");
+                    System.out.println("0. Volver al menu principal");
+                    System.out.println("---");
+                    System.out.print("Seleccione una opcion: ");
+                    opcionEntrenador = sc.nextInt();
+                    sc.nextLine();
+
+                    if (opcionEntrenador == 1) {
+                        alumnoElegido = -1;
+                        while (alumnoElegido != 0) {
+                            System.out.println("\n=== FICHAS TECNICAS DE ALUMNOS ===");
+                            System.out.println("1. Valentina Restrepo");
+                            System.out.println("2. Juan David Gomez");
+                            System.out.println("3. Camila Arango");
+                            System.out.println("4. Mateo Castano");
+                            System.out.println("5. Sara Jimenez");
+                            System.out.println("0. Volver");
+                            System.out.println("---");
+                            System.out.print("Elija un alumno para ver detalles: ");
+                            alumnoElegido = sc.nextInt();
+                            sc.nextLine();
+
+                            if (alumnoElegido == 1) {
+                                System.out.println("\nFICHA: Valentina Restrepo");
+                                System.out.println("Plan contratado: Plan Makia (Plata)");
+                                System.out.println("Vence: 30 de noviembre de 2026");
+                                System.out.println("Rutina asignada: Tren superior y core, 4 dias a la semana");
+                                System.out.println("Objetivo: Hipertrofia");
+                            } else if (alumnoElegido == 2) {
+                                System.out.println("\nFICHA: Juan David Gomez");
+                                System.out.println("Plan contratado: Plan Elite (Oro)");
+                                System.out.println("Vence: 15 de diciembre de 2026");
+                                System.out.println("Rutina asignada: Cardio y circuito funcional, 5 dias a la semana");
+                                System.out.println("Objetivo: Perdida de peso");
+                            } else if (alumnoElegido == 3) {
+                                System.out.println("\nFICHA: Camila Arango");
+                                System.out.println("Plan contratado: Plan Basico (Bronce)");
+                                System.out.println("Vence: 20 de noviembre de 2026");
+                                System.out.println("Rutina asignada: Full body y movilidad, 3 dias a la semana");
+                                System.out.println("Objetivo: Acondicionamiento fisico");
+                            } else if (alumnoElegido == 4) {
+                                System.out.println("\nFICHA: Mateo Castano");
+                                System.out.println("Plan contratado: Plan Anual Makia VIP");
+                                System.out.println("Vence: 10 de agosto de 2027");
+                                System.out.println("Rutina asignada: Empuje, traccion y pierna, 5 dias a la semana");
+                                System.out.println("Objetivo: Hipertrofia");
+                            } else if (alumnoElegido == 5) {
+                                System.out.println("\nFICHA: Sara Jimenez");
+                                System.out.println("Plan contratado: Plan Makia (Plata)");
+                                System.out.println("Vence: 5 de diciembre de 2026");
+                                System.out.println("Rutina asignada: Cardio, fuerza ligera y estiramiento, 4 dias a la semana");
+                                System.out.println("Objetivo: Perdida de peso");
+                            } else if (alumnoElegido != 0) {
+                                System.out.println("Opcion no valida.");
+                            }
+                        }
+                    } else if (opcionEntrenador == 2) {
+                        System.out.println("\n=== AGENDA PERSONAL DEL ENTRENADOR ===");
+                        System.out.println("LUNES");
+                        System.out.println("  [ 7:00 a. m. ] Valentina Restrepo - Fuerza (individual)");
+                        System.out.println("  [ 9:00 a. m. ] Libre");
+                        System.out.println("  [ 4:00 p. m. ] Camila Arango - Movilidad (individual)");
+                        System.out.println("MARTES");
+                        System.out.println("  [ 7:00 a. m. ] Libre");
+                        System.out.println("  [ 6:00 p. m. ] Juan David Gomez - Cardio (individual)");
+                        System.out.println("MIERCOLES");
+                        System.out.println("  [ 8:00 a. m. ] Mateo Castano - Hipertrofia (individual)");
+                        System.out.println("  [ 5:00 p. m. ] Libre");
+                        System.out.println("JUEVES");
+                        System.out.println("  [ 7:00 a. m. ] Sara Jimenez - Cardio y fuerza (individual)");
+                        System.out.println("  [ 6:00 p. m. ] Libre");
+                        System.out.println("VIERNES");
+                        System.out.println("  [ 9:00 a. m. ] Libre");
+                        System.out.println("  [ 5:30 p. m. ] Valentina Restrepo - Valoracion (individual)");
+                        System.out.println("--------------------");
+                    } else if (opcionEntrenador == 3) {
+                        System.out.println("\n=== CLASES GRUPALES QUE DEBO IMPARTIR ===");
+                        System.out.println("- [CICLISMO] Ciclismo indoor");
+                        System.out.println("    Lunes, 6:00 p. m. | Aforo: 18 personas");
+                        System.out.println("    Enfoque: resistencia cardiovascular");
+                        System.out.println("    Preparacion: bicicletas y lista musical");
+                        System.out.println("- [FUNCIONAL] Entrenamiento funcional");
+                        System.out.println("    Miercoles, 7:00 a. m. | Aforo: 12 personas");
+                        System.out.println("    Enfoque: fuerza y coordinacion");
+                        System.out.println("    Preparacion: bandas, conos y colchonetas");
+                        System.out.println("- [MOVILIDAD] Movilidad y estiramiento");
+                        System.out.println("    Viernes, 5:30 p. m. | Aforo: 10 personas");
+                        System.out.println("    Enfoque: flexibilidad y recuperacion");
+                        System.out.println("    Preparacion: colchonetas y bloques");
+                        System.out.println("--------------------");
+                    } else if (opcionEntrenador == 4) {
+                        claseElegida = -1;
+                        while (claseElegida != 0) {
+                            System.out.println("\n=== ASISTENTES POR CLASE ===");
+                            System.out.println("1. Ciclismo indoor (Lunes) - Reservas: 6");
+                            System.out.println("2. Entrenamiento funcional (Miercoles) - Reservas: 5");
+                            System.out.println("3. Movilidad y estiramiento (Viernes) - Reservas: 4");
+                            System.out.println("0. Volver");
+                            System.out.println("---");
+                            System.out.print("Elija una clase: ");
+                            claseElegida = sc.nextInt();
+                            sc.nextLine();
+
+                            if (claseElegida == 1) {
+                                System.out.println("\nAsistentes de Ciclismo indoor (6 reservas):");
+                                System.out.println("1. Valentina Restrepo | 2. Juan David Gomez | 3. Camila Arango | 4. Mateo Castano | 5. Sara Jimenez | 6. Daniela Ruiz");
+                            } else if (claseElegida == 2) {
+                                System.out.println("\nAsistentes de Entrenamiento funcional (5 reservas):");
+                                System.out.println("1. Andres Salazar | 2. Laura Mejia | 3. Felipe Duque | 4. Mariana Gomez | 5. Santiago Ocampo");
+                            } else if (claseElegida == 3) {
+                                System.out.println("\nAsistentes de Movilidad y estiramiento (4 reservas):");
+                                System.out.println("1. Paula Zapata | 2. Sebastian Velez | 3. Natalia Cardona | 4. Camilo Rios");
+                            } else if (claseElegida != 0) {
+                                System.out.println("Opcion no valida.");
+                            }
+                        }
+                    } else if (opcionEntrenador != 0) {
+                        System.out.println("Opcion no valida.");
+                    }
+                }
+            } else if (opcionMenu == 8) {
+                System.out.println("\n=== MODULO ADMINISTRACION ===");
+                System.out.println("(proximamente)");
+            } else if (opcionMenu == 9) {
                 System.out.println("\nGracias por visitar Gym Los Makias. Hasta pronto.");
             } else {
                 System.out.println("\nOpcion no valida. Intente nuevamente.");
