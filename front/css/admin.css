@@ -577,3 +577,109 @@
         grid-template-columns: minmax(0, 1fr);
     }
 }
+
+/* HU032: Búsqueda simulada de clientes */
+.seccion-clientes-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 3rem;
+}
+
+.encabezado-clientes-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.encabezado-clientes-admin h2 {
+    color: #ffffff;
+    font-family: "Syne", "Roboto", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+.encabezado-clientes-admin p {
+    color: #b0c4c4;
+    line-height: 1.5;
+}
+
+.campo-busqueda {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    max-width: 420px;
+}
+
+.campo-busqueda label {
+    color: #2DE0A5;
+    font-weight: 700;
+}
+
+.campo-busqueda input {
+    padding: 0.7rem 1rem;
+    border: 1px solid #2DE0A5;
+    border-radius: 6px;
+    background-color: #00363C;
+    color: #ffffff;
+    font: inherit;
+}
+
+.campo-busqueda input:focus-visible {
+    outline: 2px solid #2DE0A5;
+    outline-offset: 2px;
+}
+
+.tabla-admin-scroll {
+    overflow-x: auto;
+    border: 2px solid #2DE0A5;
+    border-radius: 12px;
+    background-color: #00363C;
+}
+
+.tabla-admin {
+    width: 100%;
+    border-collapse: collapse;
+    color: #ffffff;
+    text-align: left;
+}
+
+.tabla-admin caption {
+    padding: 1rem 1.25rem;
+    border-bottom: 2px solid #2DE0A5;
+    background-color: #004d55;
+    font-family: "Syne", "Roboto", sans-serif;
+    font-weight: 800;
+    text-align: left;
+}
+
+.tabla-admin thead th {
+    padding: 0.8rem 1.25rem;
+    border-bottom: 1px solid #2DE0A5;
+    background-color: #001F23;
+    color: #2DE0A5;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+.tabla-admin tbody th,
+.tabla-admin tbody td {
+    padding: 0.85rem 1.25rem;
+    border-bottom: 1px solid rgba(176, 196, 196, 0.2);
+}
+
+.tabla-admin tbody th {
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+
+.fila-oculta {
+    display: none;
+}
+
+.sin-resultados {
+    display: none;
+    color: #e8a23a;
+    font-weight: 700;
+}
