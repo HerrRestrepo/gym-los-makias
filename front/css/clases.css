@@ -245,3 +245,58 @@
         transition: none;
     }
 }
+
+/* HU021: Reserva de cupo */
+.cupos-restantes {
+    margin-bottom: 0.65rem;
+    color: #e0ecec;
+    font-size: 0.75rem;
+}
+
+.sesion-reservada {
+    border-color: #70b7d1;
+    background-color: #1c3e4a;
+    opacity: 0.85;
+}
+
+.sesion-reservada .estado {
+    color: #70b7d1;
+}
+
+.sesion-clase {
+    margin-top: 0.6rem;
+    border-radius: 8px;
+    border-left: 5px solid #2DE0A5;
+}
+
+.sesion-clase:has(.estado-limitado) {
+    border-left-color: #F2A93B;
+}
+
+.sesion-llena {
+    border-left-color: #D75A5A;
+}
+
+.cupos-restantes {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    background-color: #001F23;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.sesion-reservada {
+    border-left-color: #70b7d1;
+}
+
+.sesion-reservada .estado::before {
+    content: "✓ ";
+}
+
+.sesion-reservada .boton-reserva:disabled {
+    border-color: #70b7d1;
+    background-color: #70b7d1;
+    color: #001F23;
+    cursor: default;
+}

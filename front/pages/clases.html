@@ -44,14 +44,14 @@
               <h3>Zumba</h3>
               <p class="instructor">Carlos Ramírez</p>
               <p class="estado estado-disponible">Cupos disponibles</p>
-              <button class="boton-reserva" type="button">Reservar</button>
+              <button class="boton-reserva" type="button" onclick="reservar(0)">Reservar</button>
             </article>
             <article class="sesion-clase">
               <p class="hora-clase">5:30 p. m. - 6:30 p. m.</p>
               <h3>Spinning</h3>
               <p class="instructor">Andrés Londoño</p>
               <p class="estado estado-limitado">Últimos cupos</p>
-              <button class="boton-reserva" type="button">Reservar</button>
+              <button class="boton-reserva" type="button" onclick="reservar(1)">Reservar</button>
             </article>
           </li>
 
@@ -62,14 +62,14 @@
               <h3>Yoga</h3>
               <p class="instructor">Laura Torres</p>
               <p class="estado estado-disponible">Cupos disponibles</p>
-              <button class="boton-reserva" type="button">Reservar</button>
+              <button class="boton-reserva" type="button" onclick="reservar(2)">Reservar</button>
             </article>
             <article class="sesion-clase">
               <p class="hora-clase">5:30 p. m. - 6:30 p. m.</p>
               <h3>Spinning</h3>
               <p class="instructor">Andrés Londoño</p>
               <p class="estado estado-limitado">Últimos cupos</p>
-              <button class="boton-reserva" type="button">Reservar</button>
+              <button class="boton-reserva" type="button" onclick="reservar(3)">Reservar</button>
             </article>
           </li>
 
@@ -80,21 +80,21 @@
               <h3>Zumba</h3>
               <p class="instructor">Carlos Ramírez</p>
               <p class="estado estado-disponible">Cupos disponibles</p>
-              <button class="boton-reserva" type="button">Reservar</button>
+              <button class="boton-reserva" type="button" onclick="reservar(4)">Reservar</button>
             </article>
             <article class="sesion-clase">
               <p class="hora-clase">5:30 p. m. - 6:30 p. m.</p>
               <h3>Spinning</h3>
               <p class="instructor">Andrés Londoño</p>
               <p class="estado estado-limitado">Últimos cupos</p>
-              <button class="boton-reserva" type="button">Reservar</button>
+              <button class="boton-reserva" type="button" onclick="reservar(5)">Reservar</button>
             </article>
             <article class="sesion-clase">
               <p class="hora-clase">6:30 p. m. - 7:30 p. m.</p>
               <h3>Crossfit</h3>
               <p class="instructor">Julián Cardona</p>
               <p class="estado estado-disponible">Cupos disponibles</p>
-              <button class="boton-reserva" type="button">Reservar</button>
+              <button class="boton-reserva" type="button" onclick="reservar(6)">Reservar</button>
             </article>
           </li>
 
@@ -105,14 +105,14 @@
               <h3>Yoga</h3>
               <p class="instructor">Laura Torres</p>
               <p class="estado estado-disponible">Cupos disponibles</p>
-              <button class="boton-reserva" type="button">Reservar</button>
+              <button class="boton-reserva" type="button" onclick="reservar(7)">Reservar</button>
             </article>
             <article class="sesion-clase">
               <p class="hora-clase">5:30 p. m. - 6:30 p. m.</p>
               <h3>Spinning</h3>
               <p class="instructor">Andrés Londoño</p>
               <p class="estado estado-limitado">Últimos cupos</p>
-              <button class="boton-reserva" type="button">Reservar</button>
+              <button class="boton-reserva" type="button" onclick="reservar(8)">Reservar</button>
             </article>
           </li>
 
@@ -123,21 +123,21 @@
               <h3>Spinning</h3>
               <p class="instructor">Andrés Londoño</p>
               <p class="estado estado-limitado">Últimos cupos</p>
-              <button class="boton-reserva" type="button">Reservar</button>
+              <button class="boton-reserva" type="button" onclick="reservar(9)">Reservar</button>
             </article>
             <article class="sesion-clase">
               <p class="hora-clase">6:30 p. m. - 7:30 p. m.</p>
               <h3>Crossfit</h3>
               <p class="instructor">Julián Cardona</p>
               <p class="estado estado-disponible">Cupos disponibles</p>
-              <button class="boton-reserva" type="button">Reservar</button>
+              <button class="boton-reserva" type="button" onclick="reservar(10)">Reservar</button>
             </article>
             <article class="sesion-clase">
               <p class="hora-clase">8:00 p. m. - 9:00 p. m.</p>
               <h3>Baile</h3>
               <p class="instructor">Daniel Osorio</p>
               <p class="estado estado-disponible">Cupos disponibles</p>
-              <button class="boton-reserva" type="button">Reservar</button>
+              <button class="boton-reserva" type="button" onclick="reservar(11)">Reservar</button>
             </article>
           </li>
 
@@ -148,7 +148,7 @@
               <h3>Pilates</h3>
               <p class="instructor">Sofía Vélez</p>
               <p class="estado estado-lleno">Sin cupos</p>
-              <button class="boton-reserva" type="button" disabled>Reservar</button>
+              <button class="boton-reserva" type="button" disabled onclick="reservar(12)">Reservar</button>
             </article>
           </li>
         </ul>
@@ -189,6 +189,36 @@
     </section>
     
   </footer>
+  <script>
+    // HU021: cupos de cada sesión, en el orden de la página (13 sesiones)
+    var aforos = [20, 3, 15, 4, 18, 2, 12, 15, 5, 3, 14, 10, 0];
+
+    var botones = document.getElementsByClassName("boton-reserva");
+    var sesiones = document.getElementsByClassName("sesion-clase");
+    var estados = document.getElementsByClassName("estado");
+
+    // Al cargar, agrega a cada sesión una línea con sus cupos
+    for (var i = 0; i < sesiones.length; i++) {
+      var linea = document.createElement("p");
+      linea.className = "cupos-restantes";
+      linea.textContent = "Cupos restantes: " + aforos[i];
+      sesiones[i].insertBefore(linea, botones[i]);
+    }
+
+    // Se ejecuta al hacer clic en Reservar
+    function reservar(numero) {
+      if (aforos[numero] > 0) {
+        aforos[numero] = aforos[numero] - 1;
+
+        sesiones[numero].getElementsByClassName("cupos-restantes")[0].textContent =
+          "Cupos restantes: " + aforos[numero];
+        estados[numero].textContent = "Reservado";
+        sesiones[numero].classList.add("sesion-reservada");
+        botones[numero].textContent = "Reservado";
+        botones[numero].disabled = true;
+      }
+    }
+  </script>
 </body>
 
 </html>
