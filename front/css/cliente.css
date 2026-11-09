@@ -42,13 +42,57 @@
 }
 
 @media (max-width: 768px) {
-    .perfil {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1.5rem;
+  .item-historial {
+    flex-direction: column;
+    align-items: flex-start;
     }
 
     .clases-lista-preview {
         grid-template-columns: 1fr;
     }
+}
+
+/* HU018: Historial de sesiones completadas */
+.historial {
+  margin-top: 40px;
+}
+
+.lista-historial {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item-historial {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border: 1px solid #6b7777;
+  border-left: 6px solid #6b7777;
+  border-radius: 10px;
+  background-color: #2b3a3a;
+  color: #b4bdbd;
+  opacity: 0.7;
+  transition: opacity 0.2s
+}
+
+.item-historial:hover {
+  opacity: 0.9;
+}
+
+.estado-completado {
+  background-color: #6b7777;
+  color: #e3e8e8;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+section.historial header.encabezado-seccion {
+  margin-bottom: 24px;
 }
