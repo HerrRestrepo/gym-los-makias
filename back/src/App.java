@@ -1,8 +1,10 @@
+import java.security.SecureRandom;
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        SecureRandom generadorAleatorio = new SecureRandom();
 
         int opcionMenu = 0;
         int areaActual = 1;
@@ -25,6 +27,8 @@ public class App {
         int opcionPago = 0;
         String planSeleccionado = "";
         String metodoPagoSeleccionado = "";
+        String numeroMedioPago = "";
+        String nombreBanco = "";
         int valorPlanSeleccionado = 0;
         boolean planConfirmado = false;
         int opcionEntrenador = 0;
@@ -165,6 +169,8 @@ public class App {
             } else if (opcionMenu == 6) {
                 registroValido = false;
                 metodoPagoSeleccionado = "";
+                numeroMedioPago = "";
+                nombreBanco = "";
                 while (!registroValido) {
                     System.out.println("\n=== FORMULARIO DE REGISTRO DE NUEVO USUARIO ===");
                     System.out.print("Ingrese su nombre completo: ");
@@ -265,15 +271,49 @@ public class App {
                                 }
                             }
 
+                            if (opcionPago == 1 || opcionPago == 2) {
+                                boolean numeroMedioPagoValido = false;
+                                while (!numeroMedioPagoValido) {
+                                    System.out.print("Ingrese el numero de tarjeta o cuenta: ");
+                                    numeroMedioPago = sc.nextLine().trim();
+                                    if (!numeroMedioPago.matches("\\d{4,}")) {
+                                        System.out.println("ALERTA: Ingrese un numero valido de al menos 4 digitos.");
+                                    } else {
+                                        numeroMedioPagoValido = true;
+                                    }
+                                }
+
+                                while (nombreBanco.trim().equals("")) {
+                                    System.out.print("Ingrese el nombre del banco: ");
+                                    nombreBanco = sc.nextLine();
+                                    if (nombreBanco.trim().equals("")) {
+                                        System.out.println("ALERTA: El nombre del banco es obligatorio.");
+                                    }
+                                }
+                            }
+
+                            String caracteresRecibo = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+                            String numeroRecibo = "";
+                            for (int i = 0; i < 4; i++) {
+                                numeroRecibo += caracteresRecibo.charAt(
+                                    generadorAleatorio.nextInt(caracteresRecibo.length()));
+                            }
+
                             planConfirmado = true;
                             System.out.println("---");
                             System.out.println("RESUMEN DE ALTA Y SELECCION:");
+                            System.out.println("Numero de recibo: " + numeroRecibo);
                             System.out.println("Cliente: " + usuarioNombre + " (Doc: " + usuarioDocumento + ")");
                             System.out.println("Correo: " + usuarioCorreo + " | Telefono: " + usuarioTelefono);
                             System.out.println("Plan seleccionado: " + planSeleccionado);
                             System.out.println("Metodo de pago: " + metodoPagoSeleccionado);
+                            if (!numeroMedioPago.equals("")) {
+                                System.out.println("Numero registrado: ****" + numeroMedioPago.substring(numeroMedioPago.length() - 4));
+                                System.out.println("Banco: " + nombreBanco.trim());
+                            }
                             System.out.println("Valor a cobrar en el proceso de pago: $" + valorPlanSeleccionado);
                             System.out.println("--------------------");
+                            numeroMedioPago = "";
                         }
                     } else {
                         System.out.println("Opcion no valida.");
