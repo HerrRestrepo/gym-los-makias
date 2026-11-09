@@ -30,6 +30,21 @@ public class App {
         int claseElegida = 0;
         int opcionAdmin = 0;
 
+                int usuariosActivos = 126;
+        String busqueda = "";
+        int filaElegida = 0;
+        int numeroPlan = 0;
+        String confirmar = "";
+        boolean hayResultados = false;
+        String[][] clientes = {
+            {"Mariana Gomez", "mariana.gomez@correo.com", "Plan Makia (Plata)", "Activo"},
+            {"Valentina Restrepo", "valentina.restrepo@ejemplo.com", "Plan Elite (Oro)", "Activo"},
+            {"Juan David Gomez", "juan.gomez@ejemplo.com", "Plan Basico (Bronce)", "Vencido"},
+            {"Camila Arango", "camila.arango@ejemplo.com", "Plan Makia (Plata)", "Activo"},
+            {"Mateo Castano", "mateo.castano@ejemplo.com", "Plan Anual Makia VIP", "Activo"},
+            {"Sara Jimenez", "sara.jimenez@ejemplo.com", "Plan Basico (Bronce)", "Vencido"}
+        };
+
         while (opcionMenu != 9) {
             System.out.println("\n--- GYM LOS MAKIAS ---");
             System.out.println("1. Inicio e informacion de la marca");
@@ -367,9 +382,188 @@ public class App {
                         System.out.println("Opcion no valida.");
                     }
                 }
-            } else if (opcionMenu == 8) {
-                System.out.println("\n=== MODULO ADMINISTRACION ===");
-                System.out.println("(proximamente)");
+                    } else if (opcionMenu == 8) {
+                    opcionAdmin = -1;
+                    while (opcionAdmin != 0) {
+                    System.out.println("\n=== MODULO ADMINISTRACION ===");
+                    System.out.println("1. Usuarios activos");
+                    System.out.println("2. Indicador semanal de reservas");
+                    System.out.println("3. Graficos de finanzas y planes");
+                    System.out.println("4. Tabla general de clientes");
+                    System.out.println("5. Buscar cliente por nombre");
+                    System.out.println("6. Directorio de entrenadores");
+                    System.out.println("7. Editar plan de un cliente");
+                    System.out.println("8. Dar de baja a un cliente");
+                    System.out.println("0. Volver al menu principal");
+                    System.out.println("---");
+                    System.out.print("Seleccione una opcion: ");
+                    opcionAdmin = sc.nextInt();
+                    sc.nextLine();
+
+                    if (opcionAdmin == 1) {
+                        // HU028: usuarios activos
+                        System.out.println("\n=== DASHBOARD: USUARIOS ACTIVOS ===");
+                        System.out.println("+------------------------------+");
+                        System.out.println("| Clientes activos             |");
+                        System.out.println("|           " + usuariosActivos + "                |");
+                        System.out.println("| (dato de demostracion)       |");
+                        System.out.println("+------------------------------+");
+                    } else if (opcionAdmin == 2) {
+                        // HU029: indicador semanal de reservas
+                        String[] clasesNombre = {"Ciclismo indoor", "Entrenamiento funcional", "Yoga", "Zumba"};
+                        int[] clasesReservas = {38, 29, 22, 37};
+                        int[] clasesCupos = {40, 36, 30, 42};
+                        System.out.println("\n=== INDICADOR SEMANAL DE RESERVAS ===");
+                        for (int i = 0; i < clasesNombre.length; i++) {
+                            int porcentaje = clasesReservas[i] * 100 / clasesCupos[i];
+                            String barra = "";
+                            for (int j = 0; j < porcentaje / 5; j++) {
+                                barra = barra + "#";
+                            }
+                            System.out.println(clasesNombre[i] + " (" + clasesReservas[i] + " de " + clasesCupos[i] + " cupos)");
+                            System.out.println("[" + barra + "] " + porcentaje + "%");
+                        }
+                    } else if (opcionAdmin == 3) {
+                        // HU030: graficos simulados (porcentajes fijos)
+                        String[] planesNombre = {"Plan Basico (Bronce)", "Plan Makia (Plata)", "Plan Elite (Oro)", "Plan Anual VIP"};
+                        int[] planesPorcentaje = {20, 45, 25, 10};
+                        String[] pagosNombre = {"Tarjeta de credito", "PSE", "Efectivo"};
+                        int[] pagosPorcentaje = {40, 35, 25};
+
+                        System.out.println("\n=== PLANES MAS VENDIDOS ===");
+                        for (int i = 0; i < planesNombre.length; i++) {
+                            String barra = "";
+                            for (int j = 0; j < planesPorcentaje[i] / 2; j++) {
+                                barra = barra + "#";
+                            }
+                            System.out.println(planesNombre[i] + ": " + barra + " " + planesPorcentaje[i] + "%");
+                        }
+
+                        System.out.println("\n=== METODOS DE PAGO USADOS ===");
+                        for (int i = 0; i < pagosNombre.length; i++) {
+                            String barra = "";
+                            for (int j = 0; j < pagosPorcentaje[i] / 2; j++) {
+                                barra = barra + "#";
+                            }
+                            System.out.println(pagosNombre[i] + ": " + barra + " " + pagosPorcentaje[i] + "%");
+                        }
+                        System.out.println("(datos de demostracion)");
+                    } else if (opcionAdmin == 4) {
+                        // HU031: tabla general de clientes
+                        System.out.println("\n=== TABLA GENERAL DE CLIENTES ===");
+                        System.out.println("N | Nombre | Correo | Plan | Estado");
+                        for (int i = 0; i < clientes.length; i++) {
+                            if (!clientes[i][3].equals("Baja")) {
+                                System.out.println((i + 1) + " | " + clientes[i][0] + " | " + clientes[i][1] + " | " + clientes[i][2] + " | " + clientes[i][3]);
+                            }
+                        }
+                    } else if (opcionAdmin == 5) {
+                        // HU032: busqueda de clientes
+                        System.out.print("\nEscriba el nombre a buscar: ");
+                        busqueda = sc.nextLine().toLowerCase();
+                        hayResultados = false;
+                        System.out.println("=== RESULTADOS ===");
+                        for (int i = 0; i < clientes.length; i++) {
+                            if (!clientes[i][3].equals("Baja") && clientes[i][0].toLowerCase().contains(busqueda)) {
+                                System.out.println((i + 1) + " | " + clientes[i][0] + " | " + clientes[i][1] + " | " + clientes[i][2] + " | " + clientes[i][3]);
+                                hayResultados = true;
+                            }
+                        }
+                        if (!hayResultados) {
+                            System.out.println("No se encontraron clientes con ese nombre.");
+                        }
+                    } else if (opcionAdmin == 6) {
+                        // HU033: directorio de entrenadores
+                        System.out.println("\n=== DIRECTORIO DEL PERSONAL TECNICO ===");
+                        System.out.println("1. Andres Londono - Entrenador personal");
+                        System.out.println("   Cuenta: andres.londono@gymmakias.ejemplo");
+                        System.out.println("   Especialidad: Fuerza e hipertrofia");
+                        System.out.println("   Horario: Lunes a viernes, 6:00 a. m. a 2:00 p. m.");
+                        System.out.println("2. Laura Restrepo - Instructora grupal");
+                        System.out.println("   Cuenta: laura.restrepo@gymmakias.ejemplo");
+                        System.out.println("   Especialidad: Ciclismo indoor y resistencia");
+                        System.out.println("   Horario: Lunes a jueves, 2:00 p. m. a 8:00 p. m.");
+                        System.out.println("3. Julian Cardenas - Entrenador funcional");
+                        System.out.println("   Cuenta: julian.cardenas@gymmakias.ejemplo");
+                        System.out.println("   Especialidad: Acondicionamiento y entrenamiento funcional");
+                        System.out.println("   Horario: Martes a sabado, 7:00 a. m. a 3:00 p. m.");
+                        System.out.println("4. Mariana Velez - Instructora grupal");
+                        System.out.println("   Cuenta: mariana.velez@gymmakias.ejemplo");
+                        System.out.println("   Especialidad: Yoga y movilidad");
+                        System.out.println("   Horario: Miercoles a domingo, 8:00 a. m. a 4:00 p. m.");
+                        System.out.println("---");
+                        System.out.println("[Crear nuevo perfil] (boton inactivo: solo gerencia)");
+                    } else if (opcionAdmin == 7) {
+                        // HU034: editar plan de un cliente (solo en memoria)
+                        System.out.println("\n=== EDITAR PLAN DE UN CLIENTE ===");
+                        for (int i = 0; i < clientes.length; i++) {
+                            if (!clientes[i][3].equals("Baja")) {
+                                System.out.println((i + 1) + ". " + clientes[i][0] + " - " + clientes[i][2]);
+                            }
+                        }
+                        System.out.print("Numero del cliente a editar (0 para cancelar): ");
+                        filaElegida = sc.nextInt();
+                        sc.nextLine();
+
+                        if (filaElegida >= 1 && filaElegida <= clientes.length && !clientes[filaElegida - 1][3].equals("Baja")) {
+                            System.out.println("Nuevo plan:");
+                            System.out.println("1. Plan Basico (Bronce)");
+                            System.out.println("2. Plan Makia (Plata)");
+                            System.out.println("3. Plan Elite (Oro)");
+                            System.out.println("4. Plan Anual Makia VIP");
+                            System.out.print("Seleccione el plan: ");
+                            numeroPlan = sc.nextInt();
+                            sc.nextLine();
+
+                            if (numeroPlan == 1) {
+                                clientes[filaElegida - 1][2] = "Plan Basico (Bronce)";
+                            } else if (numeroPlan == 2) {
+                                clientes[filaElegida - 1][2] = "Plan Makia (Plata)";
+                            } else if (numeroPlan == 3) {
+                                clientes[filaElegida - 1][2] = "Plan Elite (Oro)";
+                            } else if (numeroPlan == 4) {
+                                clientes[filaElegida - 1][2] = "Plan Anual Makia VIP";
+                            } else {
+                                System.out.println("Opcion no valida. No se hicieron cambios.");
+                            }
+                            if (numeroPlan >= 1 && numeroPlan <= 4) {
+                                System.out.println("Plan actualizado: " + clientes[filaElegida - 1][0] + " ahora tiene " + clientes[filaElegida - 1][2]);
+                                System.out.println("(el cambio dura hasta cerrar el programa)");
+                            }
+                        } else if (filaElegida != 0) {
+                            System.out.println("Cliente no valido.");
+                        }
+                    } else if (opcionAdmin == 8) {
+                        // HU035: dar de baja con confirmacion (solo en memoria)
+                        System.out.println("\n=== DAR DE BAJA A UN CLIENTE ===");
+                        for (int i = 0; i < clientes.length; i++) {
+                            if (!clientes[i][3].equals("Baja")) {
+                                System.out.println((i + 1) + ". " + clientes[i][0] + " - " + clientes[i][3]);
+                            }
+                        }
+                        System.out.print("Numero del cliente a dar de baja (0 para cancelar): ");
+                        filaElegida = sc.nextInt();
+                        sc.nextLine();
+
+                        if (filaElegida >= 1 && filaElegida <= clientes.length && !clientes[filaElegida - 1][3].equals("Baja")) {
+                            System.out.print("ALERTA - Gerencia: confirma dar de baja a " + clientes[filaElegida - 1][0] + "? (s/n): ");
+                            confirmar = sc.nextLine();
+                            if (confirmar.equals("s")) {
+                                if (clientes[filaElegida - 1][3].equals("Activo")) {
+                                    usuariosActivos = usuariosActivos - 1;
+                                }
+                                clientes[filaElegida - 1][3] = "Baja";
+                                System.out.println("Cliente dado de baja. Ya no aparece en el listado.");
+                            } else {
+                                System.out.println("Baja cancelada.");
+                            }
+                        } else if (filaElegida != 0) {
+                            System.out.println("Cliente no valido.");
+                        }
+                    } else if (opcionAdmin != 0) {
+                        System.out.println("Opcion no valida.");
+                    }
+                }
             } else if (opcionMenu == 9) {
                 System.out.println("\nGracias por visitar Gym Los Makias. Hasta pronto.");
             } else {
