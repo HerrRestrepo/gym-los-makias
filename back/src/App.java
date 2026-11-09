@@ -22,9 +22,19 @@ public class App {
         String usuarioContrasena = "";
         boolean registroValido = false;
         boolean correoValido = false;
+        boolean clienteRegistrado = false;
+        String estadoCliente = "Sin registro";
+        boolean[] clasesReservadas = new boolean[3];
+        String[] nombresClases = {
+            "Ciclismo indoor - Lunes, 6:00 p. m.",
+            "Entrenamiento funcional - Miercoles, 7:00 a. m.",
+            "Movilidad y estiramiento - Viernes, 5:30 p. m."
+        };
 
         int opcionPlan = 0;
         int opcionPago = 0;
+        int opcionCliente = 0;
+        int claseCliente = 0;
         String planSeleccionado = "";
         String metodoPagoSeleccionado = "";
         String numeroMedioPago = "";
@@ -51,7 +61,7 @@ public class App {
             {"Sara Jimenez", "sara.jimenez@ejemplo.com", "Plan Basico (Bronce)", "Vencido"}
         };
 
-        while (opcionMenu != 9) {
+        while (opcionMenu != 10) {
             System.out.println("\n--- GYM LOS MAKIAS ---");
             System.out.println("1. Inicio e informacion de la marca");
             System.out.println("2. Carrusel de areas de entrenamiento");
@@ -61,7 +71,8 @@ public class App {
             System.out.println("6. Registrarse y seleccionar plan (!PONTE VIGA!)");
             System.out.println("7. Modulo entrenador");
             System.out.println("8. Modulo administracion");
-            System.out.println("9. Salir");
+            System.out.println("9. Modulo cliente");
+            System.out.println("10. Salir");
             System.out.println("---");
             System.out.print("Seleccione una opcion: ");
             opcionMenu = sc.nextInt();
@@ -300,6 +311,8 @@ public class App {
                             }
 
                             planConfirmado = true;
+                            clienteRegistrado = true;
+                            estadoCliente = "Activo";
                             System.out.println("---");
                             System.out.println("RESUMEN DE ALTA Y SELECCION:");
                             System.out.println("Numero de recibo: " + numeroRecibo);
@@ -319,6 +332,96 @@ public class App {
                         System.out.println("Opcion no valida.");
                     }
                 }
+                } else if (opcionMenu == 9) {
+                    opcionCliente = -1;
+                    while (opcionCliente != 0) {
+                        System.out.println("\n=== MODULO CLIENTE ===");
+                        System.out.println("1. Ver informacion de registro");
+                        System.out.println("2. Reservar clase");
+                        System.out.println("3. Ver clases reservadas");
+                        System.out.println("4. Cancelar reserva");
+                        System.out.println("0. Volver al menu principal");
+                        System.out.print("Seleccione una opcion: ");
+                        opcionCliente = sc.nextInt();
+                        sc.nextLine();
+
+                        if (opcionCliente == 1) {
+                            if (clienteRegistrado) {
+                                System.out.println("\nInformacion de registro:");
+                                System.out.println("Nombre: " + usuarioNombre);
+                                System.out.println("Documento: " + usuarioDocumento);
+                                System.out.println("Correo: " + usuarioCorreo);
+                                System.out.println("Telefono: " + usuarioTelefono);
+                                System.out.println("Plan: " + planSeleccionado);
+                                System.out.println("Estado del plan: " + estadoCliente);
+                            } else {
+                                System.out.println("No hay un registro confirmado. Seleccione la opcion 6 para registrarse.");
+                            }
+                        } else if (opcionCliente == 2) {
+                            if (!clienteRegistrado || !estadoCliente.equals("Activo")) {
+                                System.out.println("Debe tener un registro activo para reservar clases.");
+                            } else {
+                                System.out.println("\n=== CLASES DISPONIBLES ===");
+                                System.out.println("1. Ciclismo indoor - Lunes, 6:00 p. m.");
+                                System.out.println("2. Entrenamiento funcional - Miercoles, 7:00 a. m.");
+                                System.out.println("3. Movilidad y estiramiento - Viernes, 5:30 p. m.");
+                                System.out.println("0. Volver");
+                                System.out.print("Seleccione la clase que desea reservar: ");
+                                claseCliente = sc.nextInt();
+                                sc.nextLine();
+
+                                if (claseCliente >= 1 && claseCliente <= clasesReservadas.length) {
+                                    if (clasesReservadas[claseCliente - 1]) {
+                                        System.out.println("Ya tiene una reserva para esa clase.");
+                                    } else {
+                                        clasesReservadas[claseCliente - 1] = true;
+                                        System.out.println("Reserva confirmada.");
+                                    }
+                                } else if (claseCliente != 0) {
+                                    System.out.println("Opcion no valida.");
+                                }
+                            }
+                        } else if (opcionCliente == 3) {
+                            boolean tieneReservas = false;
+                            System.out.println("\n=== CLASES RESERVADAS ===");
+                            for (int i = 0; i < clasesReservadas.length; i++) {
+                                if (clasesReservadas[i]) {
+                                    System.out.println("- " + nombresClases[i]);
+                                    tieneReservas = true;
+                                }
+                            }
+                            if (!tieneReservas) {
+                                System.out.println("Aun no tiene clases reservadas.");
+                            }
+                        } else if (opcionCliente == 4) {
+                            boolean tieneReservas = false;
+                            System.out.println("\n=== CANCELAR RESERVA ===");
+                            for (int i = 0; i < clasesReservadas.length; i++) {
+                                if (clasesReservadas[i]) {
+                                    System.out.println((i + 1) + ". " + nombresClases[i]);
+                                    tieneReservas = true;
+                                }
+                            }
+                            if (tieneReservas) {
+                                System.out.println("0. Volver");
+                                System.out.print("Seleccione la reserva que desea cancelar: ");
+                                claseCliente = sc.nextInt();
+                                sc.nextLine();
+
+                                if (claseCliente >= 1 && claseCliente <= clasesReservadas.length
+                                    && clasesReservadas[claseCliente - 1]) {
+                                    clasesReservadas[claseCliente - 1] = false;
+                                    System.out.println("Reserva cancelada correctamente.");
+                                } else if (claseCliente != 0) {
+                                    System.out.println("Opcion no valida o no corresponde a una reserva activa.");
+                                }
+                            } else {
+                                System.out.println("No tiene reservas para cancelar.");
+                            }
+                        } else if (opcionCliente != 0) {
+                            System.out.println("Opcion no valida.");
+                        }
+                    }
                 } else if (opcionMenu == 7) {
                 opcionEntrenador = -1;
                 while (opcionEntrenador != 0) {
