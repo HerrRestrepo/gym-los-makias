@@ -468,3 +468,112 @@
         padding: 1rem;
     }
 }
+/* HU030: Reportes simulados (gráficos de torta) */
+.seccion-reportes {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 3rem;
+}
+
+.encabezado-reportes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.encabezado-reportes h2 {
+    color: #ffffff;
+    font-family: "Syne", "Roboto", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+.encabezado-reportes p {
+    color: #b0c4c4;
+    line-height: 1.5;
+}
+
+.graficos-reportes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.reporte-grafico {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem;
+    border: 1px solid #2DE0A5;
+    border-radius: 10px;
+    background-color: #00363C;
+}
+
+.reporte-grafico h3 {
+    color: #ffffff;
+    font-family: "Syne", "Roboto", sans-serif;
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+/* El círculo: un div con border-radius 50% */
+.grafico-torta {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+/* Porciones: los porcentajes están escritos a mano */
+.torta-planes {
+    background: conic-gradient(
+        #b8733a 0% 20%,
+        #2DE0A5 20% 65%,
+        #e8a23a 65% 90%,
+        #bb8ae0 90% 100%
+    );
+}
+
+.torta-pagos {
+    background: conic-gradient(
+        #70b7d1 0% 40%,
+        #2DE0A5 40% 75%,
+        #e8a23a 75% 100%
+    );
+}
+
+.leyenda-torta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    color: #e0ecec;
+    font-size: 0.9rem;
+}
+
+.leyenda-torta strong {
+    color: #ffffff;
+}
+
+.punto {
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.8rem;
+    margin-right: 0.5rem;
+    border-radius: 50%;
+}
+
+.punto-basico { background-color: #b8733a; }
+.punto-makia { background-color: #2DE0A5; }
+.punto-elite { background-color: #e8a23a; }
+.punto-vip { background-color: #bb8ae0; }
+.punto-tarjeta { background-color: #70b7d1; }
+.punto-pse { background-color: #2DE0A5; }
+.punto-efectivo { background-color: #e8a23a; }
+
+@media (max-width: 700px) {
+    .graficos-reportes {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
