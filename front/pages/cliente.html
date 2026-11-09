@@ -24,21 +24,20 @@
 
   <main class="contenedor-cliente">
 
-    <!-- Resumen de datos personales y estado -->
     <section id="perfil" class="perfil" aria-label="Resumen de afiliación del cliente">
-      <figure class="perfil-avatar" aria-label="Iniciales de Mariana Gómez Restrepo">MG</figure>
+  <figure class="perfil-avatar" id="perfil-avatar"></figure>
 
-      <header class="perfil-info">
-        <h1>Mariana Gómez Restrepo</h1>
-        <p><strong>Documento:</strong> 1.020.345.678</p>
-        <p><strong>Correo:</strong> mariana.gomez@correo.com</p>
-        <p><strong>Teléfono:</strong> 300 123 4567</p>
-        <p><strong>Plan:</strong> Plan Makia (Plata)</p>
-        <p><strong>Vence:</strong> 30 de noviembre de 2026</p>
-      </header>
+  <header class="perfil-info">
+    <h1 id="perfil-nombre"></h1>
+    <p><strong>Documento:</strong> <span id="perfil-documento"></span></p>
+    <p><strong>Correo:</strong> <span id="perfil-correo"></span></p>
+    <p><strong>Teléfono:</strong> <span id="perfil-telefono"></span></p>
+    <p><strong>Plan:</strong> <span id="perfil-plan"></span></p>
+    <p><strong>Vence:</strong> <span id="perfil-vence"></span></p>
+  </header>
 
-      <span class="etiqueta etiqueta-estado-cliente">Activo</span>
-    </section>
+  <span class="etiqueta etiqueta-estado-cliente" id="perfil-estado"></span>
+</section>
 
     <!-- Vista previa de HU017: Rutina de un solo día -->
     <section id="rutinas" class="rutinas-preview" aria-labelledby="titulo-rutina-hoy">
@@ -154,6 +153,12 @@
         <a href="clases.html" class="boton-ver-mas">Ver y agendar todas las clases</a>
       </p>
     </section>
+    <!-- HU018: Historial de sesiones completadas -->
+    <section id="historial" class="historial" aria-labelledby="titulo-historial">
+      <header class="encabezado-seccion">
+        <h2 id="titulo-historial">Historial de sesiones con tu entrenador</h2>
+        <p class="subtitulo-seccion">Entrenamientos personales que ya finalizaste.</p>
+      </header>
     <section id="clases" class="clases" aria-labelledby="titulo-clases-proximas">
       <header class="encabezado-seccion">
         <h2 id="titulo-clases-proximas">Clases reservadas</h2>
@@ -184,6 +189,8 @@
       </ul>
     </section>
 
+      <ul class="lista-historial" id="lista-historial"></ul>
+    </section>
   </main>
 
   <footer class="footer-home">
@@ -219,11 +226,55 @@
     <a href="#inicio" class="boton-subir">Subir</a>
   </footer>
   <script>
+    // Datos quemados del cliente (simulación, sin backend)
+    var nombres = "Mariana";
+    var apellidos = "Gómez Restrepo";
+    var iniciales = "MG";
+    var documento = "1.020.345.678";
+    var correo = "mariana.gomez@correo.com";
+    var telefono = "300 123 4567";
+    var plan = "Plan Makia (Plata)";
+    var vence = "30 de noviembre de 2026";
+    var estado = "Activo";
+
+        // Mostrar los datos en la página
+    document.getElementById("perfil-avatar").textContent = iniciales;
+    document.getElementById("perfil-nombre").textContent = nombres + " " + apellidos;
+    document.getElementById("perfil-documento").textContent = documento;
+    document.getElementById("perfil-correo").textContent = correo;
+    document.getElementById("perfil-telefono").textContent = telefono;
+    document.getElementById("perfil-plan").textContent = plan;
+    document.getElementById("perfil-vence").textContent = vence;
+    document.getElementById("perfil-estado").textContent = estado;
+
+    // Funcion de otra historia (cancelar reserva)
     function mostrarAlerta() {
       alert('Su reserva a sido cancelada...');
     }
   </script>
+  <script>
+    
+    var sesiones = [
+      ["28 de octubre de 2026", "Carlos Ramírez", "Tren superior", "Completado"],
+      ["21 de octubre de 2026", "Carlos Ramírez", "Tren inferior", "Completado"],
+      ["14 de octubre de 2026", "Laura Mejía", "Cardio y core", "Completado"],
+      ["7 de octubre de 2026", "Laura Mejía", "Valoración física", "Completado"]
+    ];
 
+    var lista = document.getElementById("lista-historial");
+    var contenido = "";
+
+    for (var i = 0; i < sesiones.length; i++) {
+      contenido = contenido +
+        '<li class="item-historial">' +
+        '<p><strong>' + sesiones[i][0] + '</strong><br>' +
+        sesiones[i][2] + ' con ' + sesiones[i][1] + '</p>' +
+        '<span class="estado-completado">' + sesiones[i][3] + '</span>' +
+        '</li>';
+    }
+
+    lista.innerHTML = contenido;
+  </script>
 </body>
 
 </html>
