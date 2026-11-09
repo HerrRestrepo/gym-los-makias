@@ -22,7 +22,9 @@ public class App {
         boolean correoValido = false;
 
         int opcionPlan = 0;
+        int opcionPago = 0;
         String planSeleccionado = "";
+        String metodoPagoSeleccionado = "";
         int valorPlanSeleccionado = 0;
         boolean planConfirmado = false;
         int opcionEntrenador = 0;
@@ -162,6 +164,7 @@ public class App {
                 System.out.println("--------------------");
             } else if (opcionMenu == 6) {
                 registroValido = false;
+                metodoPagoSeleccionado = "";
                 while (!registroValido) {
                     System.out.println("\n=== FORMULARIO DE REGISTRO DE NUEVO USUARIO ===");
                     System.out.print("Ingrese su nombre completo: ");
@@ -242,12 +245,33 @@ public class App {
                         if (planSeleccionado.equals("")) {
                             System.out.println("ALERTA: Debe seleccionar un plan antes de confirmar.");
                         } else {
+                            while (metodoPagoSeleccionado.equals("")) {
+                                System.out.println("\n=== METODO DE PAGO ===");
+                                System.out.println("1. Tarjeta de credito");
+                                System.out.println("2. PSE");
+                                System.out.println("3. Efectivo");
+                                System.out.print("Seleccione un metodo de pago: ");
+                                opcionPago = sc.nextInt();
+                                sc.nextLine();
+
+                                if (opcionPago == 1) {
+                                    metodoPagoSeleccionado = "Tarjeta de credito";
+                                } else if (opcionPago == 2) {
+                                    metodoPagoSeleccionado = "PSE";
+                                } else if (opcionPago == 3) {
+                                    metodoPagoSeleccionado = "Efectivo";
+                                } else {
+                                    System.out.println("Opcion no valida. Seleccione 1, 2 o 3.");
+                                }
+                            }
+
                             planConfirmado = true;
                             System.out.println("---");
                             System.out.println("RESUMEN DE ALTA Y SELECCION:");
                             System.out.println("Cliente: " + usuarioNombre + " (Doc: " + usuarioDocumento + ")");
                             System.out.println("Correo: " + usuarioCorreo + " | Telefono: " + usuarioTelefono);
                             System.out.println("Plan seleccionado: " + planSeleccionado);
+                            System.out.println("Metodo de pago: " + metodoPagoSeleccionado);
                             System.out.println("Valor a cobrar en el proceso de pago: $" + valorPlanSeleccionado);
                             System.out.println("--------------------");
                         }
