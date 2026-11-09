@@ -167,6 +167,70 @@
                 </article>
             </section>
         </section>
+
+                <!-- HU032: Búsqueda simulada de clientes -->
+        <section class="seccion-clientes-admin" aria-labelledby="titulo-clientes-admin">
+            <header class="encabezado-clientes-admin">
+                <h2 id="titulo-clientes-admin">Registro de clientes</h2>
+                <p>Escribe un nombre para filtrar la tabla.</p>
+            </header>
+            <p class="campo-busqueda">
+                <label for="buscador-clientes">Buscar cliente</label>
+                <input type="text" id="buscador-clientes" placeholder="Ej: Mariana" onkeyup="buscarCliente()">
+            </p>
+            <figure class="tabla-admin-scroll">
+                <table class="tabla-admin">
+                    <caption>Clientes registrados</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Correo</th>
+                            <th scope="col">Plan</th>
+                            <th scope="col">Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpo-clientes">
+                        <tr>
+                            <th scope="row">Mariana Gómez</th>
+                            <td>mariana.gomez@correo.com</td>
+                            <td>Plan Makia (Plata)</td>
+                            <td>Activo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Valentina Restrepo</th>
+                            <td>valentina.restrepo@ejemplo.com</td>
+                            <td>Plan Élite (Oro)</td>
+                            <td>Activo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Juan David Gómez</th>
+                            <td>juan.gomez@ejemplo.com</td>
+                            <td>Plan Básico (Bronce)</td>
+                            <td>Vencido</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Camila Arango</th>
+                            <td>camila.arango@ejemplo.com</td>
+                            <td>Plan Makia (Plata)</td>
+                            <td>Activo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Mateo Castaño</th>
+                            <td>mateo.castano@ejemplo.com</td>
+                            <td>Plan Anual Makia VIP</td>
+                            <td>Activo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Sara Jiménez</th>
+                            <td>sara.jimenez@ejemplo.com</td>
+                            <td>Plan Básico (Bronce)</td>
+                            <td>Vencido</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </figure>
+            <p id="sin-resultados" class="sin-resultados">No se encontraron clientes con ese nombre.</p>
+        </section>
         <section class="seccion-personal" aria-labelledby="titulo-personal">
             <header class="encabezado-personal">
                 <section>
@@ -276,5 +340,31 @@
             <a href="#inicio">Volver al inicio</a>
         </section>
     </footer>
+
+        <script>
+        // HU032: Búsqueda simulada de clientes por nombre
+        function buscarCliente() {
+            var texto = document.getElementById("buscador-clientes").value.toLowerCase();
+            var filas = document.getElementById("cuerpo-clientes").getElementsByTagName("tr");
+            var encontrados = 0;
+
+            for (var i = 0; i < filas.length; i++) {
+                var nombre = filas[i].getElementsByTagName("th")[0].textContent.toLowerCase();
+
+                if (nombre.indexOf(texto) != -1) {
+                    filas[i].classList.remove("fila-oculta");
+                    encontrados = encontrados + 1;
+                } else {
+                    filas[i].classList.add("fila-oculta");
+                }
+            }
+
+            if (encontrados == 0) {
+                document.getElementById("sin-resultados").style.display = "block";
+            } else {
+                document.getElementById("sin-resultados").style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
