@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/entrenador.css">
 </head>
+
 <body id="inicio" class="pagina-entrenador flex min-h-screen flex-col">
     <header class="header-home w-full">
         <nav aria-label="Navegación del entrenador">
@@ -37,6 +39,7 @@
                             <th scope="col">Género</th>
                             <th scope="col">Correo electrónico</th>
                             <th scope="col">Objetivo</th>
+                            <th scope="col">Detalle</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -46,6 +49,8 @@
                             <td data-label="Género">Mujer</td>
                             <td data-label="Correo electrónico">valentina.restrepo@ejemplo.com</td>
                             <td data-label="Objetivo">Hipertrofia</td>
+                            <td data-label="Detalle"><button type="button" class="boton-detalles"
+                                    onclick="mostrarFicha(0)">Ver detalles</button></td>
                         </tr>
                         <tr>
                             <th scope="row">Juan David Gómez</th>
@@ -53,6 +58,8 @@
                             <td data-label="Género">Hombre</td>
                             <td data-label="Correo electrónico">juan.gomez@ejemplo.com</td>
                             <td data-label="Objetivo">Pérdida de peso</td>
+                            <td data-label="Detalle"><button type="button" class="boton-detalles"
+                                    onclick="mostrarFicha(1)">Ver detalles</button></td>
                         </tr>
                         <tr>
                             <th scope="row">Camila Arango</th>
@@ -60,6 +67,8 @@
                             <td data-label="Género">Mujer</td>
                             <td data-label="Correo electrónico">camila.arango@ejemplo.com</td>
                             <td data-label="Objetivo">Acondicionamiento físico</td>
+                            <td data-label="Detalle"><button type="button" class="boton-detalles"
+                                    onclick="mostrarFicha(2)">Ver detalles</button></td>
                         </tr>
                         <tr>
                             <th scope="row">Mateo Castaño</th>
@@ -67,6 +76,8 @@
                             <td data-label="Género">Hombre</td>
                             <td data-label="Correo electrónico">mateo.castano@ejemplo.com</td>
                             <td data-label="Objetivo">Hipertrofia</td>
+                            <td data-label="Detalle"><button type="button" class="boton-detalles"
+                                    onclick="mostrarFicha(3)">Ver detalles</button></td>
                         </tr>
                         <tr>
                             <th scope="row">Sara Jiménez</th>
@@ -74,6 +85,8 @@
                             <td data-label="Género">Mujer</td>
                             <td data-label="Correo electrónico">sara.jimenez@ejemplo.com</td>
                             <td data-label="Objetivo">Pérdida de peso</td>
+                            <td data-label="Detalle"><button type="button" class="boton-detalles"
+                                    onclick="mostrarFicha(4)">Ver detalles</button></td>
                         </tr>
                     </tbody>
                 </table>
@@ -109,6 +122,17 @@
             </ul>
         </aside>
     </main>
+        <!-- HU024: Tarjeta flotante con la ficha del alumno (oculta por defecto) -->
+    <aside id="ficha-alumno" class="ficha-alumno" aria-labelledby="ficha-nombre">
+        <article class="ficha-contenido">
+            <h2 id="ficha-nombre"></h2>
+            <p><strong>Plan contratado:</strong> <span id="ficha-plan"></span></p>
+            <p><strong>Vence:</strong> <span id="ficha-vence"></span></p>
+            <p><strong>Rutina asignada:</strong> <span id="ficha-rutina"></span></p>
+            <p><strong>Objetivo:</strong> <span id="ficha-objetivo"></span></p>
+            <button type="button" class="boton-cerrar-ficha" onclick="cerrarFicha()">Cerrar</button>
+        </article>
+    </aside>
     <footer class="footer-home mt-auto">
         <section class="footer-contenido mx-auto grid w-full max-w-6xl grid-cols-1 gap-4 pb-3 md:grid-cols-2"
             aria-label="Información del gimnasio">
@@ -123,13 +147,42 @@
                     Bello, Antioquia
                 </address>
                 <a href="tel:+573001234567">+57 300 123 4567</a>
-                <a href="https://wa.me/573001234567" target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp</a>
+                <a href="https://wa.me/573001234567" target="_blank" rel="noopener noreferrer">Escríbenos por
+                    WhatsApp</a>
             </section>
         </section>
-        <section class="footer-final mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-2 pt-3 text-center text-sm md:flex-row">
+        <section
+            class="footer-final mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-2 pt-3 text-center text-sm md:flex-row">
             <p>&copy; 2026 Gym Los Makias. Todos los derechos reservados.</p>
             <a href="#inicio">Volver al inicio</a>
         </section>
     </footer>
+        <script>
+        // HU024: Datos quemados de cada alumno (simulación, sin backend)
+        // Cada fila es: [nombre, plan, vence, rutina, objetivo]
+        var alumnos = [
+            ["Valentina Restrepo", "Plan Makia (Plata)", "30 de noviembre de 2026", "Tren superior y core, 4 días a la semana", "Hipertrofia"],
+            ["Juan David Gómez", "Plan Élite (Oro)", "15 de diciembre de 2026", "Cardio y circuito funcional, 5 días a la semana", "Pérdida de peso"],
+            ["Camila Arango", "Plan Básico (Bronce)", "20 de noviembre de 2026", "Full body y movilidad, 3 días a la semana", "Acondicionamiento físico"],
+            ["Mateo Castaño", "Plan Anual Makia VIP", "10 de agosto de 2027", "Empuje, tracción y pierna, 5 días a la semana", "Hipertrofia"],
+            ["Sara Jiménez", "Plan Makia (Plata)", "5 de diciembre de 2026", "Cardio, fuerza ligera y estiramiento, 4 días a la semana", "Pérdida de peso"]
+        ];
+
+        // Muestra la tarjeta con los datos del alumno elegido
+        function mostrarFicha(numero) {
+            document.getElementById("ficha-nombre").textContent = alumnos[numero][0];
+            document.getElementById("ficha-plan").textContent = alumnos[numero][1];
+            document.getElementById("ficha-vence").textContent = alumnos[numero][2];
+            document.getElementById("ficha-rutina").textContent = alumnos[numero][3];
+            document.getElementById("ficha-objetivo").textContent = alumnos[numero][4];
+            document.getElementById("ficha-alumno").style.display = "block";
+        }
+
+        // Oculta la tarjeta otra vez
+        function cerrarFicha() {
+            document.getElementById("ficha-alumno").style.display = "none";
+        }
+    </script>
 </body>
+
 </html>
