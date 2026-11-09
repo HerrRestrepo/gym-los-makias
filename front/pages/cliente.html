@@ -237,7 +237,7 @@
     var vence = "30 de noviembre de 2026";
     var estado = "Activo";
 
-    // Mostrar los datos en la página
+        // Mostrar los datos en la página
     document.getElementById("perfil-avatar").textContent = iniciales;
     document.getElementById("perfil-nombre").textContent = nombres + " " + apellidos;
     document.getElementById("perfil-documento").textContent = documento;
@@ -246,20 +246,20 @@
     document.getElementById("perfil-plan").textContent = plan;
     document.getElementById("perfil-vence").textContent = vence;
     document.getElementById("perfil-estado").textContent = estado;
+
+    // Funcion de otra historia (cancelar reserva)
+    function mostrarAlerta() {
+      alert('Su reserva a sido cancelada...');
+    }
   </script>
   <script>
-    // HU018: Historial de sesiones completadas (matriz de datos quemados)
-    // Cada fila es: [fecha, entrenador, enfoque, estado]
+    
     var sesiones = [
       ["28 de octubre de 2026", "Carlos Ramírez", "Tren superior", "Completado"],
       ["21 de octubre de 2026", "Carlos Ramírez", "Tren inferior", "Completado"],
       ["14 de octubre de 2026", "Laura Mejía", "Cardio y core", "Completado"],
       ["7 de octubre de 2026", "Laura Mejía", "Valoración física", "Completado"]
     ];
-    function mostrarAlerta() {
-      alert('Su reserva a sido cancelada...');
-    }
-  </script>
 
     var lista = document.getElementById("lista-historial");
     var contenido = "";
