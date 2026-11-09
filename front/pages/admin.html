@@ -179,7 +179,7 @@
                 <input type="text" id="buscador-clientes" placeholder="Ej: Mariana" onkeyup="buscarCliente()">
             </p>
             <figure class="tabla-admin-scroll">
-                <table class="tabla-admin">
+                                <table class="tabla-admin">
                     <caption>Clientes registrados</caption>
                     <thead>
                         <tr>
@@ -187,6 +187,7 @@
                             <th scope="col">Correo</th>
                             <th scope="col">Plan</th>
                             <th scope="col">Estado</th>
+                            <th scope="col">Acción</th>
                         </tr>
                     </thead>
                     <tbody id="cuerpo-clientes">
@@ -195,36 +196,42 @@
                             <td>mariana.gomez@correo.com</td>
                             <td>Plan Makia (Plata)</td>
                             <td>Activo</td>
+                            <td><button type="button" class="boton-baja" onclick="darDeBaja(this)">Dar de baja</button></td>
                         </tr>
                         <tr>
                             <th scope="row">Valentina Restrepo</th>
                             <td>valentina.restrepo@ejemplo.com</td>
                             <td>Plan Élite (Oro)</td>
                             <td>Activo</td>
+                            <td><button type="button" class="boton-baja" onclick="darDeBaja(this)">Dar de baja</button></td>
                         </tr>
                         <tr>
                             <th scope="row">Juan David Gómez</th>
                             <td>juan.gomez@ejemplo.com</td>
                             <td>Plan Básico (Bronce)</td>
                             <td>Vencido</td>
+                            <td><button type="button" class="boton-baja" onclick="darDeBaja(this)">Dar de baja</button></td>
                         </tr>
                         <tr>
                             <th scope="row">Camila Arango</th>
                             <td>camila.arango@ejemplo.com</td>
                             <td>Plan Makia (Plata)</td>
                             <td>Activo</td>
+                            <td><button type="button" class="boton-baja" onclick="darDeBaja(this)">Dar de baja</button></td>
                         </tr>
                         <tr>
                             <th scope="row">Mateo Castaño</th>
                             <td>mateo.castano@ejemplo.com</td>
                             <td>Plan Anual Makia VIP</td>
                             <td>Activo</td>
+                            <td><button type="button" class="boton-baja" onclick="darDeBaja(this)">Dar de baja</button></td>
                         </tr>
                         <tr>
                             <th scope="row">Sara Jiménez</th>
                             <td>sara.jimenez@ejemplo.com</td>
                             <td>Plan Básico (Bronce)</td>
                             <td>Vencido</td>
+                            <td><button type="button" class="boton-baja" onclick="darDeBaja(this)">Dar de baja</button></td>
                         </tr>
                     </tbody>
                 </table>
@@ -365,6 +372,21 @@
                 document.getElementById("sin-resultados").style.display = "none";
             }
         }
+                // HU035: Simulación de baja de un cliente (solo en la página, no borra nada real)
+        function darDeBaja(boton) {
+            var fila = boton.parentNode.parentNode;
+            var nombre = fila.getElementsByTagName("th")[0].textContent;
+
+            var confirmar = confirm("Gerencia: ¿confirma dar de baja a " + nombre + "?");
+
+            if (confirmar == true) {
+                fila.remove();
+            }
+        }
     </script>
+
+    
+
+
 </body>
 </html>
