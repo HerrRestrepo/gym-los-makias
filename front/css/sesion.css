@@ -1,0 +1,180 @@
+.pagina-sesion {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: #001F23;
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+}
+
+.pagina-sesion::before {
+    position: fixed;
+    z-index: -1;
+    inset: 0;
+    background-image: url("../images/fondo_lateral.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+    opacity: 0.7;
+}
+
+.pagina-sesion .header-home {
+    position: relative;
+}
+
+.pagina-sesion .footer-home {
+    padding: 1rem max(1rem, calc((100% - 1200px) / 2));
+}
+
+.pagina-sesion .footer-contenido {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    padding-bottom: 0.75rem;
+}
+
+.pagina-sesion .footer-marca,
+.pagina-sesion .footer-contacto {
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+}
+
+.pagina-sesion .footer-final {
+    justify-content: center;
+    gap: 0.5rem 1rem;
+    padding-top: 0.75rem;
+    text-align: center;
+}
+
+.contenido-sesion {
+    display: grid;
+    flex: 1;
+    place-items: center;
+    padding: 3rem 1.25rem;
+}
+
+.tarjeta-sesion {
+    display: flex;
+    width: min(100%, 30rem);
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    padding: clamp(1.75rem, 5vw, 3rem);
+    border: 1px solid #2DE0A5;
+    border-radius: 12px;
+    background-color: #001F23;
+    text-align: center;
+}
+
+.tarjeta-sesion h1 {
+    font-family: "Syne", "Roboto", sans-serif;
+    color: #2DE0A5;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.texto-sesion {
+    color: #e0ecec;
+    line-height: 1.5;
+}
+
+.formulario-sesion {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: left;
+}
+
+.campos-sesion {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    padding: 1rem;
+    border: 1px solid #527477;
+    border-radius: 8px;
+}
+
+.campos-sesion legend {
+    padding: 0 0.5rem;
+    color: #b0c4c4;
+    font-size: 0.9rem;
+}
+
+.campos-sesion label {
+    color: #e0ecec;
+    font-weight: 700;
+}
+
+.campos-sesion input,
+.campos-sesion select {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 0.55rem;
+    padding: 0.8rem;
+    border: 1px solid #7d999b;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #001F23;
+    font: inherit;
+}
+
+.campos-sesion select {
+    cursor: pointer;
+}
+
+.campos-sesion input:focus-visible,
+.campos-sesion select:focus-visible {
+    outline: 2px solid #2DE0A5;
+    outline-offset: 2px;
+}
+
+.boton-iniciar-sesion {
+    width: 100%;
+    padding: 0.95rem 1rem;
+    border: 2px solid #2DE0A5;
+    border-radius: 6px;
+    background-color: #2DE0A5;
+    color: #001F23;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 800;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.boton-iniciar-sesion:hover {
+    transform: translateY(-2px);
+    background-color: #25c993;
+    border-color: #25c993;
+}
+
+.boton-iniciar-sesion:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+}
+
+@media (max-width: 520px) {
+    .contenido-sesion {
+        padding: 2rem 1rem;
+    }
+
+    .tarjeta-sesion {
+        gap: 1rem;
+    }
+
+}
+
+@media (min-width: 701px) {
+    .pagina-sesion .footer-contenido {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pagina-sesion .footer-final {
+        justify-content: space-between;
+    }
+}

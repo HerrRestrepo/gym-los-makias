@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/registro.css">
+    <title>Registro</title>
+</head>
+
+<body id="inicio" class="pagina-registro">
+    <header class="header-home w-full">
+        <nav class="navegacion-inicio flex items-center justify-between w-full" aria-label="Navegación de registro y pago">
+            <a class="logo-inicio" href="../index.html"><img src="../images/logo.png" alt="Gym Los Makias, inicio"></a>
+            <ul class="barra navegacion-escritorio">
+                <li><a href="#registro" class="enlace-activo" aria-current="page">Registrarte</a></li>
+            </ul>
+            <details class="menu-hamburguesa">
+                <summary><span class="icono-hamburguesa" aria-hidden="true"></span>Menú</summary>
+                <ul class="barra navegacion-movil">
+                    <li><a href="#registro" class="enlace-activo" aria-current="page">Registrarte</a></li>
+                </ul>
+            </details>
+        </nav>
+    </header>
+    <main id="registro" class="contenedor-formulario">
+        <section class="formulario" aria-labelledby="titulo-registro">
+            <h1 id="titulo-registro" class="subtitulo">¡Súmate a Los Makias!</h1>
+            <form id="formulario-registro" action="pago.html" method="get">
+                <p class="campo-formulario">
+                    <label for="tipo-documento">Tipo de documento</label>
+                    <select name="tipo-documento" id="tipo-documento" required>
+                        <option value="">Tipo de documento</option>
+                        <option value="cedula">Cedula</option>
+                        <option value="pasaporte">Pasaporte</option>
+                        <option value="tarjeda-identidad">Tarjeta Identidad</option>
+                    </select>
+                    <label for="documento">Numero de Documento</label>
+                    <input type="text" id="documento" placeholder="Numero de documento" name="numero_docuemento"
+                        required>
+                </p>
+                <p class="campo-formulario">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" placeholder="Nombre" required name="nombre">
+                    <label for="apellido">Apellidos</label>
+                    <input type="text" id="apellido" placeholder="Apellidos" required name="apellidos">
+                </p>
+                <p class="campo-formulario">
+                    <label for="telefono-contacto">Número de telefeno</label>
+                    <input type="text" id="telefono-contacto" placeholder="+57 000 000 000" required
+                        name="telefono-contacto">
+                </p>
+                <p class="campo-formulario">
+                    <label for="email">Correo electronico</label>
+                    <input type="email" id="email" placeholder="Ej: correo@electronico.com" required name="email">
+                </p>
+                <p class="campo-formulario">
+                    <input type="checkbox" id="politica-datos" name="acepta-politicas" value="aceptado" required>
+                    <label for="politica-datos">Acepto el tratamiendo de datos</label>
+                </p>
+                <button type="submit" class="boton-registrarse">Registrarse</button>
+                <button type="reset" class="boton-limpiar">Limpiar Formulario</button>
+            </form>
+        </section>
+    </main>
+    <footer class="footer-home">
+        <section class="footer-contenido" aria-label="Información del gimnasio">
+            <section class="footer-marca" aria-label="Marca del gimnasio">
+                <a class="footer-logo" href="#inicio">Gym Los Makias</a>
+                <p>Fuerza, disciplina y berraquera para alcanzar tus metas.</p>
+            </section>
+            <nav class="footer-enlaces" aria-label="Navegación del pie de página">
+                <h2>Explora</h2>
+                <ul>
+                    <li><a href="../index.html#inicio">Inicio</a></li>
+                    <li><a href="../index.html#ubicacion">Ubicación y horarios</a></li>
+                    <li><a href="../index.html#planes">Nuestros planes</a></li>
+                    <li><a href="registro.html">Ponte viga</a></li>
+                    <li><a href="cliente.html">Mi perfil</a></li>
+                </ul>
+            </nav>
+            <section class="footer-contacto" aria-labelledby="titulo-contacto">
+                <h2 id="titulo-contacto">Visítanos</h2>
+                <address>
+                    Calle 52 # 48-35, Sector El Prado<br>
+                    Bello, Antioquia
+                </address>
+                <a href="tel:+573001234567">+57 300 123 4567</a>
+                <a href="https://wa.me/573001234567" target="_blank" rel="noopener noreferrer">Escríbenos por
+                    WhatsApp</a>
+            </section>
+        </section>
+        <section class="footer-final" aria-label="Información legal y acceso al inicio">
+            <p>Proyecto estudiantil Cesde</p>
+            <a href="#inicio">Volver al inicio ↑</a>
+        </section>
+    </footer>
+    <script>
+        document.getElementById("formulario-registro").addEventListener("submit", (evento) => {
+            evento.preventDefault();
+            window.location.assign("pago.html");
+        });
+    </script>
+</body>
+
+</html>

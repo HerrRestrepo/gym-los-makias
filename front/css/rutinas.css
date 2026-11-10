@@ -1,0 +1,121 @@
+.rutinas-completas {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.resumen-objetivos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+}
+
+.ficha-objetivo {
+    background-color: #00363C;
+    border: 1px solid #2DE0A5;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.ficha-objetivo:hover {
+    transform: translateY(-3px);
+    background-color: #004d55;
+    border-color: #ffffff;
+}
+
+.ficha-objetivo a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.ficha-objetivo strong {
+    color: #2DE0A5;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ficha-objetivo span {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.lista-rutinas-dia {
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+}
+
+.bloque-rutina {
+    scroll-margin-top: 14rem;
+}
+
+.consejo-dia {
+    box-sizing: border-box;
+    padding: 0.75rem 1.25rem;
+    border-top: 1px solid rgba(45, 224, 165, 0.4);
+    background-color: #001F23;
+    color: #b0c4c4;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.consejo-dia strong {
+    color: #2DE0A5;
+}
+
+@media (max-width: 768px) {
+    .resumen-objetivos {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .bloque-rutina {
+        scroll-margin-top: 13rem;
+    }
+
+    .tabla-rutina caption {
+        position: sticky;
+        left: 0;
+        width: calc(100vw - 3rem);
+        box-sizing: border-box;
+    }
+
+    .caption-contenido {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .dia-titulo {
+        min-width: 0;
+        max-width: 100%;
+        white-space: normal;
+        overflow-wrap: break-word;
+    }
+
+    .objetivo-etiqueta {
+        align-self: flex-start;
+        max-width: 100%;
+        box-sizing: border-box;
+        white-space: normal;
+        overflow-wrap: break-word;
+    }
+
+    .consejo-dia {
+        padding: 0.75rem 1rem;
+        overflow-wrap: anywhere;
+    }
+}
+
+@media (max-width: 480px) {
+    .resumen-objetivos {
+        grid-template-columns: 1fr;
+    }
+}

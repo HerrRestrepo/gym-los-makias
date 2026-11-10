@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/pago.css">
+    <title>Pago</title>
+</head>
+
+<body id="inicio" class="pagina-pago">
+    <header class="header-home w-full">
+        <nav class="navegacion-inicio flex items-center justify-between w-full" aria-label="Navegación de registro y pago">
+            <a class="logo-inicio" href="../index.html"><img src="../images/logo.png" alt="Gym Los Makias, inicio"></a>
+            <ul class="barra navegacion-escritorio">
+                <li><a href="pago.html" class="enlace-activo" aria-current="page">Paga tu plan</a></li>
+            </ul>
+            <details class="menu-hamburguesa">
+                <summary><span class="icono-hamburguesa" aria-hidden="true"></span>Menú</summary>
+                <ul class="barra navegacion-movil">
+                    <li><a href="pago.html" class="enlace-activo" aria-current="page">Paga tu plan</a></li>
+                </ul>
+            </details>
+        </nav>
+    </header>
+    <main>
+        <form id="formulario-pago" action="cliente.html" method="get">
+            <section class="contenedor-formulario">
+                <section id="datos-pago" class="formulario">
+                    <h1 class="subtitulo titulo-pago">Paga tu plan</h1>
+                    <p class="campo-formulario">
+                        <label for="plan">Plan que deseas elegir</label>
+                        <select name="plan" id="plan" required>
+                            <option value="">Seleccione un plan</option>
+                            <option value="basico">Plan Básico (Bronce) - $65.000 / mes</option>
+                            <option value="makia">Plan Makia (Plata) - $95.000 / mes</option>
+                            <option value="elite">Plan Élite (Oro) - $150.000 / mes</option>
+                            <option value="vip">Plan Anual Makia VIP - $900.000 / año</option>
+                        </select>
+                    </p>
+                    <h2 class="subtitulo subtitulo-pago">Método de pago</h2>
+                    <p class="campo-formulario">
+                        <label for="tipo-pago">Método de pago</label>
+                        <select name="tipo-pago" id="tipo-pago" required>
+                            <option value="">Seleccione un método de pago</option>
+                            <option value="pse">PSE</option>
+                            <option value="tarjeta">Tarjeta crédito/débito</option>
+                        </select>
+                    </p>
+                    <p class="campo-formulario">
+                        <label for="banco">Entidad bancaria</label>
+                        <select name="banco" id="banco" required>
+                            <option value="">Seleccione su banco</option>
+                            <option value="bancolombia">Bancolombia</option>
+                            <option value="davivienda">Davivienda</option>
+                            <option value="nequi">Nequi</option>
+                        </select>
+                    </p>
+                    <p class="campo-formulario">
+                        <label for="direccion">Dirección</label>
+                        <input type="text" id="direccion" placeholder="Calle 00 # 00 - 00" required name="direccion">
+                    </p>
+                    <p class="campo-formulario">
+                        <label for="telefono-contacto">Número de teléfono</label>
+                        <input type="text" id="telefono-contacto" placeholder="+57 000 000 000" required
+                            name="telefono-contacto">
+                    </p>
+                    <p class="campo-formulario">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" placeholder="Ej: correo@electronico.com" required name="email">
+                    </p>
+                    <p class="campo-formulario campo-facturacion">
+                        <input type="checkbox" id="facturacion-electronica" name="facturacion-electronica"
+                            value="solicitada">
+                        <label for="facturacion-electronica">Facturación electrónica</label>
+                    </p>
+                    <button type="submit" class="boton-registrarse">Continuar</button>
+                    <button type="reset" class="boton-limpiar">Limpiar formulario</button>
+                </section>
+                <section id="confirmacion-pago" class="formulario confirmacion-recibo" aria-live="polite" hidden>
+                    <h2 class="subtitulo">Confirmación de registro y pago simulado</h2>
+                    <p class="aviso-pago">Simulación completada: no se realizaron cobros reales ni se guardaron datos en un servidor.</p>
+                    <p class="recibo-detalle">
+                        <span>Número de recibo ficticio:</span>
+                        <output id="numero-recibo" class="codigo-recibo">---</output>
+                    </p>
+                    <a href="cliente.html" id="boton-dashboard" class="boton-registrarse enlace-dashboard">Ir al dashboard de cliente</a>
+                </section>
+            </section>
+        </form>
+    </main>
+    <footer class="footer-home">
+        <section class="footer-contenido" aria-label="Información del gimnasio">
+            <section class="footer-marca">
+                <h2><a class="footer-logo" href="#inicio">Gym Los Makias</a></h2>
+                <p>Fuerza, disciplina y berraquera para alcanzar tus metas.</p>
+            </section>
+            <nav class="footer-enlaces" aria-label="Navegación del pie de página">
+                <h2>Explora</h2>
+                <ul>
+                    <li><a href="../index.html#inicio">Inicio</a></li>
+                    <li><a href="../index.html#ubicacion">Ubicación y horarios</a></li>
+                    <li><a href="../index.html#planes">Nuestros planes</a></li>
+                    <li><a href="registro.html">Ponte viga</a></li>
+                    <li><a href="cliente.html">Mi perfil</a></li>
+                </ul>
+            </nav>
+            <section class="footer-contacto">
+                <h2>Visítanos</h2>
+                <address>
+                    Calle 52 # 48-35, Sector El Prado<br>
+                    Bello, Antioquia
+                </address>
+                <a href="tel:+573001234567">+57 300 123 4567</a>
+                <a href="https://wa.me/573001234567" target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp</a>
+            </section>
+        </section>
+        <section class="footer-final">
+            <p>Proyecto estudiantil Cesde</p>
+            <a href="#inicio">Volver al inicio ↑</a>
+        </section>
+    </footer>
+    <script>
+        function generarNumeroRecibo() {
+            const numeroAleatorio = Math.floor(100000 + Math.random() * 900000);
+            return `MK-${numeroAleatorio}`;
+        }
+
+        document.getElementById("formulario-pago").addEventListener("submit", function (event) {
+            event.preventDefault();
+            const recibo = generarNumeroRecibo();
+            const salidaRecibo = document.getElementById("numero-recibo");
+            const seccionConfirmacion = document.getElementById("confirmacion-pago");
+
+            salidaRecibo.textContent = recibo;
+            seccionConfirmacion.hidden = false;
+
+            alert(`Registro y simulación de pago completados con éxito.\nNúmero de recibo ficticio: ${recibo}\n(Simulación: no se procesaron pagos reales ni se guardaron datos.)`);
+            window.location.href = "cliente.html";
+        });
+    </script>
+</body>
+
+</html>

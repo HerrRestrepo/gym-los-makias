@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal del Cliente</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/cliente.css">
+</head>
+
+<body id="inicio">
+
+  <header class="header-home">
+    <nav class="navegacion-inicio flex items-center justify-between w-full" aria-label="Navegación del portal del cliente">
+      <a class="logo-inicio" href="../index.html"><img src="../images/logo.png" alt="Gym Los Makias, inicio"></a>
+      <ul class="barra navegacion-escritorio">
+        <li><a href="cliente.html" class="enlace-activo" aria-current="page">Mi perfil</a></li>
+        <li><a href="rutinas.html">Rutinas por día</a></li>
+        <li><a href="clases.html">Clases grupales</a></li>
+      </ul>
+      <details class="menu-hamburguesa">
+        <summary><span class="icono-hamburguesa" aria-hidden="true"></span>Menú</summary>
+        <ul class="barra navegacion-movil">
+          <li><a href="cliente.html" class="enlace-activo" aria-current="page">Mi perfil</a></li>
+          <li><a href="rutinas.html">Rutinas por día</a></li>
+          <li><a href="clases.html">Clases grupales</a></li>
+        </ul>
+      </details>
+    </nav>
+  </header>
+
+  <main class="contenedor-cliente">
+
+    <section id="perfil" class="perfil" aria-label="Resumen de afiliación del cliente">
+  <p class="perfil-avatar" aria-hidden="true">MG</p>
+
+  <header class="perfil-info">
+    <h1>Mariana Gómez Restrepo</h1>
+    <p><strong>Documento:</strong> 1.020.345.678</p>
+    <p><strong>Correo:</strong> mariana.gomez@correo.com</p>
+    <p><strong>Teléfono:</strong> 300 123 4567</p>
+    <p><strong>Plan:</strong> Plan Makia (Plata)</p>
+    <p><strong>Vence:</strong> 30 de noviembre de 2026</p>
+  </header>
+
+  <span class="etiqueta etiqueta-estado-cliente">Activo</span>
+</section>
+
+    <section id="rutinas" class="rutinas-preview" aria-labelledby="titulo-rutina-hoy">
+      <header class="encabezado-seccion">
+        <h2 id="titulo-rutina-hoy">Tu rutina del día</h2>
+        <p class="subtitulo-seccion">Vista rápida del entrenamiento asignado para hoy. Consulta la programación completa
+          para ver todos los días de la semana.</p>
+      </header>
+
+      <article class="bloque-rutina">
+        <table class="tabla-rutina">
+          <caption>
+            <p class="caption-contenido">
+              <span class="dia-titulo">Lunes: Tren Superior — Empuje</span>
+              <span class="objetivo-etiqueta">Objetivo: Fuerza e hipertrofia</span>
+            </p>
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Ejercicio</th>
+              <th scope="col">Zona / Máquina</th>
+              <th scope="col">Series</th>
+              <th scope="col">Repeticiones</th>
+              <th scope="col">Descanso</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Press de banca plano con barra</th>
+              <td class="zona-maquina">Zona de fuerza — Banca olímpica</td>
+              <td class="dato-destacado">4</td>
+              <td>8 a 10</td>
+              <td>90 s</td>
+            </tr>
+            <tr>
+              <th scope="row">Press inclinado con mancuernas</th>
+              <td class="zona-maquina">Peso libre — Banco ajustable</td>
+              <td class="dato-destacado">4</td>
+              <td>10 a 12</td>
+              <td>75 s</td>
+            </tr>
+            <tr>
+              <th scope="row">Press militar en máquina convergente</th>
+              <td class="zona-maquina">Sala de musculación — Hombros</td>
+              <td class="dato-destacado">3</td>
+              <td>10 a 12</td>
+              <td>75 s</td>
+            </tr>
+            <tr>
+              <th scope="row">Aperturas en polea alta (cruce de poleas)</th>
+              <td class="zona-maquina">Torre multifuncional</td>
+              <td class="dato-destacado">3</td>
+              <td>12 a 15</td>
+              <td>60 s</td>
+            </tr>
+            <tr>
+              <th scope="row">Extensión de tríceps con lazo en polea</th>
+              <td class="zona-maquina">Torre multifuncional</td>
+              <td class="dato-destacado">4</td>
+              <td>12 a 15</td>
+              <td>60 s</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="5">Recomendación del día: realizar 10 minutos de movilidad escapular y hombro antes de
+                iniciar la primera serie efectiva.</td>
+            </tr>
+          </tfoot>
+        </table>
+      </article>
+
+      <p class="acciones-seccion">
+        <a href="rutinas.html" class="boton-ver-mas">Ver rutina semanal completa</a>
+      </p>
+    </section>
+
+    <section id="clases" class="clases" aria-labelledby="titulo-clases-proximas">
+      <header class="encabezado-seccion">
+        <h2 id="titulo-clases-proximas">Próximas clases grupales</h2>
+        <p class="clases-subtitulo">Reserva rápido una de las sesiones destacadas o explora la cartelera completa de
+          horarios.</p>
+      </header>
+
+      <ul class="clases-lista clases-lista-preview" aria-label="Vista previa de próximas clases grupales">
+
+        <li class="item-clase">
+          <article class="tarjeta-clase">
+            <span class="etiqueta etiqueta-cupos">Cupos disponibles</span>
+            <h3>Zumba</h3>
+            <p>Lunes y miércoles</p>
+            <p>6:00 a.m. - 7:00 a.m.</p>
+            <p>Instructor: Carlos Ramírez</p>
+            <button class="boton-reservar" type="button">Reservar</button>
+          </article>
+        </li>
+
+        <li class="item-clase">
+          <article class="tarjeta-clase">
+            <span class="etiqueta etiqueta-pocos">Últimos cupos</span>
+            <h3>Spinning</h3>
+            <p>Lunes a viernes</p>
+            <p>5:30 p.m. - 6:30 p.m.</p>
+            <p>Instructor: Andrés Londoño</p>
+            <button class="boton-reservar" type="button">Reservar</button>
+          </article>
+        </li>
+
+      </ul>
+
+      <p class="acciones-seccion">
+        <a href="clases.html" class="boton-ver-mas">Ver y agendar todas las clases</a>
+      </p>
+    </section>
+    <section id="clases-reservadas" class="clases" aria-labelledby="titulo-clases-reservadas">
+      <header class="encabezado-seccion">
+        <h2 id="titulo-clases-reservadas">Clases reservadas</h2>
+      </header>
+
+      <ul class="clases-lista clases-lista-preview" aria-label="Vista previa de próximas clases grupales">
+
+        <li class="item-clase">
+          <article class="tarjeta-clase">
+            <h3>Zumba</h3>
+            <p>Lunes y miércoles</p>
+            <p>6:00 a.m. - 7:00 a.m.</p>
+            <p>Instructor: Carlos Ramírez</p>
+            <button onclick="mostrarAlerta()" class="boton-cancelar-reserva" type="button">Cancelar Reserva</button>
+          </article>
+        </li>
+
+        <li class="item-clase">
+          <article class="tarjeta-clase">
+            <h3>Spinning</h3>
+            <p>Lunes a viernes</p>
+            <p>5:30 p.m. - 6:30 p.m.</p>
+            <p>Instructor: Andrés Londoño</p>
+            <button onclick="mostrarAlerta()" class="boton-cancelar-reserva" type="button">Cancelar Reserva</button>
+          </article>
+        </li>
+
+      </ul>
+    </section>
+
+    <section id="historial" class="historial" aria-labelledby="titulo-historial">
+      <header class="encabezado-seccion">
+        <h2 id="titulo-historial">Historial de sesiones con tu entrenador</h2>
+        <p class="subtitulo-seccion">Entrenamientos personales que ya finalizaste.</p>
+      </header>
+
+      <ul class="lista-historial">
+        <li class="item-historial">
+          <article class="tarjeta-historial">
+            <header class="cabecera-historial">
+              <section>
+                <p class="fecha-historial"><time datetime="2026-10-28">28 de octubre de 2026</time></p>
+                <h3>Tren superior: fuerza y técnica</h3>
+              </section>
+              <span class="estado-completado">Completado</span>
+            </header>
+            <p class="entrenador-historial">Entrenador: <strong>Carlos Ramírez</strong></p>
+            <ul class="datos-sesion">
+              <li><strong>Duración:</strong> 60 minutos</li>
+              <li><strong>Enfoque:</strong> Pecho, espalda y hombros</li>
+            </ul>
+            <p class="nota-entrenador"><strong>Nota del entrenador:</strong> Buen control en press de banca; mantener la técnica antes de subir la carga.</p>
+          </article>
+        </li>
+        <li class="item-historial">
+          <article class="tarjeta-historial">
+            <header class="cabecera-historial">
+              <section>
+                <p class="fecha-historial"><time datetime="2026-10-21">21 de octubre de 2026</time></p>
+                <h3>Tren inferior: estabilidad y potencia</h3>
+              </section>
+              <span class="estado-completado">Completado</span>
+            </header>
+            <p class="entrenador-historial">Entrenador: <strong>Carlos Ramírez</strong></p>
+            <ul class="datos-sesion">
+              <li><strong>Duración:</strong> 55 minutos</li>
+              <li><strong>Enfoque:</strong> Piernas y estabilidad del core</li>
+            </ul>
+            <p class="nota-entrenador"><strong>Nota del entrenador:</strong> Mejoró la estabilidad en sentadilla; continuar con movilidad de cadera al inicio.</p>
+          </article>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer-home">
+    <section class="footer-contenido" aria-label="Información del gimnasio">
+      <section class="footer-marca">
+        <a class="footer-logo" href="../index.html">Gym Los Makias</a>
+        <p>Fuerza, disciplina y berraquera para alcanzar tus metas.</p>
+      </section>
+      <nav class="footer-enlaces" aria-label="Navegación del pie de página">
+        <h2>Explora</h2>
+        <ul>
+          <li><a href="../index.html#inicio">Inicio</a></li>
+          <li><a href="cliente.html">Mi perfil</a></li>
+          <li><a href="rutinas.html">Rutinas por día</a></li>
+          <li><a href="clases.html">Clases grupales</a></li>
+          <li><a href="pago.html">Paga tu plan</a></li>
+        </ul>
+      </nav>
+      <section class="footer-contacto">
+        <h2>Visítanos</h2>
+        <address>
+          Calle 52 # 48-35, Sector El Prado<br>
+          Bello, Antioquia
+        </address>
+        <a href="tel:+573001234567">+57 300 123 4567</a>
+        <a href="https://wa.me/573001234567" target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp</a>
+      </section>
+    </section>
+    <section class="footer-final">
+      <p>Proyecto estudiantil Cesde</p>
+      <a href="#inicio">Volver al inicio</a>
+    </section>
+  </footer>
+  <a href="#inicio" class="boton-subir">Subir</a>
+  <script>
+    document.querySelectorAll(".boton-cancelar-reserva").forEach((boton) => {
+      boton.addEventListener("click", () => {
+        alert("Su reserva a sido cancelada...");
+      });
+    });
+  </script>
+</body>
+
+</html>

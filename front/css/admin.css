@@ -1,0 +1,694 @@
+.pagina-admin {
+    position: relative;
+    isolation: isolate;
+    background-color: #001F23;
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+}
+
+.pagina-admin::before {
+    position: fixed;
+    z-index: -1;
+    inset: 0;
+    background-image: url("../images/fondo_lateral.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+.pagina-admin .barra {
+    justify-content: flex-start;
+    gap: 2rem;
+}
+
+.pagina-admin .barra img {
+    width: clamp(9rem, 18vw, 15rem);
+}
+
+.pagina-admin .barra a[aria-current="page"] {
+    color: #2DE0A5;
+    text-decoration: none;
+}
+
+.contenedor-dashboard {
+    max-width: 1200px;
+    box-sizing: border-box;
+    margin: 2.5rem auto 3.5rem;
+    padding: 0 1.5rem;
+}
+
+.encabezado-dashboard,
+.encabezado-actividades {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.encabezado-dashboard h1 {
+    color: #ffffff;
+    font-family: "Syne", "Roboto", sans-serif;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 800;
+}
+
+.encabezado-dashboard p,
+.encabezado-actividades p {
+    color: #b0c4c4;
+    line-height: 1.5;
+}
+
+.resumen-semanal {
+    margin-top: 1.75rem;
+}
+
+.indicador-semanal {
+    display: flex;
+    min-height: 8rem;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.25rem;
+    border: 1px solid #2DE0A5;
+    border-radius: 10px;
+    background-color: #001F23;
+}
+
+.indicador-semanal h2 {
+    color: #b0c4c4;
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.indicador-semanal p {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+}
+
+.indicador-semanal strong {
+    color: #2DE0A5;
+    font-family: "Syne", "Roboto", sans-serif;
+    font-size: 2rem;
+}
+
+.indicador-semanal span {
+    color: #e0ecec;
+    font-size: 0.9rem;
+}
+
+.seccion-actividades {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+}
+
+.encabezado-actividades h2 {
+    color: #ffffff;
+    font-family: "Syne", "Roboto", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+.lista-actividades {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.actividad {
+    display: flex;
+    min-width: 0;
+    height: 100%;
+    box-sizing: border-box;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.25rem;
+    border: 1px solid;
+    border-radius: 10px;
+    background-color: #00363C;
+}
+
+.actividad header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.actividad h3 {
+    color: #ffffff;
+    font-family: "Syne", "Roboto", sans-serif;
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+.actividad header p,
+.datos-actividad {
+    color: #d3e2e2;
+    font-size: 0.9rem;
+}
+
+.datos-actividad {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.datos-actividad strong {
+    color: #ffffff;
+}
+
+.metricas-actividad {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    margin-top: auto;
+}
+
+.metricas-actividad p {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+    color: #e0ecec;
+    font-size: 0.85rem;
+}
+
+.metricas-actividad p strong {
+    flex-shrink: 0;
+    color: #ffffff;
+}
+
+.barra-progreso {
+    display: block;
+    width: 100%;
+    height: 0.7rem;
+    overflow: hidden;
+    border: 0;
+    border-radius: 999px;
+    appearance: none;
+    background-color: #001F23;
+}
+
+.barra-progreso::-webkit-progress-bar {
+    border-radius: 999px;
+    background-color: #001F23;
+}
+
+.progreso-reservas::-webkit-progress-value {
+    border-radius: 999px;
+    background-color: #2DE0A5;
+}
+
+.progreso-asistencia::-webkit-progress-value {
+    border-radius: 999px;
+    background-color: #70b7d1;
+}
+
+.progreso-reservas::-moz-progress-bar {
+    border-radius: 999px;
+    background-color: #2DE0A5;
+}
+
+.progreso-asistencia::-moz-progress-bar {
+    border-radius: 999px;
+    background-color: #70b7d1;
+}
+
+.actividad-ciclismo {
+    border-color: #2DE0A5;
+}
+
+.actividad-funcional {
+    border-color: #e8a23a;
+}
+
+.actividad-yoga {
+    border-color: #70b7d1;
+}
+
+.actividad-zumba {
+    border-color: #bb8ae0;
+}
+
+.seccion-personal {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 3rem;
+}
+
+.encabezado-personal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.encabezado-personal > section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.encabezado-personal h2 {
+    color: #ffffff;
+    font-family: "Syne", "Roboto", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+.encabezado-personal p {
+    color: #b0c4c4;
+    line-height: 1.5;
+}
+
+.acciones-personal {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.boton-crear-perfil {
+    display: block;
+    padding: 0.75rem 1rem;
+    border: 1px solid #2DE0A5;
+    border-radius: 6px;
+    background-color: #00363C;
+    color: #ffffff;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+    transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.boton-crear-perfil:not(:disabled):hover {
+    transform: translateY(-2px);
+    border-color: #ffffff;
+}
+
+.boton-crear-perfil:focus-visible {
+    outline: 2px solid #2DE0A5;
+    outline-offset: 3px;
+}
+
+.boton-crear-perfil:disabled {
+    color: #b0c4c4;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.lista-personal {
+    list-style: none;
+}
+
+.perfil-personal {
+    height: 100%;
+    box-sizing: border-box;
+    padding: 1.25rem;
+    border: 1px solid #2DE0A5;
+    border-radius: 10px;
+    background-color: #001F23;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.perfil-personal:hover {
+    transform: translateY(-2px);
+    border-color: #ffffff;
+}
+
+.perfil-personal header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(45, 224, 165, 0.45);
+}
+
+.perfil-personal h3 {
+    color: #2DE0A5;
+    font-family: "Syne", "Roboto", sans-serif;
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+.perfil-personal header p {
+    color: #e0ecec;
+    font-size: 0.9rem;
+}
+
+.perfil-personal dl {
+    display: grid;
+    grid-template-columns: minmax(5.5rem, 0.7fr) minmax(0, 1.3fr);
+    gap: 0.6rem 0.8rem;
+    font-size: 0.9rem;
+}
+
+.perfil-personal dt {
+    color: #2DE0A5;
+    font-weight: 800;
+}
+
+.perfil-personal dd {
+    min-width: 0;
+    color: #e0ecec;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+}
+
+.perfil-personal .correo-personal {
+    grid-column: 1 / -1;
+}
+
+.perfil-personal dd.correo-personal {
+    word-break: break-word;
+}
+
+.pagina-admin .footer-home {
+    padding: 1rem max(1rem, calc((100% - 1200px) / 2));
+}
+
+.pagina-admin .footer-contenido {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    padding-bottom: 0.75rem;
+}
+
+.pagina-admin .footer-marca,
+.pagina-admin .footer-contacto {
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+}
+
+.pagina-admin .footer-final {
+    justify-content: center;
+    gap: 0.5rem 1rem;
+    padding-top: 0.75rem;
+    text-align: center;
+}
+
+@media (min-width: 701px) {
+    .pagina-admin .footer-contenido {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pagina-admin .footer-final {
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 700px) {
+    .contenedor-dashboard {
+        margin: 1.75rem auto 2.5rem;
+        padding: 0 1rem;
+    }
+
+    .lista-actividades {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .seccion-actividades {
+        margin-top: 2rem;
+    }
+
+    .seccion-personal {
+        margin-top: 2.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .pagina-admin .barra {
+        flex-wrap: nowrap;
+        gap: 1rem;
+        padding: 0.5rem 0.75rem;
+        font-size: 1rem;
+    }
+
+    .pagina-admin .barra img {
+        width: clamp(7rem, 32vw, 9rem);
+    }
+
+    .indicador-semanal {
+        min-height: 6.5rem;
+    }
+
+    .actividad {
+        padding: 1rem;
+    }
+
+    .encabezado-personal {
+        align-items: stretch;
+    }
+
+    .acciones-personal {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .acciones-personal li,
+    .boton-crear-perfil {
+        width: 100%;
+    }
+
+    .perfil-personal {
+        padding: 1rem;
+    }
+}
+.seccion-reportes {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 3rem;
+}
+
+.encabezado-reportes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.encabezado-reportes h2 {
+    color: #ffffff;
+    font-family: "Syne", "Roboto", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+.encabezado-reportes p {
+    color: #b0c4c4;
+    line-height: 1.5;
+}
+
+.graficos-reportes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.reporte-grafico {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem;
+    border: 1px solid #2DE0A5;
+    border-radius: 10px;
+    background-color: #00363C;
+}
+
+.reporte-grafico h3 {
+    color: #ffffff;
+    font-family: "Syne", "Roboto", sans-serif;
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+.grafico-torta {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.torta-planes {
+    background: conic-gradient(
+        #b8733a 0% 20%,
+        #2DE0A5 20% 65%,
+        #e8a23a 65% 90%,
+        #bb8ae0 90% 100%
+    );
+}
+
+.torta-pagos {
+    background: conic-gradient(
+        #70b7d1 0% 40%,
+        #2DE0A5 40% 75%,
+        #e8a23a 75% 100%
+    );
+}
+
+.leyenda-torta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    color: #e0ecec;
+    font-size: 0.9rem;
+}
+
+.leyenda-torta strong {
+    color: #ffffff;
+}
+
+.punto {
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.8rem;
+    margin-right: 0.5rem;
+    border-radius: 50%;
+}
+
+.punto-basico { background-color: #b8733a; }
+.punto-makia { background-color: #2DE0A5; }
+.punto-elite { background-color: #e8a23a; }
+.punto-vip { background-color: #bb8ae0; }
+.punto-tarjeta { background-color: #70b7d1; }
+.punto-pse { background-color: #2DE0A5; }
+.punto-efectivo { background-color: #e8a23a; }
+
+@media (max-width: 700px) {
+    .graficos-reportes {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+.seccion-clientes-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 3rem;
+}
+
+.encabezado-clientes-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.encabezado-clientes-admin h2 {
+    color: #ffffff;
+    font-family: "Syne", "Roboto", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+.encabezado-clientes-admin p {
+    color: #b0c4c4;
+    line-height: 1.5;
+}
+
+.campo-busqueda {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    max-width: 420px;
+}
+
+.campo-busqueda label {
+    color: #2DE0A5;
+    font-weight: 700;
+}
+
+.campo-busqueda input {
+    padding: 0.7rem 1rem;
+    border: 1px solid #2DE0A5;
+    border-radius: 6px;
+    background-color: #00363C;
+    color: #ffffff;
+    font: inherit;
+}
+
+.campo-busqueda input:focus-visible {
+    outline: 2px solid #2DE0A5;
+    outline-offset: 2px;
+}
+
+.tabla-admin-scroll {
+    overflow-x: auto;
+    border: 2px solid #2DE0A5;
+    border-radius: 12px;
+    background-color: #00363C;
+}
+
+.tabla-admin {
+    width: 100%;
+    border-collapse: collapse;
+    color: #ffffff;
+    text-align: left;
+}
+
+.tabla-admin caption {
+    padding: 1rem 1.25rem;
+    border-bottom: 2px solid #2DE0A5;
+    background-color: #004d55;
+    font-family: "Syne", "Roboto", sans-serif;
+    font-weight: 800;
+    text-align: left;
+}
+
+.tabla-admin thead th {
+    padding: 0.8rem 1.25rem;
+    border-bottom: 1px solid #2DE0A5;
+    background-color: #001F23;
+    color: #2DE0A5;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+.tabla-admin tbody th,
+.tabla-admin tbody td {
+    padding: 0.85rem 1.25rem;
+    border-bottom: 1px solid rgba(176, 196, 196, 0.2);
+}
+
+.tabla-admin tbody th {
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+
+.fila-oculta {
+    display: none;
+}
+
+.sin-resultados {
+    display: none;
+    color: #e8a23a;
+    font-weight: 700;
+}
+
+.boton-baja {
+    padding: 0.4rem 0.9rem;
+    border: 1px solid #e05a5a;
+    border-radius: 6px;
+    background-color: transparent;
+    color: #e05a5a;
+    font-size: 0.85rem;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.boton-baja:hover {
+    background-color: #e05a5a;
+    color: #ffffff;
+}

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Gym Los Makias</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body id="inicio" class="pagina-admin flex min-h-screen flex-col">
+    <header class="header-home w-full">
+        <nav class="navegacion-inicio flex items-center justify-between w-full" aria-label="Navegación del administrador">
+            <a class="logo-inicio" href="../index.html"><img src="../images/logo.png" alt="Gym Los Makias, inicio"></a>
+            <ul class="barra navegacion-escritorio">
+                <li><a href="admin.html" class="enlace-activo" aria-current="page">Dashboard</a></li>
+                <li><a href="usuarios.html">Usuarios Registrados</a></li>
+            </ul>
+            <details class="menu-hamburguesa">
+                <summary><span class="icono-hamburguesa" aria-hidden="true"></span>Menú</summary>
+                <ul class="barra navegacion-movil">
+                    <li><a href="admin.html" class="enlace-activo" aria-current="page">Dashboard</a></li>
+                    <li><a href="usuarios.html">Usuarios Registrados</a></li>
+                </ul>
+            </details>
+        </nav>
+    </header>
+    <main class="contenedor-dashboard mx-auto w-full flex-1">
+        <section class="encabezado-dashboard" aria-labelledby="titulo-dashboard">
+            <h1 id="titulo-dashboard">Dashboard</h1>
+            <p>Resumen semanal de reservas y asistencia a clases grupales.</p>
+        </section>
+         <section class="resumen-semanal grid grid-cols-1 gap-4 md:grid-cols-3" aria-label="Resumen semanal">
+            <article class="indicador-semanal">
+                <h2>Planes activos</h2>
+                <p><strong>150</strong><span>Planes Activos</span></p>
+            </article>
+            <article class="indicador-semanal">
+                <h2>Planes a vencer</h2>
+                <p><strong>25</strong><span>Planes a vencer mes de noviembre</span></p>
+            </article>
+            <article class="indicador-semanal">
+                <h2>Planes vencidos</h2>
+                <p><strong>30</strong><span>Planes vencidos sin renevonar este mes</span></p>
+            </article>
+        </section>
+        <section class="resumen-semanal grid grid-cols-1 gap-4 md:grid-cols-3" aria-label="Resumen semanal">
+            <article class="indicador-semanal">
+                <h2>Reservas de la semana</h2>
+                <p><strong>126</strong><span>reservas registradas</span></p>
+            </article>
+            <article class="indicador-semanal">
+                <h2>Asistencias</h2>
+                <p><strong>104</strong><span>asistencias registradas</span></p>
+            </article>
+            <article class="indicador-semanal">
+                <h2>Asistencia promedio</h2>
+                <p><strong>83%</strong><span>de las reservas</span></p>
+            </article>
+        </section>
+
+        <section class="seccion-actividades" aria-labelledby="titulo-actividades">
+            <header class="encabezado-actividades">
+                <h2 id="titulo-actividades">Popularidad de las clases</h2>
+            </header>
+            <ul class="lista-actividades">
+                <li>
+                    <article class="actividad actividad-ciclismo">
+                        <header>
+                            <h3>Ciclismo indoor</h3>
+                            <p>Lunes y jueves</p>
+                        </header>
+                        <ul class="datos-actividad">
+                            <li><strong>Reservas:</strong> 38 de 40 cupos</li>
+                            <li><strong>Asistencias:</strong> 33 personas</li>
+                        </ul>
+                        <section class="metricas-actividad" aria-label="Tasas de ciclismo indoor">
+                            <p id="etiqueta-reservas-ciclismo">Ocupación de cupos <strong>95%</strong></p>
+                            <progress class="barra-progreso progreso-reservas" max="100" value="95"
+                                aria-labelledby="etiqueta-reservas-ciclismo">95%</progress>
+                            <p id="etiqueta-asistencia-ciclismo">Asistencia sobre reservas <strong>87%</strong></p>
+                            <progress class="barra-progreso progreso-asistencia" max="100" value="87"
+                                aria-labelledby="etiqueta-asistencia-ciclismo">87%</progress>
+                        </section>
+                    </article>
+                </li>
+                <li>
+                    <article class="actividad actividad-funcional">
+                        <header>
+                            <h3>Entrenamiento funcional</h3>
+                            <p>Martes y viernes</p>
+                        </header>
+                        <ul class="datos-actividad">
+                            <li><strong>Reservas:</strong> 29 de 36 cupos</li>
+                            <li><strong>Asistencias:</strong> 24 personas</li>
+                        </ul>
+                        <section class="metricas-actividad" aria-label="Tasas de entrenamiento funcional">
+                            <p id="etiqueta-reservas-funcional">Ocupación de cupos <strong>81%</strong></p>
+                            <progress class="barra-progreso progreso-reservas" max="100" value="81"
+                                aria-labelledby="etiqueta-reservas-funcional">81%</progress>
+                            <p id="etiqueta-asistencia-funcional">Asistencia sobre reservas <strong>83%</strong></p>
+                            <progress class="barra-progreso progreso-asistencia" max="100" value="83"
+                                aria-labelledby="etiqueta-asistencia-funcional">83%</progress>
+                        </section>
+                    </article>
+                </li>
+                <li>
+                    <article class="actividad actividad-yoga">
+                        <header>
+                            <h3>Yoga</h3>
+                            <p>Miércoles y sábado</p>
+                        </header>
+                        <ul class="datos-actividad">
+                            <li><strong>Reservas:</strong> 22 de 30 cupos</li>
+                            <li><strong>Asistencias:</strong> 19 personas</li>
+                        </ul>
+                        <section class="metricas-actividad" aria-label="Tasas de yoga">
+                            <p id="etiqueta-reservas-yoga">Ocupación de cupos <strong>73%</strong></p>
+                            <progress class="barra-progreso progreso-reservas" max="100" value="73"
+                                aria-labelledby="etiqueta-reservas-yoga">73%</progress>
+                            <p id="etiqueta-asistencia-yoga">Asistencia sobre reservas <strong>86%</strong></p>
+                            <progress class="barra-progreso progreso-asistencia" max="100" value="86"
+                                aria-labelledby="etiqueta-asistencia-yoga">86%</progress>
+                        </section>
+                    </article>
+                </li>
+                <li>
+                    <article class="actividad actividad-zumba">
+                        <header>
+                            <h3>Zumba</h3>
+                            <p>Miércoles y domingo</p>
+                        </header>
+                        <ul class="datos-actividad">
+                            <li><strong>Reservas:</strong> 37 de 42 cupos</li>
+                            <li><strong>Asistencias:</strong> 28 personas</li>
+                        </ul>
+                        <section class="metricas-actividad" aria-label="Tasas de zumba">
+                            <p id="etiqueta-reservas-zumba">Ocupación de cupos <strong>88%</strong></p>
+                            <progress class="barra-progreso progreso-reservas" max="100" value="88"
+                                aria-labelledby="etiqueta-reservas-zumba">88%</progress>
+                            <p id="etiqueta-asistencia-zumba">Asistencia sobre reservas <strong>76%</strong></p>
+                            <progress class="barra-progreso progreso-asistencia" max="100" value="76"
+                                aria-labelledby="etiqueta-asistencia-zumba">76%</progress>
+                        </section>
+                    </article>
+                </li>
+            </ul>
+        </section>
+        <section class="seccion-reportes" aria-labelledby="titulo-reportes">
+            <header class="encabezado-reportes">
+                <h2 id="titulo-reportes">Reportes de suscripciones</h2>
+                <p>Datos de demostración: los porcentajes están definidos en el código.</p>
+            </header>
+            <section class="graficos-reportes">
+                <article class="reporte-grafico">
+                    <h3>Planes más vendidos</h3>
+                    <figure class="grafico-torta torta-planes" role="img" aria-label="Gráfico de torta de planes más vendidos"></figure>
+                    <ul class="leyenda-torta">
+                        <li><span class="punto punto-basico"></span>Plan Básico (Bronce): <strong>20%</strong></li>
+                        <li><span class="punto punto-makia"></span>Plan Makia (Plata): <strong>45%</strong></li>
+                        <li><span class="punto punto-elite"></span>Plan Élite (Oro): <strong>25%</strong></li>
+                        <li><span class="punto punto-vip"></span>Plan Anual VIP: <strong>10%</strong></li>
+                    </ul>
+                </article>
+                <article class="reporte-grafico">
+                    <h3>Métodos de pago usados</h3>
+                    <figure class="grafico-torta torta-pagos" role="img" aria-label="Gráfico de torta de métodos de pago"></figure>
+                    <ul class="leyenda-torta">
+                        <li><span class="punto punto-tarjeta"></span>Tarjeta de crédito: <strong>40%</strong></li>
+                        <li><span class="punto punto-pse"></span>PSE: <strong>35%</strong></li>
+                        <li><span class="punto punto-efectivo"></span>Efectivo: <strong>25%</strong></li>
+                    </ul>
+                </article>
+            </section>
+        </section>
+
+        <section class="seccion-clientes-admin" aria-labelledby="titulo-clientes-admin">
+            <header class="encabezado-clientes-admin">
+                <h2 id="titulo-clientes-admin">Registro de clientes</h2>
+                <p>Escribe un nombre para filtrar la tabla.</p>
+            </header>
+            <p class="campo-busqueda">
+                <label for="buscador-clientes">Buscar cliente</label>
+                <input type="text" id="buscador-clientes" placeholder="Ej: Mariana" onkeyup="buscarCliente()">
+            </p>
+            <figure class="tabla-admin-scroll">
+                                <table class="tabla-admin">
+                    <caption>Clientes registrados</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Correo</th>
+                            <th scope="col">Plan</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpo-clientes">
+                        <tr>
+                            <th scope="row">Mariana Gómez</th>
+                            <td>mariana.gomez@correo.com</td>
+                            <td>Plan Makia (Plata)</td>
+                            <td>Activo</td>
+                            <td><button type="button" class="boton-baja" onclick="darDeBaja(this)">Dar de baja</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Valentina Restrepo</th>
+                            <td>valentina.restrepo@ejemplo.com</td>
+                            <td>Plan Élite (Oro)</td>
+                            <td>Activo</td>
+                            <td><button type="button" class="boton-baja" onclick="darDeBaja(this)">Dar de baja</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Juan David Gómez</th>
+                            <td>juan.gomez@ejemplo.com</td>
+                            <td>Plan Básico (Bronce)</td>
+                            <td>Vencido</td>
+                            <td><button type="button" class="boton-baja" onclick="darDeBaja(this)">Dar de baja</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Camila Arango</th>
+                            <td>camila.arango@ejemplo.com</td>
+                            <td>Plan Makia (Plata)</td>
+                            <td>Activo</td>
+                            <td><button type="button" class="boton-baja" onclick="darDeBaja(this)">Dar de baja</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Mateo Castaño</th>
+                            <td>mateo.castano@ejemplo.com</td>
+                            <td>Plan Anual Makia VIP</td>
+                            <td>Activo</td>
+                            <td><button type="button" class="boton-baja" onclick="darDeBaja(this)">Dar de baja</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Sara Jiménez</th>
+                            <td>sara.jimenez@ejemplo.com</td>
+                            <td>Plan Básico (Bronce)</td>
+                            <td>Vencido</td>
+                            <td><button type="button" class="boton-baja" onclick="darDeBaja(this)">Dar de baja</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </figure>
+            <p id="sin-resultados" class="sin-resultados">No se encontraron clientes con ese nombre.</p>
+        </section>
+        <section class="seccion-personal" aria-labelledby="titulo-personal">
+            <header class="encabezado-personal">
+                <section>
+                    <h2 id="titulo-personal">Directorio del personal técnico</h2>
+                    <p>Cuentas, especialidades y horarios del equipo del gimnasio.</p>
+                </section>
+                <ul class="acciones-personal">
+                    <li>
+                        <button class="boton-crear-perfil" type="button" disabled aria-disabled="true">
+                            Crear nuevo perfil
+                        </button>
+                    </li>
+                    <li>
+                        <button class="boton-crear-perfil" type="button">
+                            Reasignar roles
+                        </button>
+                    </li>
+                </ul>
+            </header>
+            <ul class="lista-personal grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+                <li>
+                    <article class="perfil-personal">
+                        <header>
+                            <h3>Andrés Londoño</h3>
+                            <p>Entrenador personal</p>
+                        </header>
+                        <dl>
+                            <dt class="correo-personal">Cuenta</dt>
+                            <dd class="correo-personal">andres.londono@gymmakias.ejemplo</dd>
+                            <dt>Especialidad</dt>
+                            <dd>Fuerza e hipertrofia</dd>
+                            <dt>Horario</dt>
+                            <dd>Lunes a viernes · 6:00 a. m. a 2:00 p. m.</dd>
+                        </dl>
+                    </article>
+                </li>
+                <li>
+                    <article class="perfil-personal">
+                        <header>
+                            <h3>Laura Restrepo</h3>
+                            <p>Instructora grupal</p>
+                        </header>
+                        <dl>
+                            <dt class="correo-personal">Cuenta</dt>
+                            <dd class="correo-personal">laura.restrepo@gymmakias.ejemplo</dd>
+                            <dt>Especialidad</dt>
+                            <dd>Ciclismo indoor y resistencia</dd>
+                            <dt>Horario</dt>
+                            <dd>Lunes a jueves · 2:00 p. m. a 8:00 p. m.</dd>
+                        </dl>
+                    </article>
+                </li>
+                <li>
+                    <article class="perfil-personal">
+                        <header>
+                            <h3>Julián Cárdenas</h3>
+                            <p>Entrenador funcional</p>
+                        </header>
+                        <dl>
+                            <dt class="correo-personal">Cuenta</dt>
+                            <dd class="correo-personal">julian.cardenas@gymmakias.ejemplo</dd>
+                            <dt>Especialidad</dt>
+                            <dd>Acondicionamiento y entrenamiento funcional</dd>
+                            <dt>Horario</dt>
+                            <dd>Martes a sábado · 7:00 a. m. a 3:00 p. m.</dd>
+                        </dl>
+                    </article>
+                </li>
+                <li>
+                    <article class="perfil-personal">
+                        <header>
+                            <h3>Mariana Vélez</h3>
+                            <p>Instructora grupal</p>
+                        </header>
+                        <dl>
+                            <dt class="correo-personal">Cuenta</dt>
+                            <dd class="correo-personal">mariana.velez@gymmakias.ejemplo</dd>
+                            <dt>Especialidad</dt>
+                            <dd>Yoga y movilidad</dd>
+                            <dt>Horario</dt>
+                            <dd>Miércoles a domingo · 8:00 a. m. a 4:00 p. m.</dd>
+                        </dl>
+                    </article>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer class="footer-home mt-auto">
+        <section class="footer-contenido mx-auto grid w-full max-w-6xl grid-cols-1 gap-4 pb-3 md:grid-cols-2"
+            aria-label="Información del gimnasio">
+            <section class="footer-marca flex flex-col items-center gap-2 text-center">
+                <a class="footer-logo" href="../index.html">Gym Los Makias</a>
+                <p>Fuerza, disciplina y berraquera para alcanzar tus metas.</p>
+            </section>
+            <section class="footer-contacto flex flex-col items-center gap-2 text-center">
+                <h2>Visítanos</h2>
+                <address>
+                    Calle 52 # 48-35, Sector El Prado<br>
+                    Bello, Antioquia
+                </address>
+                <a href="tel:+573001234567">+57 300 123 4567</a>
+                <a href="https://wa.me/573001234567" target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp</a>
+            </section>
+        </section>
+        <section class="footer-final mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-2 pt-3 text-center text-sm md:flex-row">
+            <p>Proyecto estudiantil Cesde</p>
+            <a href="#inicio">Volver al inicio</a>
+        </section>
+    </footer>
+
+        <script>
+        function buscarCliente() {
+            var texto = document.getElementById("buscador-clientes").value.toLowerCase();
+            var filas = document.getElementById("cuerpo-clientes").getElementsByTagName("tr");
+            var encontrados = 0;
+
+            for (var i = 0; i < filas.length; i++) {
+                var nombre = filas[i].getElementsByTagName("th")[0].textContent.toLowerCase();
+
+                if (nombre.indexOf(texto) != -1) {
+                    filas[i].classList.remove("fila-oculta");
+                    encontrados = encontrados + 1;
+                } else {
+                    filas[i].classList.add("fila-oculta");
+                }
+            }
+
+            if (encontrados == 0) {
+                document.getElementById("sin-resultados").style.display = "block";
+            } else {
+                document.getElementById("sin-resultados").style.display = "none";
+            }
+        }
+        function darDeBaja(boton) {
+            var fila = boton.parentNode.parentNode;
+            var nombre = fila.getElementsByTagName("th")[0].textContent;
+
+            var confirmar = confirm("Gerencia: ¿confirma dar de baja a " + nombre + "?");
+
+            if (confirmar == true) {
+                fila.remove();
+            }
+        }
+    </script>
+
+    
+
+
+</body>
+</html>
