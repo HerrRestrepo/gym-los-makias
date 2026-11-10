@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portal del Cliente</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/cliente.css">
 </head>
@@ -12,34 +13,41 @@
 <body id="inicio">
 
   <header class="header-home">
-    <nav aria-label="Navegación del portal del cliente">
-      <ul class="barra">
-        <li><a href="../index.html"><img src="../images/logo.png" alt="Logo del Gym Los Makias"></a></li>
+    <nav class="navegacion-inicio flex items-center justify-between w-full" aria-label="Navegación del portal del cliente">
+      <a class="logo-inicio" href="../index.html"><img src="../images/logo.png" alt="Gym Los Makias, inicio"></a>
+      <ul class="barra navegacion-escritorio">
         <li><a href="cliente.html" class="enlace-activo" aria-current="page">Mi perfil</a></li>
         <li><a href="rutinas.html">Rutinas por día</a></li>
         <li><a href="clases.html">Clases grupales</a></li>
       </ul>
+      <details class="menu-hamburguesa">
+        <summary><span class="icono-hamburguesa" aria-hidden="true"></span>Menú</summary>
+        <ul class="barra navegacion-movil">
+          <li><a href="cliente.html" class="enlace-activo" aria-current="page">Mi perfil</a></li>
+          <li><a href="rutinas.html">Rutinas por día</a></li>
+          <li><a href="clases.html">Clases grupales</a></li>
+        </ul>
+      </details>
     </nav>
   </header>
 
   <main class="contenedor-cliente">
 
     <section id="perfil" class="perfil" aria-label="Resumen de afiliación del cliente">
-  <figure class="perfil-avatar" id="perfil-avatar"></figure>
+  <p class="perfil-avatar" aria-hidden="true">MG</p>
 
   <header class="perfil-info">
-    <h1 id="perfil-nombre"></h1>
-    <p><strong>Documento:</strong> <span id="perfil-documento"></span></p>
-    <p><strong>Correo:</strong> <span id="perfil-correo"></span></p>
-    <p><strong>Teléfono:</strong> <span id="perfil-telefono"></span></p>
-    <p><strong>Plan:</strong> <span id="perfil-plan"></span></p>
-    <p><strong>Vence:</strong> <span id="perfil-vence"></span></p>
+    <h1>Mariana Gómez Restrepo</h1>
+    <p><strong>Documento:</strong> 1.020.345.678</p>
+    <p><strong>Correo:</strong> mariana.gomez@correo.com</p>
+    <p><strong>Teléfono:</strong> 300 123 4567</p>
+    <p><strong>Plan:</strong> Plan Makia (Plata)</p>
+    <p><strong>Vence:</strong> 30 de noviembre de 2026</p>
   </header>
 
-  <span class="etiqueta etiqueta-estado-cliente" id="perfil-estado"></span>
+  <span class="etiqueta etiqueta-estado-cliente">Activo</span>
 </section>
 
-    <!-- Vista previa de HU017: Rutina de un solo día -->
     <section id="rutinas" class="rutinas-preview" aria-labelledby="titulo-rutina-hoy">
       <header class="encabezado-seccion">
         <h2 id="titulo-rutina-hoy">Tu rutina del día</h2>
@@ -115,7 +123,6 @@
       </p>
     </section>
 
-    <!-- Vista previa de HU020: Próximas dos clases grupales -->
     <section id="clases" class="clases" aria-labelledby="titulo-clases-proximas">
       <header class="encabezado-seccion">
         <h2 id="titulo-clases-proximas">Próximas clases grupales</h2>
@@ -153,15 +160,9 @@
         <a href="clases.html" class="boton-ver-mas">Ver y agendar todas las clases</a>
       </p>
     </section>
-    <!-- HU018: Historial de sesiones completadas -->
-    <section id="historial" class="historial" aria-labelledby="titulo-historial">
+    <section id="clases-reservadas" class="clases" aria-labelledby="titulo-clases-reservadas">
       <header class="encabezado-seccion">
-        <h2 id="titulo-historial">Historial de sesiones con tu entrenador</h2>
-        <p class="subtitulo-seccion">Entrenamientos personales que ya finalizaste.</p>
-      </header>
-    <section id="clases" class="clases" aria-labelledby="titulo-clases-proximas">
-      <header class="encabezado-seccion">
-        <h2 id="titulo-clases-proximas">Clases reservadas</h2>
+        <h2 id="titulo-clases-reservadas">Clases reservadas</h2>
       </header>
 
       <ul class="clases-lista clases-lista-preview" aria-label="Vista previa de próximas clases grupales">
@@ -189,7 +190,48 @@
       </ul>
     </section>
 
-      <ul class="lista-historial" id="lista-historial"></ul>
+    <section id="historial" class="historial" aria-labelledby="titulo-historial">
+      <header class="encabezado-seccion">
+        <h2 id="titulo-historial">Historial de sesiones con tu entrenador</h2>
+        <p class="subtitulo-seccion">Entrenamientos personales que ya finalizaste.</p>
+      </header>
+
+      <ul class="lista-historial">
+        <li class="item-historial">
+          <article class="tarjeta-historial">
+            <header class="cabecera-historial">
+              <section>
+                <p class="fecha-historial"><time datetime="2026-10-28">28 de octubre de 2026</time></p>
+                <h3>Tren superior: fuerza y técnica</h3>
+              </section>
+              <span class="estado-completado">Completado</span>
+            </header>
+            <p class="entrenador-historial">Entrenador: <strong>Carlos Ramírez</strong></p>
+            <ul class="datos-sesion">
+              <li><strong>Duración:</strong> 60 minutos</li>
+              <li><strong>Enfoque:</strong> Pecho, espalda y hombros</li>
+            </ul>
+            <p class="nota-entrenador"><strong>Nota del entrenador:</strong> Buen control en press de banca; mantener la técnica antes de subir la carga.</p>
+          </article>
+        </li>
+        <li class="item-historial">
+          <article class="tarjeta-historial">
+            <header class="cabecera-historial">
+              <section>
+                <p class="fecha-historial"><time datetime="2026-10-21">21 de octubre de 2026</time></p>
+                <h3>Tren inferior: estabilidad y potencia</h3>
+              </section>
+              <span class="estado-completado">Completado</span>
+            </header>
+            <p class="entrenador-historial">Entrenador: <strong>Carlos Ramírez</strong></p>
+            <ul class="datos-sesion">
+              <li><strong>Duración:</strong> 55 minutos</li>
+              <li><strong>Enfoque:</strong> Piernas y estabilidad del core</li>
+            </ul>
+            <p class="nota-entrenador"><strong>Nota del entrenador:</strong> Mejoró la estabilidad en sentadilla; continuar con movilidad de cadera al inicio.</p>
+          </article>
+        </li>
+      </ul>
     </section>
   </main>
 
@@ -220,60 +262,17 @@
       </section>
     </section>
     <section class="footer-final">
-      <p>&copy; 2026 Gym Los Makias. Todos los derechos reservados.</p>
+      <p>Proyecto estudiantil Cesde</p>
       <a href="#inicio">Volver al inicio</a>
     </section>
-    <a href="#inicio" class="boton-subir">Subir</a>
   </footer>
+  <a href="#inicio" class="boton-subir">Subir</a>
   <script>
-    // Datos quemados del cliente (simulación, sin backend)
-    var nombres = "Mariana";
-    var apellidos = "Gómez Restrepo";
-    var iniciales = "MG";
-    var documento = "1.020.345.678";
-    var correo = "mariana.gomez@correo.com";
-    var telefono = "300 123 4567";
-    var plan = "Plan Makia (Plata)";
-    var vence = "30 de noviembre de 2026";
-    var estado = "Activo";
-
-        // Mostrar los datos en la página
-    document.getElementById("perfil-avatar").textContent = iniciales;
-    document.getElementById("perfil-nombre").textContent = nombres + " " + apellidos;
-    document.getElementById("perfil-documento").textContent = documento;
-    document.getElementById("perfil-correo").textContent = correo;
-    document.getElementById("perfil-telefono").textContent = telefono;
-    document.getElementById("perfil-plan").textContent = plan;
-    document.getElementById("perfil-vence").textContent = vence;
-    document.getElementById("perfil-estado").textContent = estado;
-
-    // Funcion de otra historia (cancelar reserva)
-    function mostrarAlerta() {
-      alert('Su reserva a sido cancelada...');
-    }
-  </script>
-  <script>
-    
-    var sesiones = [
-      ["28 de octubre de 2026", "Carlos Ramírez", "Tren superior", "Completado"],
-      ["21 de octubre de 2026", "Carlos Ramírez", "Tren inferior", "Completado"],
-      ["14 de octubre de 2026", "Laura Mejía", "Cardio y core", "Completado"],
-      ["7 de octubre de 2026", "Laura Mejía", "Valoración física", "Completado"]
-    ];
-
-    var lista = document.getElementById("lista-historial");
-    var contenido = "";
-
-    for (var i = 0; i < sesiones.length; i++) {
-      contenido = contenido +
-        '<li class="item-historial">' +
-        '<p><strong>' + sesiones[i][0] + '</strong><br>' +
-        sesiones[i][2] + ' con ' + sesiones[i][1] + '</p>' +
-        '<span class="estado-completado">' + sesiones[i][3] + '</span>' +
-        '</li>';
-    }
-
-    lista.innerHTML = contenido;
+    document.querySelectorAll(".boton-cancelar-reserva").forEach((boton) => {
+      boton.addEventListener("click", () => {
+        alert("Su reserva a sido cancelada...");
+      });
+    });
   </script>
 </body>
 

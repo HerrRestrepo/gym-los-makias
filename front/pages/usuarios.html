@@ -1,22 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usuarios</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/usuarios.css">
 </head>
 
 <body id="inicio" class="pagina-admin flex min-h-screen flex-col">
     <header class="header-home w-full">
-        <nav aria-label="Navegación del administrador">
-            <ul class="barra justify-start px-4 md:px-8">
-                <li><a href="../index.html"><img src="../images/logo.png" alt="Gym Los Makias, inicio"></a></li>
-                <li><a href="admin.html" class="enlace-activo" aria-current="page">Dashboard</a></li>
+        <nav class="navegacion-inicio flex items-center justify-between w-full" aria-label="Navegación del administrador">
+            <a class="logo-inicio" href="../index.html"><img src="../images/logo.png" alt="Gym Los Makias, inicio"></a>
+            <ul class="barra navegacion-escritorio">
+                <li><a href="admin.html">Dashboard</a></li>
                 <li><a href="usuarios.html" class="enlace-activo" aria-current="page">Usuarios Registrados</a></li>
             </ul>
+            <details class="menu-hamburguesa">
+                <summary><span class="icono-hamburguesa" aria-hidden="true"></span>Menú</summary>
+                <ul class="barra navegacion-movil">
+                    <li><a href="admin.html">Dashboard</a></li>
+                    <li><a href="usuarios.html" class="enlace-activo" aria-current="page">Usuarios Registrados</a></li>
+                </ul>
+            </details>
         </nav>
     </header>
     <main class="contenedor-tabla-usuarios">
@@ -205,7 +213,7 @@
         </section>
         <section
             class="footer-final mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-2 pt-3 text-center text-sm md:flex-row">
-            <p>&copy; 2026 Gym Los Makias. Todos los derechos reservados.</p>
+            <p>Proyecto estudiantil Cesde</p>
             <a href="#inicio">Volver al inicio</a>
         </section>
     </footer>

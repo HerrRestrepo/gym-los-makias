@@ -1,3 +1,42 @@
+body#inicio.pagina-pago::before {
+    background-image: url("../images/fondo_lateral.jpeg");
+    opacity: 0.48;
+}
+
+.pagina-pago .contenedor-formulario {
+    min-height: 65vh;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(2rem, 6vw, 5rem) 1rem;
+    background-color: transparent;
+}
+
+.pagina-pago #datos-pago {
+    width: 100%;
+    max-width: 38rem;
+    padding: clamp(1.5rem, 5vw, 3rem);
+    border: 1px solid #2DE0A5;
+    box-shadow: 0 4px 15px #070606;
+}
+
+.pagina-pago .titulo-pago {
+    margin-bottom: 1.75rem;
+    color: #2DE0A5;
+    font-family: "Syne", "Roboto", sans-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.pagina-pago .subtitulo-pago {
+    margin: 1.5rem 0 1rem;
+    color: #ffffff;
+    font-family: "Syne", "Roboto", sans-serif;
+    font-size: 1.2rem;
+    text-align: left;
+}
+
 .campo-formulario {
     display: block;
 }
@@ -83,6 +122,15 @@
     }
 
     .formulario {
+        padding: 1.5rem 1rem;
+    }
+
+    .pagina-pago .contenedor-formulario {
+        min-height: 0;
+        padding: 2rem 1rem;
+    }
+
+    .pagina-pago #datos-pago {
         padding: 1.5rem 1rem;
     }
 }

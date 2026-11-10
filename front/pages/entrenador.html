@@ -12,11 +12,17 @@
 
 <body id="inicio" class="pagina-entrenador flex min-h-screen flex-col">
     <header class="header-home w-full">
-        <nav aria-label="Navegación del entrenador">
-            <ul class="barra">
-                <li><a href="../index.html"><img src="../images/logo.png" alt="Logo de Gym Los Makias"></a></li>
+        <nav class="navegacion-inicio flex items-center justify-between w-full" aria-label="Navegación del entrenador">
+            <a class="logo-inicio" href="../index.html"><img src="../images/logo.png" alt="Gym Los Makias, inicio"></a>
+            <ul class="barra navegacion-escritorio">
                 <li><a href="entrenador.html" class="enlace-activo" aria-current="page">Clientes asignados</a></li>
             </ul>
+            <details class="menu-hamburguesa">
+                <summary><span class="icono-hamburguesa" aria-hidden="true"></span>Menú</summary>
+                <ul class="barra navegacion-movil">
+                    <li><a href="entrenador.html" class="enlace-activo" aria-current="page">Clientes asignados</a></li>
+                </ul>
+            </details>
         </nav>
     </header>
     <main class="contenedor-entrenador mx-auto w-full flex-1">
@@ -122,7 +128,6 @@
             </ul>
         </aside>
     </main>
-        <!-- HU024: Tarjeta flotante con la ficha del alumno (oculta por defecto) -->
     <aside id="ficha-alumno" class="ficha-alumno" aria-labelledby="ficha-nombre">
         <article class="ficha-contenido">
             <h2 id="ficha-nombre"></h2>
@@ -153,13 +158,11 @@
         </section>
         <section
             class="footer-final mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-2 pt-3 text-center text-sm md:flex-row">
-            <p>&copy; 2026 Gym Los Makias. Todos los derechos reservados.</p>
+            <p>Proyecto estudiantil Cesde</p>
             <a href="#inicio">Volver al inicio</a>
         </section>
     </footer>
         <script>
-        // HU024: Datos quemados de cada alumno (simulación, sin backend)
-        // Cada fila es: [nombre, plan, vence, rutina, objetivo]
         var alumnos = [
             ["Valentina Restrepo", "Plan Makia (Plata)", "30 de noviembre de 2026", "Tren superior y core, 4 días a la semana", "Hipertrofia"],
             ["Juan David Gómez", "Plan Élite (Oro)", "15 de diciembre de 2026", "Cardio y circuito funcional, 5 días a la semana", "Pérdida de peso"],
@@ -168,7 +171,6 @@
             ["Sara Jiménez", "Plan Makia (Plata)", "5 de diciembre de 2026", "Cardio, fuerza ligera y estiramiento, 4 días a la semana", "Pérdida de peso"]
         ];
 
-        // Muestra la tarjeta con los datos del alumno elegido
         function mostrarFicha(numero) {
             document.getElementById("ficha-nombre").textContent = alumnos[numero][0];
             document.getElementById("ficha-plan").textContent = alumnos[numero][1];
@@ -178,7 +180,6 @@
             document.getElementById("ficha-alumno").style.display = "block";
         }
 
-        // Oculta la tarjeta otra vez
         function cerrarFicha() {
             document.getElementById("ficha-alumno").style.display = "none";
         }

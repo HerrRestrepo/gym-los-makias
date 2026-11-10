@@ -5,19 +5,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gym Los Makias - Horario semanal de clases</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/clases.css">
 </head>
 
 <body id="inicio">
   <header class="header-home">
-    <nav aria-label="Navegación del portal del cliente">
-      <ul class="barra">
-        <li><a href="../index.html"><img src="../images/logo.png" alt="Logo del Gym Los Makias"></a></li>
+    <nav class="navegacion-inicio flex items-center justify-between w-full" aria-label="Navegación del portal del cliente">
+      <a class="logo-inicio" href="../index.html"><img src="../images/logo.png" alt="Gym Los Makias, inicio"></a>
+      <ul class="barra navegacion-escritorio">
         <li><a href="cliente.html">Mi perfil</a></li>
         <li><a href="rutinas.html">Rutinas por día</a></li>
         <li><a href="clases.html" class="enlace-activo" aria-current="page">Clases grupales</a></li>
       </ul>
+      <details class="menu-hamburguesa">
+        <summary><span class="icono-hamburguesa" aria-hidden="true"></span>Menú</summary>
+        <ul class="barra navegacion-movil">
+          <li><a href="cliente.html">Mi perfil</a></li>
+          <li><a href="rutinas.html">Rutinas por día</a></li>
+          <li><a href="clases.html" class="enlace-activo" aria-current="page">Clases grupales</a></li>
+        </ul>
+      </details>
     </nav>
   </header>
 
@@ -184,20 +193,18 @@
       </section>
     </section>
     <section class="footer-final">
-      <p>&copy; 2026 Gym Los Makias. Todos los derechos reservados.</p>
+      <p>Proyecto estudiantil Cesde</p>
       <a href="#inicio">Volver al inicio</a>
     </section>
     
   </footer>
   <script>
-    // HU021: cupos de cada sesión, en el orden de la página (13 sesiones)
     var aforos = [20, 3, 15, 4, 18, 2, 12, 15, 5, 3, 14, 10, 0];
 
     var botones = document.getElementsByClassName("boton-reserva");
     var sesiones = document.getElementsByClassName("sesion-clase");
     var estados = document.getElementsByClassName("estado");
 
-    // Al cargar, agrega a cada sesión una línea con sus cupos
     for (var i = 0; i < sesiones.length; i++) {
       var linea = document.createElement("p");
       linea.className = "cupos-restantes";
@@ -205,7 +212,6 @@
       sesiones[i].insertBefore(linea, botones[i]);
     }
 
-    // Se ejecuta al hacer clic en Reservar
     function reservar(numero) {
       if (aforos[numero] > 0) {
         aforos[numero] = aforos[numero] - 1;

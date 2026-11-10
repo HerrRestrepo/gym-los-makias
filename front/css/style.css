@@ -10,6 +10,24 @@ body {
     background-color: #001F23;
 }
 
+body#inicio {
+    position: relative;
+    isolation: isolate;
+}
+
+body#inicio::before {
+    position: fixed;
+    z-index: -1;
+    inset: 0;
+    background-image: url("../images/fondo_lateral.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+    opacity: 0.2;
+    pointer-events: none;
+}
+
 .header-home {
     position: sticky;
     top: 0;
@@ -38,13 +56,7 @@ body {
     height: auto;
 }
 
-.portada-general {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 60rem) minmax(0, 1fr);
-}
-
 .portada {
-    position: relative;
     width: 100%;
     max-width: 60rem;
     margin: 0 auto;
@@ -52,19 +64,16 @@ body {
 
 .slogan {
     font-family: "Syne", "Roboto", sans-serif;
-    font-size: 28px;
+    font-size: clamp(1rem, 2vw, 1.4rem);
     font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    position: absolute;
-    z-index: 1;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    letter-spacing: 0.04em;
     box-sizing: border-box;
-    padding: 3rem 5% 1.5rem 5%;
+    padding: 0.85rem 1rem;
     color: #ffffff;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: #00363C;
+    border-radius: 0 0 8px 8px;
+    text-align: center;
 }
 
 
@@ -72,14 +81,7 @@ body {
     display: block;
     width: 100%;
     height: auto;
-}
-
-.foto-lateral {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.35;
+    border-radius: 8px 8px 0 0;
 }
 
 .carrusel {
@@ -88,7 +90,13 @@ body {
     margin: 2rem auto;
 }
 .carrusel input[type="radio"] {
-    display: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
 }
 .ventana-carrusel {
     width: 100%;
@@ -98,7 +106,7 @@ body {
 .slides{
     display: flex;
     width: 100%;
-    transition: 0.5s;
+    transition: transform 0.5s ease;
 }
 .diapositiva {
     flex: 0 0 100%;
@@ -117,38 +125,61 @@ body {
     transform: translateX(-200%);
 }
 .navegacionSlide{
-    font-family: "Syne", "Roboto", sans-serif;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
     margin-top: 1rem;
 }
 .navegacionSlide label{
-    background-color: #004d55;
-    color: #b0c4c4;
-    padding: 10px 15px;
+    display: grid;
+    width: 2rem;
+    height: 2rem;
+    place-items: center;
     cursor: pointer;
-    margin: 0 5px;
-    border-radius: 5px;
+    border-radius: 50%;
 }
-#img1:checked ~ .navegacionSlide label[for="img1"],
-#img2:checked ~ .navegacionSlide label[for="img2"],
-#img3:checked ~ .navegacionSlide label[for="img3"]{
+
+.navegacionSlide label::before {
+    width: 0.7rem;
+    height: 0.7rem;
+    box-sizing: border-box;
+    background-color: #004d55;
+    border: 2px solid #b0c4c4;
+    border-radius: 50%;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+#img1:checked ~ .navegacionSlide label[for="img1"]::before,
+#img2:checked ~ .navegacionSlide label[for="img2"]::before,
+#img3:checked ~ .navegacionSlide label[for="img3"]::before {
     background-color: #2de0a5;
-    color: #001f23;
+    border-color: #2de0a5;
+    transform: scale(1.2);
 }
-@media(max-width:480px){
-    .navegacionSlide label{
-        display: inline-block;
-        padding: 8px 12px;
-        margin: 0 3px;
+
+.navegacionSlide label:hover::before {
+    border-color: #2de0a5;
+}
+
+#img1:focus-visible ~ .navegacionSlide label[for="img1"],
+#img2:focus-visible ~ .navegacionSlide label[for="img2"],
+#img3:focus-visible ~ .navegacionSlide label[for="img3"] {
+    outline: 2px solid #ffffff;
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .slides,
+    .navegacionSlide label {
+        transition: none;
     }
 }
 #ubicacion {
     display: flex;
     flex-wrap: wrap;
+    scroll-margin-top: 10rem;
     justify-content: space-between;
     align-items: flex;
     gap: 2rem;
-    /* background-color: #00363C; */
     margin: 2rem auto;
     padding: 2rem;
     font-family: "roboto", sans-serif;
@@ -167,6 +198,12 @@ body {
     align-items: center;
     padding: 1rem;
     gap: 1.5rem;
+}
+
+.ubicacion-info h2 {
+    color: #2DE0A5;
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    font-weight: 800;
 }
 
 #ubicacion iframe {
@@ -340,7 +377,6 @@ body {
 .contacto-intro h2 {
     margin-bottom: 1rem;
     color: #2DE0A5;
-    font-family: "Syne", "Roboto", sans-serif;
     font-size: 2rem;
 }
 
@@ -478,8 +514,6 @@ body {
     font-size: 0.9rem;
 }
 
-
-/* Integrante 3, cliente.html */
 
 .contenedor-cliente {
     width: 100%;
@@ -785,8 +819,6 @@ select {
     }
 }
 
-/* Componentes compartidos de portal de cliente, rutinas (HU017) y clases (HU020) */
-
 .barra a {
     display: inline-block;
     padding: 0.6rem 1.1rem;
@@ -984,6 +1016,10 @@ select {
 }
 
 @media (max-width: 768px) {
+    #ubicacion {
+        scroll-margin-top: 8rem;
+    }
+
     .barra {
         flex-wrap: wrap;
         gap: 0.75rem;
@@ -1016,5 +1052,160 @@ select {
     .tabla-rutina tbody th,
     .tabla-rutina tbody td {
         padding: 0.75rem 0.9rem;
+    }
+}
+
+.navegacion-inicio {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0.35rem clamp(1rem, 3vw, 2rem);
+}
+
+.logo-inicio {
+    display: block;
+    flex: 0 0 auto;
+}
+
+.logo-inicio img {
+    display: block;
+    width: 15rem;
+    height: auto;
+}
+
+.menu-hamburguesa {
+    display: none;
+    position: relative;
+}
+
+.menu-hamburguesa > summary {
+    display: none;
+}
+
+.header-home .barra.navegacion-escritorio {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.header-home .barra .enlace-accion {
+    color: #001F23;
+    background-color: #2fc794;
+    border-bottom-color: #2fc794;
+}
+
+.header-home .barra .enlace-accion:hover,
+.header-home .barra .enlace-accion:focus-visible {
+    color: #ffffff;
+    background-color: #004d55;
+    border-bottom-color: #2DE0A5;
+}
+
+@media (max-width: 768px) {
+    .navegacion-inicio {
+        padding: 0.5rem 1rem;
+    }
+
+    .header-home .barra.navegacion-escritorio {
+        display: none;
+    }
+
+    .logo-inicio img {
+        width: clamp(8rem, 42vw, 11rem);
+    }
+
+    .menu-hamburguesa {
+        display: block;
+    }
+
+    .menu-hamburguesa > summary {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.7rem 0.85rem;
+        color: #ffffff;
+        font-family: "Roboto", sans-serif;
+        font-weight: 800;
+        cursor: pointer;
+        border: 1px solid #2DE0A5;
+        border-radius: 6px;
+        list-style: none;
+    }
+
+    .menu-hamburguesa > summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .menu-hamburguesa > summary:focus-visible {
+        outline: 2px solid #ffffff;
+        outline-offset: 3px;
+    }
+
+    .icono-hamburguesa {
+        position: relative;
+        display: block;
+        width: 1.25rem;
+        height: 2px;
+        background-color: #2DE0A5;
+        transition: background-color 0.2s ease;
+    }
+
+    .icono-hamburguesa::before,
+    .icono-hamburguesa::after {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        content: "";
+        background-color: #2DE0A5;
+        transition: transform 0.2s ease;
+    }
+
+    .icono-hamburguesa::before {
+        transform: translateY(-6px);
+    }
+
+    .icono-hamburguesa::after {
+        transform: translateY(6px);
+    }
+
+    .menu-hamburguesa[open] .icono-hamburguesa {
+        background-color: transparent;
+    }
+
+    .menu-hamburguesa[open] .icono-hamburguesa::before {
+        transform: rotate(45deg);
+    }
+
+    .menu-hamburguesa[open] .icono-hamburguesa::after {
+        transform: rotate(-45deg);
+    }
+
+    .header-home .menu-hamburguesa:not([open]) > .barra {
+        display: none;
+    }
+
+    .header-home .menu-hamburguesa[open] > .barra {
+        position: absolute;
+        top: calc(100% + 0.5rem);
+        right: 0;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.25rem;
+        min-width: 13rem;
+        padding: 0.5rem;
+        background-color: #001F23;
+        border: 1px solid #2DE0A5;
+        border-radius: 8px;
+    }
+
+    .header-home .menu-hamburguesa .barra a {
+        display: block;
+        padding: 0.75rem;
+        border-radius: 4px;
     }
 }

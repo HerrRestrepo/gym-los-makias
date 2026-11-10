@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rutinas por Día</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/rutinas.css">
 </head>
@@ -12,19 +13,26 @@
 <body id="inicio">
 
   <header class="header-home">
-    <nav aria-label="Navegación del portal del cliente">
-      <ul class="barra">
-        <li><a href="../index.html"><img src="../images/logo.png" alt="Logo del Gym Los Makias"></a></li>
+    <nav class="navegacion-inicio flex items-center justify-between w-full" aria-label="Navegación del portal del cliente">
+      <a class="logo-inicio" href="../index.html"><img src="../images/logo.png" alt="Gym Los Makias, inicio"></a>
+      <ul class="barra navegacion-escritorio">
         <li><a href="cliente.html">Mi perfil</a></li>
         <li><a href="rutinas.html" class="enlace-activo" aria-current="page">Rutinas por día</a></li>
         <li><a href="clases.html">Clases grupales</a></li>
       </ul>
+      <details class="menu-hamburguesa">
+        <summary><span class="icono-hamburguesa" aria-hidden="true"></span>Menú</summary>
+        <ul class="barra navegacion-movil">
+          <li><a href="cliente.html">Mi perfil</a></li>
+          <li><a href="rutinas.html" class="enlace-activo" aria-current="page">Rutinas por día</a></li>
+          <li><a href="clases.html">Clases grupales</a></li>
+        </ul>
+      </details>
     </nav>
   </header>
 
   <main class="contenedor-cliente">
 
-    <!-- HU017: Consulta completa de Rutinas por Día (RF-12) -->
     <section class="rutinas-completas" aria-labelledby="titulo-rutinas-semana">
       <header class="encabezado-seccion">
         <h1 id="titulo-rutinas-semana">Rutinas de entrenamiento por día y objetivo</h1>
@@ -66,7 +74,6 @@
 
       <section class="lista-rutinas-dia" aria-label="Tablas detalladas de ejercicios por día">
 
-        <!-- Lunes -->
         <article id="rutina-lunes" class="bloque-rutina">
           <table class="tabla-rutina">
             <caption>
@@ -121,15 +128,10 @@
                 <td>60 s</td>
               </tr>
             </tbody>
-            <tfoot>
-              <tr>
-                <td colspan="5">Recomendación del día: realizar 10 minutos de movilidad escapular y hombro antes de iniciar la primera serie efectiva.</td>
-              </tr>
-            </tfoot>
           </table>
+          <p class="consejo-dia mt-2 w-full break-words"><strong>Recomendación del día:</strong> realizar 10 minutos de movilidad escapular y hombro antes de iniciar la primera serie efectiva.</p>
         </article>
 
-        <!-- Martes -->
         <article id="rutina-martes" class="bloque-rutina">
           <table class="tabla-rutina">
             <caption>
@@ -184,15 +186,10 @@
                 <td>45 s</td>
               </tr>
             </tbody>
-            <tfoot>
-              <tr>
-                <td colspan="5">Recomendación del día: mantener el control excéntrico de 2 segundos en prensa y sentadilla.</td>
-              </tr>
-            </tfoot>
           </table>
+          <p class="consejo-dia mt-2 w-full break-words"><strong>Recomendación del día:</strong> mantener el control excéntrico de 2 segundos en prensa y sentadilla.</p>
         </article>
 
-        <!-- Miércoles -->
         <article id="rutina-miercoles" class="bloque-rutina">
           <table class="tabla-rutina">
             <caption>
@@ -247,15 +244,10 @@
                 <td>45 s</td>
               </tr>
             </tbody>
-            <tfoot>
-              <tr>
-                <td colspan="5">Recomendación del día: evitar el impulso lumbar durante los remos y priorizar la retracción escapular.</td>
-              </tr>
-            </tfoot>
           </table>
+          <p class="consejo-dia mt-2 w-full break-words"><strong>Recomendación del día:</strong> evitar el impulso lumbar durante los remos y priorizar la retracción escapular.</p>
         </article>
 
-        <!-- Jueves -->
         <article id="rutina-jueves" class="bloque-rutina">
           <table class="tabla-rutina">
             <caption>
@@ -303,15 +295,10 @@
                 <td>60 s</td>
               </tr>
             </tbody>
-            <tfoot>
-              <tr>
-                <td colspan="5">Recomendación del día: sostener 1 segundo de contracción isométrica arriba en cada repetición de Hip Thrust.</td>
-              </tr>
-            </tfoot>
           </table>
+          <p class="consejo-dia mt-2 w-full break-words"><strong>Recomendación del día:</strong> sostener 1 segundo de contracción isométrica arriba en cada repetición de Hip Thrust.</p>
         </article>
 
-        <!-- Viernes -->
         <article id="rutina-viernes" class="bloque-rutina">
           <table class="tabla-rutina">
             <caption>
@@ -359,12 +346,8 @@
                 <td>60 s</td>
               </tr>
             </tbody>
-            <tfoot>
-              <tr>
-                <td colspan="5">Recomendación del día: hidratarse entre rondas y finalizar con 10 minutos de estiramiento general.</td>
-              </tr>
-            </tfoot>
           </table>
+          <p class="consejo-dia mt-2 w-full break-words"><strong>Recomendación del día:</strong> hidratarse entre rondas y finalizar con 10 minutos de estiramiento general.</p>
         </article>
 
       </section>
@@ -403,15 +386,13 @@
       </section>
     </section>
     <section class="footer-final">
-      <p>&copy; 2026 Gym Los Makias. Todos los derechos reservados.</p>
+      <p>Proyecto estudiantil Cesde</p>
       <a href="#inicio">Volver al inicio</a>
     </section>
   </footer>
 
-  <!-- Botón fijo en pantalla (position: fixed) -->
   <a href="#inicio" class="boton-subir">Subir</a>
 
 </body>
 
 </html>
-

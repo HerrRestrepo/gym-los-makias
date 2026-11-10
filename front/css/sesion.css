@@ -25,16 +25,6 @@
     position: relative;
 }
 
-.pagina-sesion .barra {
-    min-height: 5rem;
-    padding: 0.5rem 1.5rem;
-    gap: 1.5rem;
-}
-
-.pagina-sesion .barra img {
-    width: clamp(8rem, 22vw, 15rem);
-}
-
 .pagina-sesion .footer-home {
     padding: 1rem max(1rem, calc((100% - 1200px) / 2));
 }
@@ -80,16 +70,12 @@
     text-align: center;
 }
 
-.logo-sesion {
-    display: block;
-    width: min(100%, 14rem);
-    height: auto;
-    margin-bottom: 0.75rem;
-}
-
 .tarjeta-sesion h1 {
     font-family: "Syne", "Roboto", sans-serif;
-    font-size: clamp(1.8rem, 5vw, 2.4rem);
+    color: #2DE0A5;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    line-height: 1.1;
 }
 
 .texto-sesion {
@@ -173,17 +159,6 @@
 }
 
 @media (max-width: 520px) {
-    .pagina-sesion .barra {
-        justify-content: center;
-        gap: 0.8rem;
-        padding: 0.75rem;
-        font-size: 0.95rem;
-    }
-
-    .pagina-sesion .barra img {
-        width: clamp(6rem, 26vw, 8rem);
-    }
-
     .contenido-sesion {
         padding: 2rem 1rem;
     }
