@@ -4,27 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/pago.css">
     <title>Pago</title>
 </head>
 
-<body id="inicio">
-    <header>
-        <nav>
-            <ul class="barra">
-                <li><a href="../index.html"><img src="../images/logo.png" alt="Logo del Gym Los Makias"></a></li>
-                <li><a href="registro.html">Registrarte</a></li>
-                <li><a href="pago.html">Paga tu plan</a></li>
-                <li><a href="../index.html#planes">¡PONTE VIGA!</a></li>
+<body id="inicio" class="pagina-pago">
+    <header class="header-home w-full">
+        <nav class="navegacion-inicio flex items-center justify-between w-full" aria-label="Navegación de registro y pago">
+            <a class="logo-inicio" href="../index.html"><img src="../images/logo.png" alt="Gym Los Makias, inicio"></a>
+            <ul class="barra navegacion-escritorio">
+                <li><a href="pago.html" class="enlace-activo" aria-current="page">Paga tu plan</a></li>
             </ul>
+            <details class="menu-hamburguesa">
+                <summary><span class="icono-hamburguesa" aria-hidden="true"></span>Menú</summary>
+                <ul class="barra navegacion-movil">
+                    <li><a href="pago.html" class="enlace-activo" aria-current="page">Paga tu plan</a></li>
+                </ul>
+            </details>
         </nav>
     </header>
     <main>
         <form id="formulario-pago" action="cliente.html" method="get">
             <section class="contenedor-formulario">
                 <section id="datos-pago" class="formulario">
-                    <h1 class="subtitulo">Paga tu plan</h1>
+                    <h1 class="subtitulo titulo-pago">Paga tu plan</h1>
                     <p class="campo-formulario">
                         <label for="plan">Plan que deseas elegir</label>
                         <select name="plan" id="plan" required>
@@ -35,7 +40,7 @@
                             <option value="vip">Plan Anual Makia VIP - $900.000 / año</option>
                         </select>
                     </p>
-                    <h2 class="subtitulo">Método de pago</h2>
+                    <h2 class="subtitulo subtitulo-pago">Método de pago</h2>
                     <p class="campo-formulario">
                         <label for="tipo-pago">Método de pago</label>
                         <select name="tipo-pago" id="tipo-pago" required>
@@ -68,7 +73,7 @@
                     </p>
                     <p class="campo-formulario campo-facturacion">
                         <input type="checkbox" id="facturacion-electronica" name="facturacion-electronica"
-                            value="solicitada" required>
+                            value="solicitada">
                         <label for="facturacion-electronica">Facturación electrónica</label>
                     </p>
                     <button type="submit" class="boton-registrarse">Continuar</button>
@@ -113,7 +118,7 @@
             </section>
         </section>
         <section class="footer-final">
-            <p>&copy; 2026 Gym Los Makias. Todos los derechos reservados.</p>
+            <p>Proyecto estudiantil Cesde</p>
             <a href="#inicio">Volver al inicio ↑</a>
         </section>
     </footer>

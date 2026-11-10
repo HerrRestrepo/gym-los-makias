@@ -1,0 +1,39 @@
+body#inicio.pagina-registro::before {
+    background-image: url("../images/fondo_lateral.jpeg");
+    opacity: 0.48;
+}
+
+.pagina-registro .contenedor-formulario {
+    min-height: 65vh;
+    box-sizing: border-box;
+    align-items: center;
+    padding: clamp(2rem, 6vw, 5rem) 1rem;
+    background-color: transparent;
+}
+
+.pagina-registro .formulario {
+    max-width: 38rem;
+    padding: clamp(1.5rem, 5vw, 3rem);
+    border: 1px solid #2DE0A5;
+    box-shadow: 0 4px 15px #070606;
+}
+
+.pagina-registro .subtitulo {
+    margin-bottom: 1.75rem;
+    color: #2DE0A5;
+    font-family: "Syne", "Roboto", sans-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+@media (max-width: 480px) {
+    .pagina-registro .contenedor-formulario {
+        min-height: 0;
+        padding: 2rem 1rem;
+    }
+
+    .pagina-registro .formulario {
+        padding: 1.5rem 1rem;
+    }
+}

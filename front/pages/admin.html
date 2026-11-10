@@ -10,12 +10,19 @@
 </head>
 <body id="inicio" class="pagina-admin flex min-h-screen flex-col">
     <header class="header-home w-full">
-        <nav aria-label="Navegación del administrador">
-            <ul class="barra justify-start px-4 md:px-8">
-                <li><a href="../index.html"><img src="../images/logo.png" alt="Gym Los Makias, inicio"></a></li>
+        <nav class="navegacion-inicio flex items-center justify-between w-full" aria-label="Navegación del administrador">
+            <a class="logo-inicio" href="../index.html"><img src="../images/logo.png" alt="Gym Los Makias, inicio"></a>
+            <ul class="barra navegacion-escritorio">
                 <li><a href="admin.html" class="enlace-activo" aria-current="page">Dashboard</a></li>
-                <li><a href="usuarios.html" class="enlace-activo" aria-current="page">Usuarios Registrados</a></li>
+                <li><a href="usuarios.html">Usuarios Registrados</a></li>
             </ul>
+            <details class="menu-hamburguesa">
+                <summary><span class="icono-hamburguesa" aria-hidden="true"></span>Menú</summary>
+                <ul class="barra navegacion-movil">
+                    <li><a href="admin.html" class="enlace-activo" aria-current="page">Dashboard</a></li>
+                    <li><a href="usuarios.html">Usuarios Registrados</a></li>
+                </ul>
+            </details>
         </nav>
     </header>
     <main class="contenedor-dashboard mx-auto w-full flex-1">
@@ -139,7 +146,6 @@
                 </li>
             </ul>
         </section>
-        <!-- HU030: Reportes simulados de planes y métodos de pago -->
         <section class="seccion-reportes" aria-labelledby="titulo-reportes">
             <header class="encabezado-reportes">
                 <h2 id="titulo-reportes">Reportes de suscripciones</h2>
@@ -148,7 +154,7 @@
             <section class="graficos-reportes">
                 <article class="reporte-grafico">
                     <h3>Planes más vendidos</h3>
-                    <div class="grafico-torta torta-planes" role="img" aria-label="Gráfico de torta de planes más vendidos"></div>
+                    <figure class="grafico-torta torta-planes" role="img" aria-label="Gráfico de torta de planes más vendidos"></figure>
                     <ul class="leyenda-torta">
                         <li><span class="punto punto-basico"></span>Plan Básico (Bronce): <strong>20%</strong></li>
                         <li><span class="punto punto-makia"></span>Plan Makia (Plata): <strong>45%</strong></li>
@@ -158,7 +164,7 @@
                 </article>
                 <article class="reporte-grafico">
                     <h3>Métodos de pago usados</h3>
-                    <div class="grafico-torta torta-pagos" role="img" aria-label="Gráfico de torta de métodos de pago"></div>
+                    <figure class="grafico-torta torta-pagos" role="img" aria-label="Gráfico de torta de métodos de pago"></figure>
                     <ul class="leyenda-torta">
                         <li><span class="punto punto-tarjeta"></span>Tarjeta de crédito: <strong>40%</strong></li>
                         <li><span class="punto punto-pse"></span>PSE: <strong>35%</strong></li>
@@ -168,7 +174,6 @@
             </section>
         </section>
 
-                <!-- HU032: Búsqueda simulada de clientes -->
         <section class="seccion-clientes-admin" aria-labelledby="titulo-clientes-admin">
             <header class="encabezado-clientes-admin">
                 <h2 id="titulo-clientes-admin">Registro de clientes</h2>
@@ -343,13 +348,12 @@
             </section>
         </section>
         <section class="footer-final mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-2 pt-3 text-center text-sm md:flex-row">
-            <p>&copy; 2026 Gym Los Makias. Todos los derechos reservados.</p>
+            <p>Proyecto estudiantil Cesde</p>
             <a href="#inicio">Volver al inicio</a>
         </section>
     </footer>
 
         <script>
-        // HU032: Búsqueda simulada de clientes por nombre
         function buscarCliente() {
             var texto = document.getElementById("buscador-clientes").value.toLowerCase();
             var filas = document.getElementById("cuerpo-clientes").getElementsByTagName("tr");
@@ -372,7 +376,6 @@
                 document.getElementById("sin-resultados").style.display = "none";
             }
         }
-                // HU035: Simulación de baja de un cliente (solo en la página, no borra nada real)
         function darDeBaja(boton) {
             var fila = boton.parentNode.parentNode;
             var nombre = fila.getElementsByTagName("th")[0].textContent;

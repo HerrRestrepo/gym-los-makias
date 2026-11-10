@@ -353,7 +353,6 @@
     }
 }
 
-/* HU024: Ficha del alumno (tarjeta flotante) */
 .boton-detalles {
     padding: 0.4rem 0.9rem;
     border: 1px solid #2DE0A5;
@@ -411,7 +410,6 @@
     cursor: pointer;
 }
 
-/* HU024: ajuste para que quepa la columna Detalle */
 @media (min-width: 769px) {
     .contenedor-entrenador {
         grid-template-columns: minmax(0, 2.4fr) minmax(230px, 0.8fr);

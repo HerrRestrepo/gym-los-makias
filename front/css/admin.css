@@ -235,11 +235,6 @@
     border-color: #bb8ae0;
 }
 
-/* .aviso-demostrativo {
-    color: #b0c4c4;
-    font-size: 0.85rem;
-} */
-
 .seccion-personal {
     display: flex;
     flex-direction: column;
@@ -468,7 +463,6 @@
         padding: 1rem;
     }
 }
-/* HU030: Reportes simulados (gráficos de torta) */
 .seccion-reportes {
     display: flex;
     flex-direction: column;
@@ -518,14 +512,12 @@
     font-weight: 800;
 }
 
-/* El círculo: un div con border-radius 50% */
 .grafico-torta {
     width: 200px;
     height: 200px;
     border-radius: 50%;
 }
 
-/* Porciones: los porcentajes están escritos a mano */
 .torta-planes {
     background: conic-gradient(
         #b8733a 0% 20%,
@@ -578,7 +570,6 @@
     }
 }
 
-/* HU032: Búsqueda simulada de clientes */
 .seccion-clientes-admin {
     display: flex;
     flex-direction: column;
@@ -684,7 +675,6 @@
     font-weight: 700;
 }
 
-/* HU035: Botón Dar de baja */
 .boton-baja {
     padding: 0.4rem 0.9rem;
     border: 1px solid #e05a5a;

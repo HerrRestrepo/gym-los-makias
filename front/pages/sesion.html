@@ -9,9 +9,22 @@
     <link rel="stylesheet" href="../css/sesion.css">
 </head>
 <body id="inicio" class="pagina-sesion flex min-h-screen flex-col">
+    <header class="header-home w-full">
+        <nav class="navegacion-inicio flex items-center justify-between w-full" aria-label="Navegación de inicio de sesión">
+            <a class="logo-inicio" href="../index.html"><img src="../images/logo.png" alt="Gym Los Makias, inicio"></a>
+            <ul class="barra navegacion-escritorio">
+                <li><a href="#titulo-sesion" class="enlace-activo" aria-current="page">Iniciar sesión</a></li>
+            </ul>
+            <details class="menu-hamburguesa">
+                <summary><span class="icono-hamburguesa" aria-hidden="true"></span>Menú</summary>
+                <ul class="barra navegacion-movil">
+                    <li><a href="#titulo-sesion" class="enlace-activo" aria-current="page">Iniciar sesión</a></li>
+                </ul>
+            </details>
+        </nav>
+    </header>
     <main class="contenido-sesion grid w-full flex-1 place-items-center">
         <section class="tarjeta-sesion flex flex-col items-center text-center" aria-labelledby="titulo-sesion">
-            <a href="../index.html"><img src="../images/logo.png" alt="Gym Los Makias, inicio"></a>
             <h1 id="titulo-sesion">Iniciar sesión</h1>
             <form class="formulario-sesion">
                 <fieldset class="campos-sesion">
@@ -30,7 +43,7 @@
                 <button type="submit" class="boton-iniciar-sesion">Iniciar sesión</button>
                 <details class="recuperacion-contrasena mt-1 text-center text-sm text-[#b0c4c4]">
                     <summary class="mx-auto w-fit cursor-pointer transition-colors duration-200 hover:text-[#2DE0A5] focus-visible:outline-2 focus-visible:outline-[#2DE0A5] focus-visible:outline-offset-2">Olvidé mi contraseña</summary>
-                    <p class="mt-2 leading-relaxed text-[#e0ecec]">La recuperación de contraseña aún no está disponible. No se envió ningún enlace.</p>
+                    <p class="mt-2 leading-relaxed text-[#e0ecec]">La recuperación de contraseña aún no está disponible. No se envió ningún enlace. Por favor acérquese a nuetra sede para más ayuda.</p>
                 </details>
             </form>
         </section>
@@ -53,7 +66,7 @@
             </section>
         </section>
         <section class="footer-final mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-2 pt-3 text-center text-sm md:flex-row">
-            <p>&copy; 2026 Gym Los Makias. Todos los derechos reservados.</p>
+            <p>Proyecto estudiantil Cesde</p>
             <a href="#inicio">Volver al inicio</a>
         </section>
     </footer>
